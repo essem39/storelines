@@ -25,7 +25,7 @@ header{background:#111827;padding:12px 0;position:sticky;top:0;z-index:200;box-s
 .logo-name{font-size:21px;font-weight:800;color:#fff;letter-spacing:.5px}
 .logo-plus{font-size:21px;font-weight:900;color:#FF6B00;margin:0 4px}
 .logo-auto{font-size:21px;font-weight:800;color:#fff;letter-spacing:.5px}
-.header-search{flex:1;display:flex;max-width:580px}
+.header-search{flex:1;display:flex;max-width:700px}
 .cat-sel{padding:0 14px;height:42px;background:#fff;border:none;border-radius:4px 0 0 4px;font-size:13px;font-weight:600;color:#333;cursor:pointer;outline:none;border-right:1px solid #ddd;min-width:120px}
 .srch-in{flex:1;height:42px;padding:0 14px;border:none;outline:none;font-size:14px;color:#333;background:#fff}
 .srch-in::placeholder{color:#aaa}
@@ -45,13 +45,14 @@ header{background:#111827;padding:12px 0;position:sticky;top:0;z-index:200;box-s
 
 /* NAV */
 .nav-bar{background:#fff;border-bottom:2px solid #f0f0f0}
-.nav-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;overflow-x:auto}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;overflow-x:auto;scrollbar-width:none}
+.nav-inner::-webkit-scrollbar{display:none}
 .nav-lnk{display:flex;align-items:center;gap:6px;padding:11px 16px;font-size:13px;font-weight:500;color:#444;text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent;margin-bottom:-2px;transition:all .2s}
 .nav-lnk:hover,.nav-lnk.active{color:#1565C0;border-bottom-color:#1565C0}
 
 /* MAIN SEARCH SECTION */
 .main-wrap{background:#f4f5f7;padding:24px 0 28px}
-.main-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:360px 1fr;gap:20px;align-items:start}
+.main-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:360px 1fr;gap:20px;align-items:stretch}
 
 /* LEFT: FINDER */
 .finder{background:#fff;border:1px solid #ddd;border-radius:4px;padding:20px}
@@ -82,6 +83,21 @@ header{background:#111827;padding:12px 0;position:sticky;top:0;z-index:200;box-s
 .banner-sub{font-size:14px;color:rgba(255,255,255,0.65);margin-bottom:22px}
 .banner-btn{display:inline-block;padding:12px 30px;background:#FF6B00;color:#fff;font-size:14px;font-weight:700;border-radius:3px;text-decoration:none;width:fit-content}
 .banner-btn:hover{background:#e65c00}
+
+/* SLIDER */
+.slider{position:relative;border-radius:4px;overflow:hidden;min-height:100%}
+.slides{display:flex;height:100%;transition:transform .5s ease}
+.slide{min-width:100%;background:linear-gradient(135deg,#111827 0%,#1a2a40 100%);padding:36px 40px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+.slide::after{content:'';position:absolute;right:-40px;top:-40px;width:280px;height:280px;background:radial-gradient(circle,rgba(255,107,0,0.15) 0%,transparent 70%)}
+.slide2{background:linear-gradient(135deg,#0d1b2a 0%,#1b3a5c 100%)}
+.slide3{background:linear-gradient(135deg,#1a1a0d 0%,#2a3a0d 100%)}
+.slider-dots{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:10}
+.dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.4);cursor:pointer;transition:background .2s}
+.dot.active{background:#FF6B00}
+.slider-prev,.slider-next{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.15);border:none;color:#fff;font-size:28px;width:40px;height:40px;border-radius:50%;cursor:pointer;z-index:10;display:flex;align-items:center;justify-content:center;transition:background .2s;line-height:1}
+.slider-prev:hover,.slider-next:hover{background:rgba(255,255,255,0.3)}
+.slider-prev{left:12px}
+.slider-next{right:12px}
 
 /* CATEGORIES */
 .section{max-width:1280px;margin:0 auto;padding:32px 24px}
@@ -239,12 +255,35 @@ footer{background:#111827;padding:40px 0 0}
       <a href="#" class="cant-find">Can't find your car in the catalogue?</a>
     </div>
 
-    <!-- BANNER -->
-    <div class="banner">
-      <div class="banner-tag">🔥 Special offer</div>
-      <div class="banner-title">UP TO <span>40%</span> OFF</div>
-      <div class="banner-sub">Engine parts, brakes, suspension and filters.<br>Best prices across 27 EU countries.</div>
-      <a href="#categories" class="banner-btn">SHOP NOW →</a>
+    <!-- SLIDER -->
+    <div class="slider">
+      <div class="slides">
+        <div class="slide slide1">
+          <div class="banner-tag">🔥 Special offer</div>
+          <div class="banner-title">UP TO <span>40%</span> OFF</div>
+          <div class="banner-sub">Engine parts, brakes, suspension and filters.<br>Best prices across 27 EU countries.</div>
+          <a href="#categories" class="banner-btn">SHOP NOW →</a>
+        </div>
+        <div class="slide slide2">
+          <div class="banner-tag">⚙️ Engine parts</div>
+          <div class="banner-title">4M+ <span>PARTS</span></div>
+          <div class="banner-sub">For 166 car brands and 75,000+ models.<br>Fast delivery 1–3 days across EU.</div>
+          <a href="#categories" class="banner-btn">BROWSE PARTS →</a>
+        </div>
+        <div class="slide slide3">
+          <div class="banner-tag">🚚 Free delivery</div>
+          <div class="banner-title">ORDERS <span>€49+</span></div>
+          <div class="banner-sub">200-day return policy. Secure payments.<br>Trusted by 5 million customers.</div>
+          <a href="#categories" class="banner-btn">SHOP NOW →</a>
+        </div>
+      </div>
+      <div class="slider-dots">
+        <span class="dot active" onclick="goSlide(0)"></span>
+        <span class="dot" onclick="goSlide(1)"></span>
+        <span class="dot" onclick="goSlide(2)"></span>
+      </div>
+      <button class="slider-prev" onclick="prevSlide()">‹</button>
+      <button class="slider-next" onclick="nextSlide()">›</button>
     </div>
 
   </div>
@@ -355,6 +394,19 @@ footer{background:#111827;padding:40px 0 0}
 <script>
 function toggleMenu(){document.getElementById('mobMenu').classList.toggle('open')}
 
+// SLIDER
+let curSlide=0;
+const totalSlides=3;
+function goSlide(n){
+  curSlide=n;
+  document.querySelector('.slides').style.transform=`translateX(-${curSlide*100}%)`;
+  document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i===curSlide));
+}
+function nextSlide(){goSlide((curSlide+1)%totalSlides)}
+function prevSlide(){goSlide((curSlide-1+totalSlides)%totalSlides)}
+setInterval(nextSlide,5000);
+
+// MODELS
 const models={
   'BMW':['1 Series','2 Series','3 Series','4 Series','5 Series','7 Series','X1','X3','X5'],
   'Mercedes-Benz':['A-Class','C-Class','E-Class','S-Class','GLA','GLC','GLE'],
