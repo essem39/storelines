@@ -3,569 +3,410 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>StoreLines — Auto Parts for Every Car | Best Prices in EU</title>
-<meta name="description" content="Find quality auto parts for any car make and model. Engine parts, brakes, suspension, filters and more. Fast delivery across Europe. Best prices guaranteed.">
-<meta name="keywords" content="auto parts EU, car parts online, engine parts, brake parts, autodoc, spare parts europe, buy car parts">
+<title>StoreLines + Auto — Car Parts Online | EU Auto Parts Store</title>
+<meta name="description" content="Buy quality car parts online. Over 4 million auto parts for 166 car brands. Fast delivery across Europe. Best prices guaranteed.">
 <link rel="canonical" href="https://storelines.net/">
-<meta property="og:title" content="StoreLines — Auto Parts for Every Car">
-<meta property="og:description" content="Quality auto parts for any car. Fast EU delivery. Best prices.">
+<meta property="og:title" content="StoreLines + Auto — Car Parts Online">
 <meta property="og:url" content="https://storelines.net/">
-<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root {
-  --red: #FF6D00;
-  --red-dark: #E65100;
-  --red-glow: rgba(255,109,0,0.2);
-  --dark: #FFFFFF;
-  --dark2: #F5F5F5;
-  --dark3: #FFFFFF;
-  --dark4: #F0F0F0;
-  --border: #E0E0E0;
-  --tx: #1A1A1A;
-  --tx2: #444444;
-  --tx3: #888888;
-  --font-head: 'Barlow Condensed', sans-serif;
-  --font-body: 'Barlow', sans-serif;
-  --radius: 10px;
-}
-
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:var(--font-body);background:#FFFFFF;color:#1A1A1A;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{font-family:'Inter',sans-serif;background:#fff;color:#1a1a1a;-webkit-font-smoothing:antialiased}
+
+/* TOPBAR */
+.topbar{background:#111827;padding:7px 0;text-align:center;font-size:12px;color:rgba(255,255,255,0.6)}
+.topbar a{color:#FF6B00;text-decoration:none;margin:0 14px;font-weight:600;letter-spacing:.3px}
 
 /* HEADER */
-header{background:#F5F5F5;border-bottom:1px solid #E0E0E0;position:sticky;top:0;z-index:100}
-.header-inner{max-width:1280px;margin:0 auto;padding:0 24px;height:68px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
-.logo-icon{width:38px;height:38px;background:var(--red);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-weight:900;font-size:18px;color:#1A1A1A;letter-spacing:-1px}
-.logo-text{font-family:var(--font-head);font-size:22px;font-weight:800;color:#1A1A1A;letter-spacing:1px;text-transform:uppercase}
-.logo-text span{color:#FF6D00}
-nav{display:flex;gap:4px}
-nav a{font-size:14px;font-weight:600;color:#444;text-decoration:none;padding:7px 14px;border-radius:7px;transition:all .2s;text-transform:uppercase;letter-spacing:.5px}
-nav a:hover{color:#1A1A1A;background:rgba(255,255,255,0.08)}
-.header-cta{padding:10px 22px;background:var(--red);color:#1A1A1A;font-family:var(--font-head);font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:1px;border-radius:8px;text-decoration:none;transition:all .2s;white-space:nowrap}
-.header-cta:hover{background:var(--red-dark);box-shadow:0 4px 20px var(--red-glow)}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
-.hamburger span{display:block;width:22px;height:2px;background:white;border-radius:2px}
-.mob-menu{display:none;position:fixed;top:68px;left:0;right:0;background:#F5F5F5;border-bottom:1px solid #E0E0E0;z-index:99;padding:16px 24px 24px}
+header{background:#111827;padding:12px 0;position:sticky;top:0;z-index:200;box-shadow:0 2px 12px rgba(0,0,0,0.4)}
+.header-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:20px}
+.logo{display:flex;align-items:center;gap:4px;text-decoration:none;flex-shrink:0}
+.logo-name{font-size:21px;font-weight:800;color:#fff;letter-spacing:.5px}
+.logo-plus{font-size:21px;font-weight:900;color:#FF6B00;margin:0 4px}
+.logo-auto{font-size:21px;font-weight:800;color:#fff;letter-spacing:.5px}
+.header-search{flex:1;display:flex;max-width:580px}
+.cat-sel{padding:0 14px;height:42px;background:#fff;border:none;border-radius:4px 0 0 4px;font-size:13px;font-weight:600;color:#333;cursor:pointer;outline:none;border-right:1px solid #ddd;min-width:120px}
+.srch-in{flex:1;height:42px;padding:0 14px;border:none;outline:none;font-size:14px;color:#333;background:#fff}
+.srch-in::placeholder{color:#aaa}
+.srch-btn{height:42px;padding:0 22px;background:#1565C0;color:#fff;border:none;border-radius:0 4px 4px 0;font-size:14px;font-weight:700;cursor:pointer;white-space:nowrap}
+.srch-btn:hover{background:#0d47a1}
+.hdr-actions{display:flex;align-items:center;gap:20px;margin-left:auto}
+.hdr-act{display:flex;flex-direction:column;align-items:center;color:rgba(255,255,255,0.75);text-decoration:none;font-size:11px;gap:2px;cursor:pointer}
+.hdr-act:hover{color:#FF6B00}
+.hdr-act svg{width:22px;height:22px}
+.ham{display:none;flex-direction:column;gap:5px;cursor:pointer}
+.ham span{display:block;width:22px;height:2px;background:#fff;border-radius:2px}
+.mob-menu{display:none;position:fixed;inset:0;background:#111827;z-index:300;padding:20px;overflow-y:auto}
 .mob-menu.open{display:block}
-.mob-menu nav{flex-direction:column;gap:4px;display:flex}
-.mob-menu nav a{padding:12px 14px;font-size:16px}
+.mob-close{color:#fff;font-size:28px;cursor:pointer;float:right;line-height:1}
+.mob-menu a{display:block;padding:14px 0;color:rgba(255,255,255,0.8);text-decoration:none;font-size:15px;border-bottom:1px solid rgba(255,255,255,0.08)}
+.mob-menu a:hover{color:#FF6B00}
 
-/* HERO */
-.hero{position:relative;min-height:480px;display:flex;align-items:center;overflow:hidden;background:#FFF8F0}
-.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#FFF8F0 0%,#FFF3E0 100%)}
-.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,109,0,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,109,0,0.05) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse at center,black 30%,transparent 70%)}
-.hero-glow{position:absolute;top:-100px;right:-100px;width:600px;height:600px;background:radial-gradient(circle,rgba(255,109,0,0.1) 0%,transparent 70%);pointer-events:none}
-.hero-inner{max-width:1280px;margin:0 auto;padding:80px 24px;position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,109,0,0.1);border:1px solid rgba(255,109,0,0.3);color:#E65100;padding:5px 14px;border-radius:100px;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:20px}
-.hero h1{font-family:var(--font-head);font-size:clamp(42px,5vw,72px);font-weight:900;line-height:1;letter-spacing:-1px;text-transform:uppercase;margin-bottom:20px;color:#1A1A1A}
-.hero h1 span{color:#FF6D00}
-.hero p{font-size:17px;color:#444;max-width:480px;margin-bottom:32px;line-height:1.7}
-.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
-.btn-primary{padding:14px 28px;background:var(--red);color:#1A1A1A;font-family:var(--font-head);font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:1px;border-radius:9px;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
-.btn-primary:hover{background:var(--red-dark);box-shadow:0 6px 24px var(--red-glow);transform:translateY(-2px)}
-.btn-secondary{padding:14px 28px;background:transparent;color:#1A1A1A;font-family:var(--font-head);font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:1px;border-radius:9px;text-decoration:none;border:1px solid #E0E0E0;transition:all .2s}
-.btn-secondary:hover{border-color:rgba(255,255,255,0.3);background:rgba(255,255,255,0.05)}
-.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
-.stat{background:#FFFFFF;border:1px solid #E0E0E0;border-radius:10px;padding:16px;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
-.stat-num{font-family:var(--font-head);font-size:28px;font-weight:800;color:#FF6D00}
-.stat-label{font-size:12px;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
-.hero-visual{position:relative}
-.hero-card{background:#FFFFFF;border:1px solid #E0E0E0;border-radius:16px;padding:24px;position:relative;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.08)}
-.hero-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--red),#FF9800)}
-.car-search-title{font-family:var(--font-head);font-size:20px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:20px;color:#1A1A1A}
-.search-row{display:flex;flex-direction:column;gap:10px}
-.search-select{width:100%;padding:12px 16px;background:#F5F5F5;border:1px solid #E0E0E0;border-radius:8px;color:#1A1A1A;font-family:var(--font-body);font-size:14px;font-weight:500;cursor:pointer;outline:none;transition:border-color .2s;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23666' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
-.search-select:focus{border-color:#FF6D00}
-.search-btn{width:100%;padding:13px;background:var(--red);color:#1A1A1A;border:none;border-radius:8px;font-family:var(--font-head);font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:1px;cursor:pointer;transition:all .2s;margin-top:4px}
-.search-btn:hover{background:var(--red-dark);box-shadow:0 4px 16px var(--red-glow)}
-.or-divider{text-align:center;color:#888;font-size:12px;letter-spacing:1px;text-transform:uppercase;margin:4px 0;position:relative}
-.or-divider::before,.or-divider::after{content:'';position:absolute;top:50%;width:40%;height:1px;background:#E0E0E0}
-.or-divider::before{left:0}
-.or-divider::after{right:0}
-.search-input-wrap{position:relative}
-.search-input{width:100%;padding:12px 16px 12px 42px;background:#F5F5F5;border:1px solid #E0E0E0;border-radius:8px;color:#1A1A1A;font-family:var(--font-body);font-size:14px;outline:none;transition:border-color .2s}
-.search-input:focus{border-color:#FF6D00}
-.search-input::placeholder{color:#888}
-.search-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:16px;pointer-events:none}
+/* NAV */
+.nav-bar{background:#fff;border-bottom:2px solid #f0f0f0}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;overflow-x:auto}
+.nav-lnk{display:flex;align-items:center;gap:6px;padding:11px 16px;font-size:13px;font-weight:500;color:#444;text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent;margin-bottom:-2px;transition:all .2s}
+.nav-lnk:hover,.nav-lnk.active{color:#1565C0;border-bottom-color:#1565C0}
+
+/* MAIN SEARCH SECTION */
+.main-wrap{background:#f4f5f7;padding:24px 0 28px}
+.main-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:360px 1fr;gap:20px;align-items:start}
+
+/* LEFT: FINDER */
+.finder{background:#fff;border:1px solid #ddd;border-radius:4px;padding:20px}
+.finder-h{font-size:14px;font-weight:600;color:#222;margin-bottom:14px}
+.reg-row{display:flex;border:2px solid #FF6B00;border-radius:4px;overflow:hidden;margin-bottom:14px}
+.reg-flag{background:#FF6B00;padding:10px 12px;color:#fff;font-size:10px;font-weight:800;text-align:center;display:flex;flex-direction:column;justify-content:center;line-height:1.2}
+.reg-input{flex:1;padding:10px 12px;border:none;outline:none;font-size:14px;font-weight:600;color:#222;text-transform:uppercase}
+.reg-input::placeholder{text-transform:none;font-weight:400;color:#aaa;font-size:13px}
+.reg-srch{padding:0 18px;background:#1565C0;color:#fff;border:none;font-size:13px;font-weight:700;cursor:pointer}
+.divider{text-align:center;font-size:12px;color:#aaa;margin:12px 0;position:relative}
+.divider::before,.divider::after{content:'';position:absolute;top:50%;width:43%;height:1px;background:#e8e8e8}
+.divider::before{left:0}.divider::after{right:0}
+.finder-sub{font-size:13px;font-weight:600;color:#333;margin-bottom:12px}
+.step-row{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.step-n{width:20px;height:20px;background:#e8f0fe;color:#1565C0;border-radius:50%;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.step-sel{flex:1;padding:10px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;color:#333;outline:none;cursor:pointer;background:#fff;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 5 5-5z' fill='%23999'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
+.step-sel:focus{border-color:#1565C0}
+.find-btn{width:100%;padding:12px;background:#1565C0;color:#fff;border:none;border-radius:4px;font-size:15px;font-weight:700;cursor:pointer;margin-top:6px}
+.find-btn:hover{background:#0d47a1}
+.cant-find{display:block;text-align:center;font-size:12px;color:#1565C0;text-decoration:none;margin-top:10px}
+
+/* RIGHT: BANNER */
+.banner{background:linear-gradient(135deg,#111827 0%,#1a2a40 100%);border-radius:4px;min-height:280px;padding:36px 40px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+.banner::after{content:'';position:absolute;right:-40px;top:-40px;width:280px;height:280px;background:radial-gradient(circle,rgba(255,107,0,0.15) 0%,transparent 70%)}
+.banner-tag{background:#FF6B00;color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:2px;display:inline-block;margin-bottom:14px;letter-spacing:1px;text-transform:uppercase;width:fit-content}
+.banner-title{font-size:52px;font-weight:900;color:#fff;line-height:1;margin-bottom:6px}
+.banner-title span{color:#FF6B00}
+.banner-sub{font-size:14px;color:rgba(255,255,255,0.65);margin-bottom:22px}
+.banner-btn{display:inline-block;padding:12px 30px;background:#FF6B00;color:#fff;font-size:14px;font-weight:700;border-radius:3px;text-decoration:none;width:fit-content}
+.banner-btn:hover{background:#e65c00}
 
 /* CATEGORIES */
-.section{max-width:1280px;margin:0 auto;padding:80px 24px}
-.section-tag{display:inline-block;background:rgba(232,35,42,0.12);border:1px solid rgba(255,109,0,0.25);color:#FF6D00;padding:4px 12px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:16px}
-.section-title{font-family:var(--font-head);font-size:clamp(32px,4vw,52px);font-weight:900;text-transform:uppercase;letter-spacing:-1px;line-height:1;margin-bottom:12px}
-.section-title span{color:#FF6D00}
-.section-sub{font-size:16px;color:#444;max-width:560px}
-.section-header{margin-bottom:48px}
-
-.cats-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}
-.cat-card{background:#FFFFFF;border:1px solid #E0E0E0;border-radius:12px;padding:24px 20px;text-decoration:none;transition:all .25s;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:flex-start;gap:12px}
-.cat-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(232,35,42,0.06),transparent);opacity:0;transition:opacity .25s}
-.cat-card:hover{border-color:rgba(232,35,42,0.4);transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,0.4)}
-.cat-card:hover::before{opacity:1}
-.cat-icon{width:48px;height:48px;background:rgba(232,35,42,0.12);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px}
-.cat-name{font-family:var(--font-head);font-size:17px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#1A1A1A}
-.cat-count{font-size:12px;color:#888}
-.cat-arrow{margin-top:auto;color:#FF6D00;font-size:18px;transition:transform .2s}
-.cat-card:hover .cat-arrow{transform:translateX(4px)}
+.section{max-width:1280px;margin:0 auto;padding:32px 24px}
+.sec-title{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#222;text-align:center;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid #f0f0f0}
+.cats-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.cat-card{background:#fff;border:1px solid #e5e5e5;border-radius:4px;padding:14px 10px;text-align:center;text-decoration:none;transition:all .2s;display:flex;flex-direction:column;align-items:center;cursor:pointer}
+.cat-card:hover{border-color:#FF6B00;box-shadow:0 2px 12px rgba(255,107,0,0.12)}
+.cat-emoji{font-size:44px;height:64px;display:flex;align-items:center;justify-content:center}
+.cat-dot{width:6px;height:6px;background:#FF6B00;border-radius:50%;margin:6px auto}
+.cat-name{font-size:12px;font-weight:600;color:#222;line-height:1.3}
 
 /* BRANDS */
-.brands-section{background:#F5F5F5;border-top:1px solid #E0E0E0;border-bottom:1px solid #E0E0E0;padding:48px 24px}
-.brands-inner{max-width:1280px;margin:0 auto}
-.brands-label{text-align:center;font-size:12px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:2px;margin-bottom:28px}
-.brands-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
-.brand-pill{background:#FFFFFF;border:1px solid #E0E0E0;border-radius:8px;padding:10px 20px;font-family:var(--font-head);font-size:15px;font-weight:700;color:#444;text-transform:uppercase;letter-spacing:1px;transition:all .2s;cursor:default}
-.brand-pill:hover{border-color:rgba(232,35,42,0.4);color:#1A1A1A;background:rgba(232,35,42,0.08)}
+.brands-wrap{background:#fff;border-top:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0;padding:24px 0}
+.brands-inner{max-width:1280px;margin:0 auto;padding:0 24px}
+.brands-label{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#333;margin-bottom:16px;text-align:center}
+.brands-list{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.brand-pill{padding:8px 18px;border:1px solid #ddd;border-radius:3px;font-size:13px;font-weight:700;color:#333;cursor:pointer;transition:all .2s;text-transform:uppercase;letter-spacing:.5px;text-decoration:none}
+.brand-pill:hover{border-color:#1565C0;color:#1565C0}
 
-/* HOW IT WORKS */
-.steps-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:24px}
-.step{position:relative;padding-left:60px}
-.step-num{position:absolute;left:0;top:0;width:42px;height:42px;background:var(--red);border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-size:20px;font-weight:900;color:white}
-.step-title{font-family:var(--font-head);font-size:18px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
-.step p{font-size:14px;color:#444;line-height:1.6}
-
-/* AUTODOC BANNER */
-.autodoc-banner{background:linear-gradient(135deg,#0f0000 0%,#1a0505 50%,#0f0000 100%);border:1px solid rgba(255,109,0,0.25);border-radius:20px;padding:48px 40px;display:flex;align-items:center;gap:40px;position:relative;overflow:hidden}
-.autodoc-banner::before{content:'';position:absolute;top:-50%;right:-5%;width:400px;height:400px;background:radial-gradient(circle,rgba(232,35,42,0.12) 0%,transparent 70%);pointer-events:none}
-.banner-icon{width:72px;height:72px;background:var(--red);border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:32px;flex-shrink:0}
-.banner-text{flex:1}
-.banner-text h3{font-family:var(--font-head);font-size:28px;font-weight:800;text-transform:uppercase;letter-spacing:-0.5px;margin-bottom:8px}
-.banner-text p{color:#444;font-size:15px}
-.banner-text p strong{color:#E65100}
-
-/* WHY US */
-.why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
-.why-card{background:#FFFFFF;border:1px solid #E0E0E0;border-radius:12px;padding:28px 24px}
-.why-icon{font-size:28px;margin-bottom:14px}
-.why-title{font-family:var(--font-head);font-size:17px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
-.why-card p{font-size:14px;color:#444;line-height:1.6}
+/* TRUST */
+.trust-bar{border-top:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0;padding:14px 0;background:#fff}
+.trust-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;justify-content:center;gap:36px;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:13px;color:#333;font-weight:500}
+.trust-icon{font-size:18px}
 
 /* FOOTER */
-footer{background:#F5F5F5;border-top:1px solid #E0E0E0;padding:48px 24px 28px}
-.footer-inner{max-width:1280px;margin:0 auto}
-.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:40px}
-.footer-brand .logo{margin-bottom:14px}
-.footer-desc{font-size:13px;color:#888;line-height:1.7}
-.footer-col h4{font-family:var(--font-head);font-size:13px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:16px}
-.footer-col a{display:block;font-size:13px;color:#444;text-decoration:none;margin-bottom:8px;transition:color .15s}
-.footer-col a:hover{color:#FF6D00}
-.footer-bottom{border-top:1px solid #E0E0E0;padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:12px;color:#888}
+footer{background:#111827;padding:40px 0 0}
+.footer-grid{max-width:1280px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-bottom:32px}
+.footer-col h4{font-size:12px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px}
+.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,0.5);text-decoration:none;margin-bottom:8px}
+.footer-col a:hover{color:#FF6B00}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding:16px 24px;max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:12px;color:rgba(255,255,255,0.35)}
+.footer-bar{background:#0d1117;padding:16px 0}
+.footer-bar-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:12px;color:rgba(255,255,255,0.3)}
+.pay-badges{display:flex;gap:8px}
+.pay-badge{background:rgba(255,255,255,0.08);border-radius:3px;padding:4px 10px;font-size:11px;color:rgba(255,255,255,0.5);font-weight:600}
 
-/* MOBILE */
-@media(max-width:900px){
-  .hero-inner{grid-template-columns:1fr;gap:40px}
-  .hero-visual{display:none}
-  .footer-top{grid-template-columns:1fr 1fr;gap:24px}
+/* RESPONSIVE */
+@media(max-width:1024px){.cats-grid{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:768px){
+  .header-search,.hdr-actions .hdr-act:not(:last-child){display:none}
+  .ham{display:flex}
+  .main-inner{grid-template-columns:1fr}
+  .banner{min-height:180px;padding:24px}
+  .banner-title{font-size:36px}
+  .cats-grid{grid-template-columns:repeat(3,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .trust-inner{gap:16px}
 }
-@media(max-width:640px){
-  nav,.header-cta{display:none}
-  .hamburger{display:flex}
-  .section{padding:56px 18px}
-  .hero-stats{grid-template-columns:repeat(3,1fr)}
-  .autodoc-banner{flex-direction:column;text-align:center;padding:32px 24px}
-  .footer-top{grid-template-columns:1fr}
-}
-
-/* ANIMATIONS */
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-.hero h1,.hero p,.hero-btns,.hero-stats{animation:fadeUp .6s ease both}
-.hero p{animation-delay:.1s}
-.hero-btns{animation-delay:.2s}
-.hero-stats{animation-delay:.3s}
+@media(max-width:480px){.cats-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr}}
 </style>
 
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "StoreLines Auto Parts",
-  "url": "https://storelines.net/",
-  "description": "Quality auto parts for every car. Fast delivery across Europe.",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://storelines.net/search?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
-}
+{"@context":"https://schema.org","@type":"WebSite","name":"StoreLines Auto Parts","url":"https://storelines.net/"}
 </script>
 </head>
 <body>
 
+<!-- TOPBAR -->
+<div class="topbar">
+  <a href="#">SHOP</a>
+  <a href="#">CLUB</a>
+  Free delivery on orders over €49 · 200-day return policy · 4M+ parts
+</div>
+
+<!-- HEADER -->
 <header>
   <div class="header-inner">
     <a href="index.html" class="logo">
-      
-      <span class="logo-text">StoreLines <span style="color:#FF6D00">+</span> Auto</span>
+      <span class="logo-name">StoreLines</span>
+      <span class="logo-plus">+</span>
+      <span class="logo-auto">Auto</span>
     </a>
-    <nav>
-      <a href="categories.html">Parts</a>
-      <a href="brands.html">Brands</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <a href="#search" class="header-cta">🔍 Find Parts</a>
-    <div class="hamburger" onclick="toggleMenu()">
-      <span></span><span></span><span></span>
+    <div class="header-search">
+      <select class="cat-sel"><option>Car parts</option><option>Truck parts</option><option>Motorcycle parts</option><option>Tyres</option><option>Tools</option></select>
+      <input class="srch-in" type="text" placeholder="Enter the part number or name" id="hSearch">
+      <button class="srch-btn" onclick="doSearch()">🔍 SEARCH</button>
     </div>
+    <div class="hdr-actions">
+      <a class="hdr-act" href="#">
+        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"/></svg>
+        My Garage
+      </a>
+      <a class="hdr-act" href="#">
+        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0"/></svg>
+        Sign in
+      </a>
+      <a class="hdr-act" href="#">
+        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"/></svg>
+        €0.00
+      </a>
+    </div>
+    <div class="ham" onclick="toggleMenu()"><span></span><span></span><span></span></div>
   </div>
 </header>
 
-<div class="mob-menu" id="mob-menu">
-  <nav>
-    <a href="categories.html" onclick="toggleMenu()">Parts Catalog</a>
-    <a href="brands.html" onclick="toggleMenu()">Car Brands</a>
-    <a href="about.html" onclick="toggleMenu()">About</a>
-    <a href="contact.html" onclick="toggleMenu()">Contact</a>
-  </nav>
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu">
+  <span class="mob-close" onclick="toggleMenu()">✕</span>
+  <br>
+  <a href="#">🔧 Car parts</a>
+  <a href="#">🚛 Truck parts</a>
+  <a href="#">🏍️ Motorcycle parts</a>
+  <a href="#">⚙️ Tyres & Wheels</a>
+  <a href="#">🛠️ Tools</a>
+  <a href="#">🛢️ Engine oil</a>
+  <a href="#">🔩 Filters</a>
+  <a href="#">🛑 Brakes</a>
 </div>
 
-<!-- HERO -->
-<section class="hero" id="search">
-  <div class="hero-bg"></div>
-  <div class="hero-grid"></div>
-  <div class="hero-glow"></div>
-  <div class="hero-inner">
-    <div class="hero-content">
-      <div class="hero-badge">🚗 EU Auto Parts Store</div>
-      <h1>The Right Part<br>For Your <span>Car</span></h1>
-      <p>Over 4 million spare parts for 166 car brands. Engine components, brakes, suspension, filters — all in one place. Fast delivery across Europe.</p>
-      <div class="hero-btns">
-        <a href="#categories" class="btn-primary">Browse Catalog →</a>
-        <a href="#how" class="btn-secondary">How It Works</a>
-      </div>
-      <div class="hero-stats">
-        <div class="stat">
-          <div class="stat-num">4M+</div>
-          <div class="stat-label">Parts</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">27</div>
-          <div class="stat-label">EU Countries</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">1400+</div>
-          <div class="stat-label">Brands</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="hero-visual">
-      <div class="hero-card">
-        <div class="car-search-title">🔍 Find Your Part</div>
-        <div class="search-row">
-          <select class="search-select" id="make">
-            <option value="">Select Car Make</option>
-            <option>BMW</option><option>Mercedes-Benz</option><option>Volkswagen</option>
-            <option>Audi</option><option>Toyota</option><option>Ford</option>
-            <option>Peugeot</option><option>Renault</option><option>Opel</option>
-            <option>Volvo</option><option>Skoda</option><option>Seat</option>
-            <option>Fiat</option><option>Honda</option><option>Hyundai</option>
-            <option>Kia</option><option>Nissan</option><option>Mazda</option>
-          </select>
-          <select class="search-select" id="model">
-            <option value="">Select Model</option>
-          </select>
-          <select class="search-select" id="year">
-            <option value="">Select Year</option>
-          </select>
-          <select class="search-select" id="category">
-            <option value="">Select Part Category</option>
-            <option>Engine & Drivetrain</option>
-            <option>Brakes & Wheels</option>
-            <option>Suspension & Steering</option>
-            <option>Filters & Maintenance</option>
-            <option>Electrical & Lighting</option>
-            <option>Body & Exterior</option>
-            <option>Cooling & Heating</option>
-            <option>Exhaust System</option>
-          </select>
-          <button class="search-btn" onclick="searchParts()">Search Parts →</button>
-          <div class="or-divider">or</div>
-          <div class="search-input-wrap">
-            <span class="search-icon">🔎</span>
-            <input class="search-input" type="text" placeholder="Search by part name or number..." id="partSearch">
-          </div>
-          <button class="search-btn" onclick="searchByName()" style="background:#F5F5F5;border:1px solid #E0E0E0">Search by Name</button>
-        </div>
-      </div>
-    </div>
+<!-- NAV -->
+<div class="nav-bar">
+  <div class="nav-inner">
+    <a href="#" class="nav-lnk active">🔧 Car parts</a>
+    <a href="#" class="nav-lnk">🚛 Truck parts</a>
+    <a href="#" class="nav-lnk">🏍️ Motorcycle parts</a>
+    <a href="#" class="nav-lnk">⚙️ Tyres & Wheels</a>
+    <a href="#" class="nav-lnk">🛠️ Tools</a>
+    <a href="#" class="nav-lnk">🛢️ Engine oil</a>
+    <a href="#" class="nav-lnk">🔩 Filters</a>
+    <a href="#" class="nav-lnk">🛑 Brakes</a>
   </div>
-</section>
+</div>
 
-<!-- BRANDS -->
-<div class="brands-section">
-  <div class="brands-inner">
-    <div class="brands-label">Parts available for all major car brands</div>
-    <div class="brands-grid">
-      <div class="brand-pill">BMW</div>
-      <div class="brand-pill">Mercedes</div>
-      <div class="brand-pill">VW</div>
-      <div class="brand-pill">Audi</div>
-      <div class="brand-pill">Toyota</div>
-      <div class="brand-pill">Ford</div>
-      <div class="brand-pill">Peugeot</div>
-      <div class="brand-pill">Renault</div>
-      <div class="brand-pill">Opel</div>
-      <div class="brand-pill">Volvo</div>
-      <div class="brand-pill">Skoda</div>
-      <div class="brand-pill">Seat</div>
-      <div class="brand-pill">Fiat</div>
-      <div class="brand-pill">Honda</div>
-      <div class="brand-pill">Hyundai</div>
-      <div class="brand-pill">+ 150 more</div>
+<!-- MAIN SEARCH AREA -->
+<div class="main-wrap">
+  <div class="main-inner">
+
+    <!-- FINDER -->
+    <div class="finder">
+      <div class="finder-h">Search car parts by registration number</div>
+      <div class="reg-row">
+        <div class="reg-flag">🇪🇺<br>EU</div>
+        <input class="reg-input" type="text" placeholder="Your registration number">
+        <button class="reg-srch">Search</button>
+      </div>
+      <div class="divider">or</div>
+      <div class="finder-sub">Find car parts for your vehicle</div>
+      <div class="step-row"><span class="step-n">1</span>
+        <select class="step-sel" id="make" onchange="loadModels()">
+          <option value="">Select maker</option>
+          <option>BMW</option><option>Mercedes-Benz</option><option>Volkswagen</option>
+          <option>Audi</option><option>Toyota</option><option>Ford</option>
+          <option>Peugeot</option><option>Renault</option><option>Opel</option>
+          <option>Volvo</option><option>Skoda</option><option>Seat</option>
+          <option>Fiat</option><option>Honda</option><option>Hyundai</option>
+          <option>Kia</option><option>Nissan</option><option>Mazda</option>
+        </select>
+      </div>
+      <div class="step-row"><span class="step-n">2</span>
+        <select class="step-sel" id="model"><option value="">Select model</option></select>
+      </div>
+      <div class="step-row"><span class="step-n">3</span>
+        <select class="step-sel" id="engine"><option value="">Select engine</option></select>
+      </div>
+      <button class="find-btn" onclick="findParts()">Search</button>
+      <a href="#" class="cant-find">Can't find your car in the catalogue?</a>
     </div>
+
+    <!-- BANNER -->
+    <div class="banner">
+      <div class="banner-tag">🔥 Special offer</div>
+      <div class="banner-title">UP TO <span>40%</span> OFF</div>
+      <div class="banner-sub">Engine parts, brakes, suspension and filters.<br>Best prices across 27 EU countries.</div>
+      <a href="#categories" class="banner-btn">SHOP NOW →</a>
+    </div>
+
   </div>
 </div>
 
 <!-- CATEGORIES -->
-<section class="section" id="categories">
-  <div class="section-header">
-    <div class="section-tag">Parts Catalog</div>
-    <h2 class="section-title">Browse by <span>Category</span></h2>
-    <p class="section-sub">From engine internals to exterior panels — find every part your car needs.</p>
-  </div>
+<div class="section" id="categories">
+  <div class="sec-title">StoreLines + Auto: Buy Car Parts Online</div>
   <div class="cats-grid">
-    <a href="category-engine.html" class="cat-card">
-      <div class="cat-icon">⚙️</div>
-      <div class="cat-name">Engine & Drivetrain</div>
-      <div class="cat-count">Pistons, timing belts, oil pumps</div>
-      <div class="cat-arrow">→</div>
-    </a>
-    <a href="category-brakes.html" class="cat-card">
-      <div class="cat-icon">🛑</div>
-      <div class="cat-name">Brakes & Wheels</div>
-      <div class="cat-count">Discs, pads, calipers, ABS</div>
-      <div class="cat-arrow">→</div>
-    </a>
-    <a href="category-suspension.html" class="cat-card">
-      <div class="cat-icon">🔧</div>
-      <div class="cat-name">Suspension & Steering</div>
-      <div class="cat-count">Shocks, springs, tie rods</div>
-      <div class="cat-arrow">→</div>
-    </a>
-    <a href="category-filters.html" class="cat-card">
-      <div class="cat-icon">🔩</div>
-      <div class="cat-name">Filters & Maintenance</div>
-      <div class="cat-count">Oil, air, fuel, cabin filters</div>
-      <div class="cat-arrow">→</div>
-    </a>
-    <a href="category-electrical.html" class="cat-card">
-      <div class="cat-icon">⚡</div>
-      <div class="cat-name">Electrical & Lighting</div>
-      <div class="cat-count">Sensors, bulbs, alternators</div>
-      <div class="cat-arrow">→</div>
-    </a>
-    <a href="category-cooling.html" class="cat-card">
-      <div class="cat-icon">🌡️</div>
-      <div class="cat-name">Cooling & Heating</div>
-      <div class="cat-count">Radiators, thermostats, pumps</div>
-      <div class="cat-arrow">→</div>
-    </a>
-    <a href="category-exhaust.html" class="cat-card">
-      <div class="cat-icon">💨</div>
-      <div class="cat-name">Exhaust System</div>
-      <div class="cat-count">Catalysts, silencers, pipes</div>
-      <div class="cat-arrow">→</div>
-    </a>
-    <a href="category-body.html" class="cat-card">
-      <div class="cat-icon">🚗</div>
-      <div class="cat-name">Body & Exterior</div>
-      <div class="cat-count">Mirrors, bumpers, wipers</div>
-      <div class="cat-arrow">→</div>
-    </a>
-    <a href="category-transmission.html" class="cat-card">
-      <div class="cat-icon">🔄</div>
-      <div class="cat-name">Transmission & Clutch</div>
-      <div class="cat-count">Gearboxes, clutch kits</div>
-      <div class="cat-arrow">→</div>
-    </a>
+    <a href="#" class="cat-card"><div class="cat-emoji">🛞</div><div class="cat-dot"></div><div class="cat-name">Tyres & Wheels</div></a>
+    <a href="#" class="cat-card"><div class="cat-emoji">🛑</div><div class="cat-dot"></div><div class="cat-name">Brakes</div></a>
+    <a href="#" class="cat-card"><div class="cat-emoji">🔧</div><div class="cat-dot"></div><div class="cat-name">Damping</div></a>
+    <a href="#" class="cat-card"><div class="cat-emoji">⚙️</div><div class="cat-dot"></div><div class="cat-name">Suspension</div></a>
+    <a href="#" class="cat-card"><div class="cat-emoji">🔩</div><div class="cat-dot"></div><div class="cat-name">Filters</div></a>
+    <a href="#" class="cat-card"><div class="cat-emoji">🏎️</div><div class="cat-dot"></div><div class="cat-name">Engine</div></a>
+    <a href="#" class="cat-card"><div class="cat-emoji">🛢️</div><div class="cat-dot"></div><div class="cat-name">Engine Oil</div></a>
+    <a href="#" class="cat-card"><div class="cat-emoji">🔄</div><div class="cat-dot"></div><div class="cat-name">Clutch & Gearbox</div></a>
+    <a href="#" class="cat-card"><div class="cat-emoji">💨</div><div class="cat-dot"></div><div class="cat-name">Exhaust</div></a>
+    <a href="#" class="cat-card"><div class="cat-emoji">⚡</div><div class="cat-dot"></div><div class="cat-name">Electrical</div></a>
+    <a href="#" class="cat-card"><div class="cat-emoji">🌡️</div><div class="cat-dot"></div><div class="cat-name">Cooling</div></a>
+    <a href="#" class="cat-card"><div class="cat-emoji">🚗</div><div class="cat-dot"></div><div class="cat-name">Body Parts</div></a>
   </div>
-</section>
+</div>
 
-<!-- HOW IT WORKS -->
-<section style="background:#F5F5F5;border-top:1px solid #E0E0E0;border-bottom:1px solid #E0E0E0" id="how">
-  <div class="section">
-    <div class="section-header">
-      <div class="section-tag">Simple Process</div>
-      <h2 class="section-title">How It <span>Works</span></h2>
-      <p class="section-sub">Find and order the right part in 3 simple steps.</p>
-    </div>
-    <div class="steps-grid">
-      <div class="step">
-        <div class="step-num">1</div>
-        <div class="step-title">Select Your Car</div>
-        <p>Choose your car make, model, and year. Our system instantly filters compatible parts.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <div class="step-title">Find the Part</div>
-        <p>Browse by category or search by part name. Compare prices from top manufacturers.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <div class="step-title">Fast Delivery</div>
-        <p>Order securely and receive your part in 1–3 business days across the EU.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">4</div>
-        <div class="step-title">Install & Drive</div>
-        <p>Follow the installation guide or take it to your mechanic. Get back on the road.</p>
-      </div>
+<!-- BRANDS -->
+<div class="brands-wrap">
+  <div class="brands-inner">
+    <div class="brands-label">Buy Auto Parts for the Most Popular Car Brands</div>
+    <div class="brands-list">
+      <a class="brand-pill" href="#">BMW</a>
+      <a class="brand-pill" href="#">Volkswagen</a>
+      <a class="brand-pill" href="#">Audi</a>
+      <a class="brand-pill" href="#">Mercedes-Benz</a>
+      <a class="brand-pill" href="#">Renault</a>
+      <a class="brand-pill" href="#">Ford</a>
+      <a class="brand-pill" href="#">Peugeot</a>
+      <a class="brand-pill" href="#">Vauxhall</a>
+      <a class="brand-pill" href="#">Volvo</a>
+      <a class="brand-pill" href="#">Toyota</a>
+      <a class="brand-pill" href="#">Nissan</a>
+      <a class="brand-pill" href="#">Honda</a>
+      <a class="brand-pill" href="#">Skoda</a>
+      <a class="brand-pill" href="#">Seat</a>
+      <a class="brand-pill" href="#">Citroën</a>
+      <a class="brand-pill" href="#">Fiat</a>
+      <a class="brand-pill" href="#">Mini</a>
+      <a class="brand-pill" href="#">+ More brands →</a>
     </div>
   </div>
-</section>
+</div>
 
-<!-- AUTODOC BANNER -->
-<section class="section">
-  <div class="autodoc-banner">
-    <div class="banner-icon">🏆</div>
-    <div class="banner-text">
-      <h3 style="color:#1A1A1A">Powered by Europe's #1 Auto Parts Retailer</h3>
-      <p>All parts are sourced through <strong>AUTODOC</strong> — Europe's leading online car parts store with <strong>4M+ products</strong>, <strong>27 EU countries</strong>, and delivery in <strong>1–3 days</strong>. Trusted by 5 million customers.</p>
-    </div>
-    <a href="#search" class="btn-primary" style="flex-shrink:0">Shop Now →</a>
+<!-- TRUST -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item"><span class="trust-icon">🔄</span> Safe Order 200 days</div>
+    <div class="trust-item"><span class="trust-icon">🔒</span> Secure payments</div>
+    <div class="trust-item"><span class="trust-icon">📱</span> Convenient app for buying car parts</div>
+    <div class="trust-item"><span class="trust-icon">🎥</span> Car repair videos</div>
   </div>
-</section>
+</div>
 
-<!-- WHY US -->
-<section style="background:#F5F5F5;border-top:1px solid #E0E0E0">
-  <div class="section">
-    <div class="section-header">
-      <div class="section-tag">Why StoreLines</div>
-      <h2 class="section-title">Why Choose <span>Us</span></h2>
-    </div>
-    <div class="why-grid">
-      <div class="why-card">
-        <div class="why-icon">✅</div>
-        <div class="why-title">Guaranteed Fit</div>
-        <p>Every part is matched to your exact car make, model and year. No guesswork.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">💰</div>
-        <div class="why-title">Best EU Prices</div>
-        <p>We compare prices from top manufacturers so you always get the best deal.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">🚚</div>
-        <div class="why-title">Fast Delivery</div>
-        <p>1–3 business days across 27 EU countries. Tracked shipping on every order.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">🔒</div>
-        <div class="why-title">Secure Shopping</div>
-        <p>Safe and trusted checkout. All major payment methods accepted.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
+<!-- FOOTER -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <a href="index.html" class="logo">
-          
-          <span class="logo-text">StoreLines <span style="color:#FF6D00">+</span> Auto</span>
-        </a>
-        <p class="footer-desc" style="margin-top:12px">Quality auto parts for every car. Fast delivery across Europe. 4 million+ parts from 1400+ brands.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Parts</h4>
-        <a href="category-engine.html">Engine & Drivetrain</a>
-        <a href="category-brakes.html">Brakes & Wheels</a>
-        <a href="category-suspension.html">Suspension</a>
-        <a href="category-filters.html">Filters</a>
-        <a href="category-electrical.html">Electrical</a>
-      </div>
-      <div class="footer-col">
-        <h4>Brands</h4>
-        <a href="#">BMW Parts</a>
-        <a href="#">Mercedes Parts</a>
-        <a href="#">VW Parts</a>
-        <a href="#">Audi Parts</a>
-        <a href="#">Toyota Parts</a>
-      </div>
-      <div class="footer-col">
-        <h4>Info</h4>
-        <a href="about.html">About Us</a>
-        <a href="contact.html">Contact</a>
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <a href="terms.html">Terms of Service</a>
-      </div>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>About StoreLines</h4>
+      <a href="#">About us</a>
+      <a href="#">Company info</a>
+      <a href="#">Press</a>
+      <a href="#">Careers</a>
+      <a href="#">Blog</a>
     </div>
-    <div class="footer-bottom">
-      <span>© 2025–2026 StoreLines. All rights reserved.</span>
-      <span>This site contains affiliate links. We may earn a commission.</span>
+    <div class="footer-col">
+      <h4>Help & Support</h4>
+      <a href="#">Help Centre</a>
+      <a href="#">Car repair manuals</a>
+      <a href="#">Terms & Conditions</a>
+      <a href="#">Privacy policy</a>
+    </div>
+    <div class="footer-col">
+      <h4>Customer Service</h4>
+      <a href="#">Help Centre</a>
+      <a href="#">Payment</a>
+      <a href="#">Delivery</a>
+      <a href="#">Contact us</a>
+      <a href="#">Returns</a>
+    </div>
+    <div class="footer-col">
+      <h4>Top Products</h4>
+      <a href="#">Brakes</a>
+      <a href="#">Filters</a>
+      <a href="#">Shock absorbers</a>
+      <a href="#">Clutch kit</a>
+      <a href="#">Suspension parts</a>
+      <a href="#">Wheel bearings</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025–2026 StoreLines + Auto. All rights reserved.</span>
+    <div class="pay-badges">
+      <span class="pay-badge">VISA</span>
+      <span class="pay-badge">Mastercard</span>
+      <span class="pay-badge">PayPal</span>
     </div>
   </div>
 </footer>
 
 <script>
-function toggleMenu(){
-  document.getElementById('mob-menu').classList.toggle('open');
+function toggleMenu(){document.getElementById('mobMenu').classList.toggle('open')}
+
+const models={
+  'BMW':['1 Series','2 Series','3 Series','4 Series','5 Series','7 Series','X1','X3','X5'],
+  'Mercedes-Benz':['A-Class','C-Class','E-Class','S-Class','GLA','GLC','GLE'],
+  'Volkswagen':['Golf','Polo','Passat','Tiguan','Touareg','T-Roc','ID.4'],
+  'Audi':['A1','A3','A4','A6','Q3','Q5','Q7'],
+  'Toyota':['Yaris','Corolla','Camry','RAV4','Land Cruiser'],
+  'Ford':['Fiesta','Focus','Mondeo','Puma','Kuga','Transit'],
+  'Peugeot':['208','308','508','2008','3008'],
+  'Renault':['Clio','Megane','Captur','Kadjar'],
+  'Opel':['Corsa','Astra','Insignia','Mokka'],
+  'Volvo':['S60','V60','XC40','XC60','XC90'],
+  'Skoda':['Fabia','Octavia','Superb','Karoq'],
+  'Seat':['Ibiza','Leon','Ateca','Arona'],
+  'Fiat':['500','Panda','Tipo','Ducato'],
+  'Honda':['Jazz','Civic','CR-V'],
+  'Hyundai':['i20','i30','Tucson','Kona'],
+  'Kia':['Rio','Ceed','Sportage'],
+  'Nissan':['Micra','Juke','Qashqai'],
+  'Mazda':['Mazda3','Mazda6','CX-5']
+};
+const engines=['1.0i','1.2i','1.4i','1.6i','1.6 TDI','1.8i','2.0i','2.0 TDI','2.2 TDI','3.0i','3.0 TDI'];
+
+function loadModels(){
+  const make=document.getElementById('make').value;
+  const mSel=document.getElementById('model');
+  const eSel=document.getElementById('engine');
+  mSel.innerHTML='<option value="">Select model</option>';
+  eSel.innerHTML='<option value="">Select engine</option>';
+  if(models[make]) models[make].forEach(m=>{const o=document.createElement('option');o.value=m;o.textContent=m;mSel.appendChild(o);});
 }
 
-const models = {
-  'BMW': ['1 Series','2 Series','3 Series','4 Series','5 Series','7 Series','X1','X3','X5'],
-  'Mercedes-Benz': ['A-Class','B-Class','C-Class','E-Class','S-Class','GLA','GLC','GLE'],
-  'Volkswagen': ['Golf','Polo','Passat','Tiguan','Touareg','T-Roc','ID.3','ID.4'],
-  'Audi': ['A1','A3','A4','A6','Q3','Q5','Q7','TT'],
-  'Toyota': ['Yaris','Corolla','Camry','RAV4','Land Cruiser','Prius','Hilux'],
-  'Ford': ['Fiesta','Focus','Mondeo','Puma','Kuga','Explorer','Transit'],
-  'Peugeot': ['208','308','508','2008','3008','5008'],
-  'Renault': ['Clio','Megane','Captur','Kadjar','Scenic','Trafic'],
-  'Opel': ['Corsa','Astra','Insignia','Mokka','Crossland','Grandland'],
-  'Volvo': ['S60','S90','V60','V90','XC40','XC60','XC90'],
-  'Skoda': ['Fabia','Octavia','Superb','Karoq','Kodiaq'],
-  'Seat': ['Ibiza','Leon','Ateca','Arona','Tarraco'],
-  'Fiat': ['500','Punto','Panda','Tipo','Ducato'],
-  'Honda': ['Jazz','Civic','Accord','CR-V','HR-V'],
-  'Hyundai': ['i10','i20','i30','Tucson','Santa Fe','Kona'],
-  'Kia': ['Picanto','Rio','Ceed','Sportage','Sorento'],
-  'Nissan': ['Micra','Juke','Qashqai','X-Trail','Leaf'],
-  'Mazda': ['Mazda2','Mazda3','Mazda6','CX-3','CX-5','CX-30']
-};
-
-const years = [];
-for(let y=2024;y>=1990;y--) years.push(y);
-
-document.getElementById('make').addEventListener('change',function(){
-  const sel = document.getElementById('model');
-  sel.innerHTML = '<option value="">Select Model</option>';
-  (models[this.value]||[]).forEach(m=>{
-    const o=document.createElement('option');
-    o.value=m; o.textContent=m;
-    sel.appendChild(o);
-  });
-  const ySel = document.getElementById('year');
-  ySel.innerHTML = '<option value="">Select Year</option>';
-  years.forEach(y=>{
-    const o=document.createElement('option');
-    o.value=y; o.textContent=y;
-    ySel.appendChild(o);
-  });
+document.getElementById('model').addEventListener('change',function(){
+  const eSel=document.getElementById('engine');
+  eSel.innerHTML='<option value="">Select engine</option>';
+  if(this.value) engines.forEach(e=>{const o=document.createElement('option');o.value=e;o.textContent=e;eSel.appendChild(o);});
 });
 
-function searchParts(){
+function findParts(){
   const make=document.getElementById('make').value;
   const model=document.getElementById('model').value;
-  const year=document.getElementById('year').value;
-  const cat=document.getElementById('category').value;
-  if(!make){alert('Please select your car make first.');return;}
-  // Redirect to AUTODOC with affiliate link
-  const query=encodeURIComponent([make,model,year,cat].filter(Boolean).join(' '));
-  window.open(`https://www.autodoc.co.uk/search?query=${query}`,'_blank');
+  if(!make){alert('Please select your car make.');return;}
+  const q=encodeURIComponent([make,model].filter(Boolean).join(' '));
+  window.open('https://www.autodoc.co.uk/search?query='+q,'_blank');
 }
 
-function searchByName(){
-  const q=document.getElementById('partSearch').value.trim();
-  if(!q){alert('Please enter a part name or number.');return;}
-  window.open(`https://www.autodoc.co.uk/search?query=${encodeURIComponent(q)}`,'_blank');
+function doSearch(){
+  const q=document.getElementById('hSearch').value.trim();
+  if(!q) return;
+  window.open('https://www.autodoc.co.uk/search?query='+encodeURIComponent(q),'_blank');
 }
 </script>
-
 </body>
 </html>
