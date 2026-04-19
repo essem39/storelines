@@ -52,8 +52,7 @@ header{background:#111827;padding:12px 0;position:sticky;top:0;z-index:200;box-s
 
 /* MAIN SEARCH SECTION */
 .main-wrap{background:#f4f5f7;padding:24px 0 28px}
-.main-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;gap:20px}
-.main-top{display:grid;grid-template-columns:360px 1fr;gap:20px;align-items:stretch}
+.main-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:360px 1fr;gap:20px;align-items:start}
 
 /* LEFT: FINDER */
 .finder{background:#fff;border:1px solid #ddd;border-radius:4px;padding:20px}
@@ -222,7 +221,6 @@ footer{background:#111827;padding:40px 0 0}
 <!-- MAIN SEARCH AREA -->
 <div class="main-wrap">
   <div class="main-inner">
-    <div class="main-top">
 
     <!-- FINDER -->
     <div class="finder">
@@ -255,27 +253,7 @@ footer{background:#111827;padding:40px 0 0}
       <a href="#" class="cant-find">Can't find your car in the catalogue?</a>
     </div>
 
-    </div><!-- /main-top -->
-
-    <!-- SLIDER FULL WIDTH -->
-    <div class="slider">
-      <div class="slider-ratio">
-      <div class="slides">
-        <div class="slide" style="background-image:url('images/slide1.webp')"></div>
-        <div class="slide" style="background-image:url('images/slide2.webp')"></div>
-        <div class="slide" style="background-image:url('images/slide3.webp')"></div>
-        <div class="slide" style="background-image:url('images/slide4.webp')"></div>
-      </div>
-      <div class="slider-dots">
-        <span class="dot active" onclick="goSlide(0)"></span>
-        <span class="dot" onclick="goSlide(1)"></span>
-        <span class="dot" onclick="goSlide(2)"></span>
-        <span class="dot" onclick="goSlide(3)"></span>
-      </div>
-      <button class="slider-prev" onclick="prevSlide()">‹</button>
-      <button class="slider-next" onclick="nextSlide()">›</button>
-      </div>
-    </div>
+    </div><!-- /slider -->
 
   </div>
 </div>
