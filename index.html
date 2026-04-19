@@ -258,29 +258,16 @@ footer{background:#111827;padding:40px 0 0}
     <!-- SLIDER -->
     <div class="slider">
       <div class="slides">
-        <div class="slide slide1">
-          <div class="banner-tag">🔥 Special offer</div>
-          <div class="banner-title">UP TO <span>40%</span> OFF</div>
-          <div class="banner-sub">Engine parts, brakes, suspension and filters.<br>Best prices across 27 EU countries.</div>
-          <a href="#categories" class="banner-btn">SHOP NOW →</a>
-        </div>
-        <div class="slide slide2">
-          <div class="banner-tag">⚙️ Engine parts</div>
-          <div class="banner-title">4M+ <span>PARTS</span></div>
-          <div class="banner-sub">For 166 car brands and 75,000+ models.<br>Fast delivery 1–3 days across EU.</div>
-          <a href="#categories" class="banner-btn">BROWSE PARTS →</a>
-        </div>
-        <div class="slide slide3">
-          <div class="banner-tag">🚚 Free delivery</div>
-          <div class="banner-title">ORDERS <span>€49+</span></div>
-          <div class="banner-sub">200-day return policy. Secure payments.<br>Trusted by 5 million customers.</div>
-          <a href="#categories" class="banner-btn">SHOP NOW →</a>
-        </div>
+        <div class="slide" style="background:url('images/slide1.webp') center/cover no-repeat;min-height:340px"></div>
+        <div class="slide" style="background:url('images/slide2.webp') center/cover no-repeat;min-height:340px"></div>
+        <div class="slide" style="background:url('images/slide3.webp') center/cover no-repeat;min-height:340px"></div>
+        <div class="slide" style="background:url('images/slide4.webp') center/cover no-repeat;min-height:340px"></div>
       </div>
       <div class="slider-dots">
         <span class="dot active" onclick="goSlide(0)"></span>
         <span class="dot" onclick="goSlide(1)"></span>
         <span class="dot" onclick="goSlide(2)"></span>
+        <span class="dot" onclick="goSlide(3)"></span>
       </div>
       <button class="slider-prev" onclick="prevSlide()">‹</button>
       <button class="slider-next" onclick="nextSlide()">›</button>
@@ -396,7 +383,7 @@ function toggleMenu(){document.getElementById('mobMenu').classList.toggle('open'
 
 // SLIDER
 let curSlide=0;
-const totalSlides=3;
+const totalSlides=4;
 function goSlide(n){
   curSlide=n;
   document.querySelector('.slides').style.transform=`translateX(-${curSlide*100}%)`;
