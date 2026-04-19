@@ -52,7 +52,8 @@ header{background:#111827;padding:12px 0;position:sticky;top:0;z-index:200;box-s
 
 /* MAIN SEARCH SECTION */
 .main-wrap{background:#f4f5f7;padding:24px 0 28px}
-.main-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:360px 1fr;gap:20px;align-items:stretch}
+.main-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;gap:20px}
+.main-top{display:grid;grid-template-columns:360px 1fr;gap:20px;align-items:stretch}
 
 /* LEFT: FINDER */
 .finder{background:#fff;border:1px solid #ddd;border-radius:4px;padding:20px}
@@ -85,12 +86,10 @@ header{background:#111827;padding:12px 0;position:sticky;top:0;z-index:200;box-s
 .banner-btn:hover{background:#e65c00}
 
 /* SLIDER */
-.slider{position:relative;border-radius:4px;overflow:hidden;min-height:100%}
-.slides{display:flex;height:100%;transition:transform .5s ease}
-.slide{min-width:100%;background:linear-gradient(135deg,#111827 0%,#1a2a40 100%);padding:36px 40px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
-.slide::after{content:'';position:absolute;right:-40px;top:-40px;width:280px;height:280px;background:radial-gradient(circle,rgba(255,107,0,0.15) 0%,transparent 70%)}
-.slide2{background:linear-gradient(135deg,#0d1b2a 0%,#1b3a5c 100%)}
-.slide3{background:linear-gradient(135deg,#1a1a0d 0%,#2a3a0d 100%)}
+.slider{position:relative;border-radius:4px;overflow:hidden;width:100%}
+.slider-ratio{width:100%;padding-top:56.25%;position:relative}
+.slides{position:absolute;top:0;left:0;right:0;bottom:0;display:flex;transition:transform .5s ease}
+.slide{min-width:100%;height:100%;background-size:cover;background-position:center;background-repeat:no-repeat}
 .slider-dots{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:10}
 .dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.4);cursor:pointer;transition:background .2s}
 .dot.active{background:#FF6B00}
@@ -223,6 +222,7 @@ footer{background:#111827;padding:40px 0 0}
 <!-- MAIN SEARCH AREA -->
 <div class="main-wrap">
   <div class="main-inner">
+    <div class="main-top">
 
     <!-- FINDER -->
     <div class="finder">
@@ -255,13 +255,16 @@ footer{background:#111827;padding:40px 0 0}
       <a href="#" class="cant-find">Can't find your car in the catalogue?</a>
     </div>
 
-    <!-- SLIDER -->
+    </div><!-- /main-top -->
+
+    <!-- SLIDER FULL WIDTH -->
     <div class="slider">
+      <div class="slider-ratio">
       <div class="slides">
-        <div class="slide" style="background:url('images/slide1.webp') center/cover no-repeat;min-height:340px"></div>
-        <div class="slide" style="background:url('images/slide2.webp') center/cover no-repeat;min-height:340px"></div>
-        <div class="slide" style="background:url('images/slide3.webp') center/cover no-repeat;min-height:340px"></div>
-        <div class="slide" style="background:url('images/slide4.webp') center/cover no-repeat;min-height:340px"></div>
+        <div class="slide" style="background-image:url('images/slide1.webp')"></div>
+        <div class="slide" style="background-image:url('images/slide2.webp')"></div>
+        <div class="slide" style="background-image:url('images/slide3.webp')"></div>
+        <div class="slide" style="background-image:url('images/slide4.webp')"></div>
       </div>
       <div class="slider-dots">
         <span class="dot active" onclick="goSlide(0)"></span>
@@ -271,6 +274,7 @@ footer{background:#111827;padding:40px 0 0}
       </div>
       <button class="slider-prev" onclick="prevSlide()">‹</button>
       <button class="slider-next" onclick="nextSlide()">›</button>
+      </div>
     </div>
 
   </div>
