@@ -118,19 +118,32 @@ footer{background:#222;color:#aaa;margin-top:40px}
   </div>
 </div></header>
 <div class="nav"><div class="nw">
-  <a class="na active" data-cat="" href="#">🛒 All Products</a>
-  <a class="na" data-cat="Kids Shoes" href="#">👟 Kids Shoes</a>
-  <a class="na" data-cat="Sweaters" href="#">🧥 Clothing</a>
+  <a class="na active" data-pr="" href="#">🛒 All</a>
+  <a class="na" data-pr="hot" href="#">🔥 Hot</a>
+  <a class="na" data-pr="25-40" href="#">$25–40</a>
+  <a class="na" data-pr="40-55" href="#">$40–55</a>
+  <a class="na" data-pr="55-70" href="#">$55–70</a>
+  <a class="na" data-pr="70-85" href="#">$70–85</a>
+  <a class="na" data-pr="85-100" href="#">$85–100</a>
+  <a class="na" data-cat="Kids Shoes" href="#">👟 Kids</a>
   <a class="na" data-cat="Electrical" href="#">⚡ Electronics</a>
   <a class="na" data-disc="50" href="#">🏷️ 50%+ Off</a>
 </div></div>
 <div class="main">
   <aside class="sb">
     <div class="sbox">
-      <div class="stit">Categories</div>
-      <div class="sit active" data-cat="">🛒 All Products</div>
+      <div class="stit">Price Range</div>
+      <div class="sit active" data-pr="">All Products</div>
+      <div class="sit" data-pr="hot">🔥 Hot Products</div>
+      <div class="sit" data-pr="25-40">$25 – $40</div>
+      <div class="sit" data-pr="40-55">$40 – $55</div>
+      <div class="sit" data-pr="55-70">$55 – $70</div>
+      <div class="sit" data-pr="70-85">$70 – $85</div>
+      <div class="sit" data-pr="85-100">$85 – $100</div>
+    </div>
+    <div class="sbox">
+      <div class="stit">Category</div>
       <div class="sit" data-cat="Kids Shoes">👟 Kids Shoes</div>
-      <div class="sit" data-cat="Sweaters">🧥 Sweaters</div>
       <div class="sit" data-cat="Electrical">⚡ Electronics</div>
     </div>
     <div class="sbox">
@@ -177,7 +190,7 @@ footer{background:#222;color:#aaa;margin-top:40px}
 </footer>
 <script>
 let DATA = [];
-let S = {cat:'', q:'', sort:'default', disc:0, page:1};
+let S = {pr:'', cat:'', q:'', sort:'default', disc:0, page:1};
 const PER = 40;
 
 // Timer
@@ -196,6 +209,7 @@ function stars(r){ return '★'.repeat(Math.round(r)) + '☆'.repeat(5-Math.roun
 
 function getFiltered(){
   let d = [...DATA];
+  if(S.pr) d = d.filter(x => (x.pr||'') === S.pr);
   if(S.cat) d = d.filter(x => (x.c||'').includes(S.cat) || (x.fc||'').includes(S.cat));
   if(S.q) d = d.filter(x => x.n.toLowerCase().includes(S.q.toLowerCase()));
   if(S.disc > 0) d = d.filter(x => (x.d||0) >= S.disc);
@@ -249,12 +263,22 @@ function renderPag(total){
   });
 }
 
-// Nav
+// Nav - price range
+document.querySelectorAll('.na[data-pr]').forEach(function(el){
+  el.addEventListener('click', function(e){
+    e.preventDefault();
+    S.pr = el.dataset.pr; S.cat = ''; S.page = 1;
+    document.querySelectorAll('.na').forEach(x => x.classList.remove('active'));
+    el.classList.add('active');
+    document.querySelectorAll('.sit[data-pr]').forEach(x => x.classList.toggle('active', x.dataset.pr === S.pr));
+    render();
+  });
+});
 document.querySelectorAll('.na[data-cat]').forEach(function(el){
   el.addEventListener('click', function(e){
     e.preventDefault();
-    S.cat = el.dataset.cat; S.page = 1;
-    document.querySelectorAll('.na[data-cat]').forEach(x => x.classList.remove('active'));
+    S.cat = el.dataset.cat; S.pr = ''; S.page = 1;
+    document.querySelectorAll('.na').forEach(x => x.classList.remove('active'));
     el.classList.add('active');
     document.querySelectorAll('.sit[data-cat]').forEach(x => x.classList.toggle('active', x.dataset.cat === S.cat));
     render();
@@ -268,11 +292,18 @@ document.querySelectorAll('.na[data-disc]').forEach(function(el){
 });
 
 // Sidebar
+document.querySelectorAll('.sit[data-pr]').forEach(function(el){
+  el.addEventListener('click', function(){
+    S.pr = el.dataset.pr; S.cat = ''; S.page = 1;
+    document.querySelectorAll('.sit[data-pr]').forEach(x => x.classList.toggle('active', x.dataset.pr === S.pr));
+    document.querySelectorAll('.na[data-pr]').forEach(x => x.classList.toggle('active', x.dataset.pr === S.pr));
+    render();
+  });
+});
 document.querySelectorAll('.sit[data-cat]').forEach(function(el){
   el.addEventListener('click', function(){
-    S.cat = el.dataset.cat; S.page = 1;
+    S.cat = el.dataset.cat; S.pr = ''; S.page = 1;
     document.querySelectorAll('.sit[data-cat]').forEach(x => x.classList.toggle('active', x.dataset.cat === S.cat));
-    document.querySelectorAll('.na[data-cat]').forEach(x => x.classList.toggle('active', x.dataset.cat === S.cat));
     render();
   });
 });
@@ -304,7 +335,7 @@ document.getElementById('si').addEventListener('keydown', function(e){
 
 // Hero
 document.getElementById('hbtn').addEventListener('click', function(){
-  S.cat=''; S.q=''; S.sort='default'; S.disc=0; S.page=1;
+  S.pr=''; S.cat=''; S.q=''; S.sort='default'; S.disc=0; S.page=1;
   document.getElementById('si').value='';
   render();
 });
