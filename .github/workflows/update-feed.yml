@@ -1,4 +1,5 @@
 name: Update Products Feed
+
 on:
   schedule:
     - cron: "0 8 * * *"
@@ -7,57 +8,18 @@ on:
 jobs:
   update:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
 
-      - name: Download and convert feed
-        run: |
-          python3 << PYEOF
-import urllib.request, xml.etree.ElementTree as ET, json, re
-
-url = "http://export.admitad.com/ru/webmaster/websites/2922896/products/export_adv_products/?user=essem&code=5a533b1307&feed_id=14280&format=xml&fcid=6115"
-req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-with urllib.request.urlopen(req, timeout=120) as r:
-    data = r.read()
-
-root = ET.fromstring(data)
-
-cats = {}
-for cat in root.findall(".//category"):
-    cats[cat.get("id","")] = cat.text or ""
-
-products = []
-for o in root.findall(".//offer"):
-    def g(tag): return (o.findtext(tag) or "").strip()
-    try:
-        price = float(g("price") or 0)
-        oprice = float(g("oldprice") or 0)
-        if price <= 0: continue
-        disc = round((oprice - price) / oprice * 100) if oprice > price else 0
-        cat_id = g("categoryId")
-        products.append({
-            "n": g("name") or g("model"),
-            "u": g("url"),
-            "i": g("picture"),
-            "p": round(price, 2),
-            "op": round(oprice, 2),
-            "d": disc,
-            "c": cats.get(cat_id, ""),
-            "fc": g("vendor"),
-            "r": round(float(g("rating") or 4.5), 1),
-            "rv": int(g("reviews") or g("sales") or 100)
-        })
-    except: continue
-
-with open("data/products.json", "w") as f:
-    json.dump(products, f, ensure_ascii=False)
-print(f"Saved {len(products)} products")
-PYEOF
+      - name: Run feed converter
+        run: python3 scripts/update_feed.py
 
       - name: Commit if changed
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add data/products.json
-          git diff --cached --quiet || git commit -m "chore: update products feed 2026-04-25"
+          git diff --cached --quiet || git commit -m "chore: update products feed $(date +%Y-%m-%d)"
           git push
