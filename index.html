@@ -220,7 +220,7 @@ function render(){
     const oldp = (p.op > 0) ? '<s>$' + p.op.toFixed(2) + '</s>' : '';
     const name = p.n.replace(/</g,'&lt;').replace(/>/g,'&gt;');
     return '<a class="pc" href="' + p.u + '" target="_blank" rel="nofollow noopener">' +
-      '<div class="pi"><img src="' + p.i + '" alt="" loading="lazy" onerror="this.parentNode.innerHTML='<div style=\'font-size:40px;line-height:190px;text-align:center\'>📦</div>'">' +
+      '<div class="pi"><img src="' + p.i + '" alt="" loading="lazy" onerror="this.style.display='none'">' +
       badge + '</div>' +
       '<div class="pin">' +
       '<div class="pname">' + name + '</div>' +
