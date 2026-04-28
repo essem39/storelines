@@ -14,7 +14,32 @@ FEEDS = [
 
 MAX_PER_FEED = 300
 
-def parse(feed_id, price_range):
+def get_eur_rate():
+    """Fetch USD->EUR rate from ECB"""
+    try:
+        url = "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml"
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            xml = resp.read().decode()
+        import re
+        m = re.search(r"currency=\'USD\' rate=\'([\d.]+)\'", xml)
+        if not m:
+            m = re.search(r'currency="USD" rate="([\d.]+)"', xml)
+        if m:
+            usd_per_eur = float(m.group(1))
+            rate = round(1 / usd_per_eur, 4)
+            print(f"ECB rate: 1 USD = {rate} EUR")
+            return rate
+    except Exception as e:
+        print(f"ECB fetch failed: {e}, using fallback 0.92")
+    return 0.92
+
+def to_eur(usd, rate):
+    if not usd or usd <= 0:
+        return 0
+    return round(usd * rate, 2)
+
+def parse(feed_id, price_range, eur_rate):
     url = BASE + feed_id
     print(f"[{feed_id}] Fetching {price_range}...", flush=True)
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
@@ -47,8 +72,8 @@ def parse(feed_id, price_range):
                     if tag == "offer":
                         in_offer = False
                         try:
-                            price = float(cur.get("price") or 0)
-                            if price <= 0:
+                            price_usd = float(cur.get("price") or 0)
+                            if price_usd <= 0:
                                 elem.clear()
                                 continue
                             img = first_pic or ""
@@ -59,29 +84,23 @@ def parse(feed_id, price_range):
                             if not u:
                                 elem.clear()
                                 continue
-                            oprice = float(cur.get("oldprice") or 0)
-                            disc = round((oprice - price) / oprice * 100) if oprice > price else 0
-                            # Only filter rating if it actually exists and is too low
-                            rating_raw = cur.get("rating")
-                            if rating_raw:
-                                rating = float(rating_raw)
-                                if rating > 0 and rating < 4.0:
-                                    elem.clear()
-                                    continue
-                            else:
-                                rating = 4.5
+                            oprice_usd = float(cur.get("oldprice") or 0)
+                            price_eur = to_eur(price_usd, eur_rate)
+                            oprice_eur = to_eur(oprice_usd, eur_rate)
+                            disc = round((oprice_eur - price_eur) / oprice_eur * 100) if oprice_eur > price_eur else 0
                             products.append({
                                 "n": cur.get("name") or cur.get("model", ""),
                                 "u": u,
                                 "i": img,
-                                "p": round(price, 2),
-                                "op": round(oprice, 2),
+                                "p": price_eur,
+                                "op": oprice_eur,
                                 "d": disc,
                                 "c": cats.get(cur.get("categoryId", ""), ""),
                                 "fc": cur.get("vendor", ""),
-                                "r": round(rating, 1),
-                                "rv": int(cur.get("reviews") or cur.get("sales") or 0),
-                                "pr": price_range
+                                "r": 4.5,
+                                "rv": 0,
+                                "pr": price_range,
+                                "cur": "EUR"
                             })
                         except Exception as e:
                             pass
@@ -92,11 +111,14 @@ def parse(feed_id, price_range):
     print(f"[{feed_id}] Got {len(products)} products", flush=True)
     return products
 
+# Get EUR rate once
+eur_rate = get_eur_rate()
+
 all_products = []
 seen = set()
 for feed_id, pr in FEEDS:
     try:
-        for p in parse(feed_id, pr):
+        for p in parse(feed_id, pr, eur_rate):
             if p["u"] not in seen:
                 seen.add(p["u"])
                 all_products.append(p)
@@ -104,5 +126,5 @@ for feed_id, pr in FEEDS:
         print(f"[{feed_id}] ERROR: {e}", flush=True)
 
 with open("data/products.json", "w", encoding="utf-8") as f:
-    json.dump(all_products, f, ensure_ascii=False)
-print(f"Done. {len(all_products)} products saved.")
+    json.dump({"eur_rate": eur_rate, "products": all_products}, f, ensure_ascii=False)
+print(f"Done. {len(all_products)} products saved at rate {eur_rate}.")
