@@ -1,4 +1,4 @@
-import urllib.request, xml.etree.ElementTree as ET, json
+import urllib.request, xml.etree.ElementTree as ET, json, re
 
 BASE = "http://export.admitad.com/ru/webmaster/websites/2922896/products/export_adv_products/?user=essem&code=5a533b1307&format=xml&fcid=25179&feed_id="
 
@@ -9,6 +9,25 @@ FEEDS = [
 ]
 
 MAX_PER_FEED = 200
+MIN_PRICE_USD = 3.0
+
+# Skip industrial/spare parts categories
+SKIP_CATS = [
+    "Electrical Equipment", "Electronic Components", "Connectors",
+    "Fasteners", "Screws", "Access Control", "Switches", "Relays",
+    "Gearboxes", "Protective", "Soldering", "Sensors", "Modules",
+    "детали", "Детали", "запчасти", "Переключател", "Разъем",
+    "Коробки", "Ключи", "Держател", "Контроль", "Винты",
+    "Industrial", "Tools & Equipment", "Measurement"
+]
+
+def is_junk(name, cat):
+    # Skip Russian names
+    if re.search(r"[а-яёА-ЯЁ]", name): return True
+    # Skip junk categories
+    for s in SKIP_CATS:
+        if s.lower() in (cat or "").lower(): return True
+    return False
 
 def get_eur_rate():
     try:
@@ -16,14 +35,12 @@ def get_eur_rate():
         req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
         with urllib.request.urlopen(req, timeout=10) as resp:
             xml = resp.read().decode()
-        import re
         m = re.search(r"currency=.USD. rate=.([\d.]+).", xml)
         if m:
             rate = round(1 / float(m.group(1)), 4)
-            print(f"ECB rate: 1 USD = {rate} EUR")
+            print(f"ECB: 1 USD = {rate} EUR")
             return rate
-    except Exception as e:
-        print(f"ECB failed: {e}")
+    except: pass
     return 0.92
 
 def to_eur(usd, rate):
@@ -43,12 +60,9 @@ def parse(feed_id, eur_rate):
         with urllib.request.urlopen(req, timeout=120) as resp:
             context = ET.iterparse(resp, events=("start", "end"))
             for event, elem in context:
-                if len(products) >= MAX_PER_FEED:
-                    break
+                if len(products) >= MAX_PER_FEED: break
                 if event == "start" and elem.tag == "offer":
-                    cur = {}
-                    first_pic = None
-                    in_offer = True
+                    cur = {}; first_pic = None; in_offer = True
                 elif event == "end":
                     if elem.tag == "category":
                         cats[elem.get("id", "")] = elem.text or ""
@@ -57,32 +71,28 @@ def parse(feed_id, eur_rate):
                         text = (elem.text or "").strip()
                         if tag == "picture" and first_pic is None:
                             first_pic = text
-                        elif tag not in ("picture", "offer", "yml_catalog", "shop", "categories", "offers"):
+                        elif tag not in ("picture","offer","yml_catalog","shop","categories","offers"):
                             cur[tag] = text
                         if tag == "offer":
                             in_offer = False
                             try:
                                 price_usd = float(cur.get("price") or 0)
-                                if price_usd <= 0: elem.clear(); continue
+                                if price_usd < MIN_PRICE_USD: elem.clear(); continue
                                 img = first_pic or ""
                                 if not img: elem.clear(); continue
                                 u = cur.get("url", "")
                                 if not u: elem.clear(); continue
+                                name = cur.get("name") or cur.get("model", "")
+                                cat = cats.get(cur.get("categoryId", ""), "")
+                                if is_junk(name, cat): elem.clear(); continue
                                 oprice_usd = float(cur.get("oldprice") or 0)
                                 price_eur = to_eur(price_usd, eur_rate)
                                 oprice_eur = to_eur(oprice_usd, eur_rate)
                                 disc = round((oprice_eur - price_eur) / oprice_eur * 100) if oprice_eur > price_eur else 0
                                 products.append({
-                                    "n": cur.get("name") or cur.get("model", ""),
-                                    "u": u,
-                                    "i": img,
-                                    "p": price_eur,
-                                    "op": oprice_eur,
-                                    "d": disc,
-                                    "c": cats.get(cur.get("categoryId", ""), ""),
-                                    "fc": cur.get("vendor", ""),
-                                    "r": 4.5,
-                                    "rv": 0
+                                    "n": name, "u": u, "i": img,
+                                    "p": price_eur, "op": oprice_eur, "d": disc,
+                                    "c": cat, "fc": cur.get("vendor",""), "r": 4.5, "rv": 0
                                 })
                             except: pass
                             elem.clear()
