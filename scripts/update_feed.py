@@ -12,60 +12,80 @@ FEEDS = [
     ("15830", "hot"),
 ]
 
-MAX_PER_FEED = 200
-MIN_RATING = 4.0
+MAX_PER_FEED = 300
 
 def parse(feed_id, price_range):
     url = BASE + feed_id
-    print(f"[{feed_id}] Streaming {price_range}...", flush=True)
-    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0", "Accept-Encoding": "gzip"})
-    
+    print(f"[{feed_id}] Fetching {price_range}...", flush=True)
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+
     products = []
     cats = {}
     cur = {}
     in_offer = False
-    count = 0
+    first_pic = None
 
     with urllib.request.urlopen(req, timeout=180) as resp:
-        # Stream directly into iterparse — no full buffer
         context = ET.iterparse(resp, events=("start", "end"))
         for event, elem in context:
             if len(products) >= MAX_PER_FEED:
                 break
             if event == "start" and elem.tag == "offer":
                 cur = {}
+                first_pic = None
                 in_offer = True
             elif event == "end":
                 if elem.tag == "category":
-                    cats[elem.get("id","")]  = elem.text or ""
-                elif in_offer and elem.tag not in ("offer","yml_catalog","shop","categories","offers"):
-                    cur[elem.tag] = (elem.text or "").strip()
-                elif elem.tag == "offer":
-                    in_offer = False
-                    try:
-                        price = float(cur.get("price") or 0)
-                        if price <= 0: elem.clear(); continue
-                        rating = float(cur.get("rating") or 0)
-                        if rating > 0 and rating < MIN_RATING: elem.clear(); continue
-                        oprice = float(cur.get("oldprice") or 0)
-                        disc = round((oprice-price)/oprice*100) if oprice>price else 0
-                        u = cur.get("url","")
-                        if not u: elem.clear(); continue
-                        products.append({
-                            "n": cur.get("name") or cur.get("model",""),
-                            "u": u,
-                            "i": cur.get("picture",""),
-                            "p": round(price,2),
-                            "op": round(oprice,2),
-                            "d": disc,
-                            "c": cats.get(cur.get("categoryId",""),""),
-                            "fc": cur.get("vendor",""),
-                            "r": round(float(cur.get("rating") or 4.5),1),
-                            "rv": int(cur.get("reviews") or cur.get("sales") or 100),
-                            "pr": price_range
-                        })
-                    except: pass
-                    elem.clear()
+                    cats[elem.get("id", "")] = elem.text or ""
+                elif in_offer:
+                    tag = elem.tag
+                    text = (elem.text or "").strip()
+                    if tag == "picture" and first_pic is None:
+                        first_pic = text
+                    elif tag not in ("picture", "offer", "yml_catalog", "shop", "categories", "offers"):
+                        cur[tag] = text
+                    if tag == "offer":
+                        in_offer = False
+                        try:
+                            price = float(cur.get("price") or 0)
+                            if price <= 0:
+                                elem.clear()
+                                continue
+                            img = first_pic or ""
+                            if not img:
+                                elem.clear()
+                                continue
+                            u = cur.get("url", "")
+                            if not u:
+                                elem.clear()
+                                continue
+                            oprice = float(cur.get("oldprice") or 0)
+                            disc = round((oprice - price) / oprice * 100) if oprice > price else 0
+                            # Only filter rating if it actually exists and is too low
+                            rating_raw = cur.get("rating")
+                            if rating_raw:
+                                rating = float(rating_raw)
+                                if rating > 0 and rating < 4.0:
+                                    elem.clear()
+                                    continue
+                            else:
+                                rating = 4.5
+                            products.append({
+                                "n": cur.get("name") or cur.get("model", ""),
+                                "u": u,
+                                "i": img,
+                                "p": round(price, 2),
+                                "op": round(oprice, 2),
+                                "d": disc,
+                                "c": cats.get(cur.get("categoryId", ""), ""),
+                                "fc": cur.get("vendor", ""),
+                                "r": round(rating, 1),
+                                "rv": int(cur.get("reviews") or cur.get("sales") or 0),
+                                "pr": price_range
+                            })
+                        except Exception as e:
+                            pass
+                        elem.clear()
                 else:
                     elem.clear()
 
@@ -83,6 +103,6 @@ for feed_id, pr in FEEDS:
     except Exception as e:
         print(f"[{feed_id}] ERROR: {e}", flush=True)
 
-with open("data/products.json","w",encoding="utf-8") as f:
+with open("data/products.json", "w", encoding="utf-8") as f:
     json.dump(all_products, f, ensure_ascii=False)
 print(f"Done. {len(all_products)} products saved.")
