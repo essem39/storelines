@@ -239,7 +239,7 @@ function render(){
                   i < 8 ? '<span class="pbd new">NEW</span>' : '';
     const oldp = (p.op > 0) ? `<s>$${p.op.toFixed(2)}</s>` : '';
     const name = p.n.replace(/</g,'&lt;').replace(/>/g,'&gt;');
-    return `<a class="pc" href="${p.u}" target="_blank" rel="nofollow noopener"><div class="pi"><img src="${p.i}" alt="${name}" loading="lazy" onerror="this.style.display='none'">${badge}</div><div class="pin"><div class="pname">${name}</div><div class="ppr">$${p.p.toFixed(2)} ${oldp}</div><div class="pmeta"><span class="stars">${stars(p.r)}</span><span class="rv">${p.rv.toLocaleString()}</span></div><div class="pship">✈ Free Shipping</div></div></a>`;
+    return `<a class="pc" href="${p.u}" target="_blank" rel="nofollow noopener"><div class="pi"><img src="${p.i}" alt="${name}" loading="lazy" onerror="this.style.display='none'">${badge}</div><div class="pin"><div class="pname">${name}</div><div class="ppr">€${p.p.toFixed(2)} ${oldp}</div><div class="pmeta"><span class="stars">${stars(p.r)}</span><span class="rv">${p.rv.toLocaleString()}</span></div><div class="pship">✈ Free Shipping</div></div></a>`;
   }).join('');
   renderPag(total);
 }
@@ -346,7 +346,7 @@ document.getElementById('hbtn').addEventListener('click', function(){
 fetch('data/products.json')
   .then(function(r){ return r.json(); })
   .then(function(d){
-    DATA = d;
+    DATA = Array.isArray(d) ? d : (d.products || []);
     render();
   })
   .catch(function(){
