@@ -3,7 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Авторизованный партнёр Xiaomi — mi-shop</title>
+<meta name="description" content="Купить Xiaomi в России выгодно на Storelines — официальные смартфоны Redmi и POCO с быстрой доставкой по всей стране по привлекательным ценам и с гарантией.">
+<link rel="canonical" href="https://storelines.net/">
+<meta property="og:title" content="Купить Xiaomi в России — официальный магазин | Storelines">
+<meta property="og:description" content="Купить Xiaomi в России выгодно на Storelines — официальные смартфоны Redmi и POCO с быстрой доставкой по всей стране.">
+<meta property="og:image" content="https://storelines.net/images/hero-main.webp">
+<meta property="og:url" content="https://storelines.net/">
+<meta property="og:type" content="website">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Store","name":"Storelines — Xiaomi в России","url":"https://storelines.net","description":"Купить Xiaomi в России — официальные смартфоны, планшеты, наушники, телевизоры Redmi и POCO","image":"https://storelines.net/images/hero-main.webp","priceRange":"₽₽","servesCuisine":"Electronics"}
+</script>
+<title>Купить Xiaomi в России — официальный магазин | Storelines</title>
 <meta name="description" content="Официальные товары Xiaomi, Redmi и POCO с доставкой по России.">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
@@ -147,7 +157,7 @@ footer{background:var(--blk);padding:32px 20px;margin-top:0}
     <img src="images/hero-main.webp" alt="Xiaomi Store — официальные товары" class="hero-img">
     <div class="hero-overlay">
       <div class="hero-in">
-        <h1><b>Xiaomi</b> — смартфоны, наушники, телевизоры, пылесосы</h1>
+        <h1>Купить <b>Xiaomi</b> в России — смартфоны и электроника</h1>
         <p>Официальные товары Redmi и POCO по выгодным ценам с доставкой по России</p>
       </div>
     </div>
@@ -155,7 +165,7 @@ footer{background:var(--blk);padding:32px 20px;margin-top:0}
 </div>
 
 <div class="toolbar">
-  <div class="t-left" id="countlbl"></div>
+  <div class="t-left"><h2 style="font-size:13px;font-weight:400;color:var(--mu);display:inline">Купить Xiaomi в России — </h2><span id="countlbl" style="font-size:13px;color:var(--mu)"></span></div>
   <div class="t-right">
     <label>Сортировка:</label>
     <select id="srt">
@@ -275,7 +285,7 @@ function render() {
     const badge=p.d>0?`<div class="badge">−${p.d}%</div>`:'';
     const old=p.op>p.p?`<span class="p-old">${p.op.toLocaleString('ru')} ₽</span>`:'';
     return `<a class="card" href="${p.u}" target="_blank" rel="nofollow noopener">
-      <div class="c-img"><img src="${p.i}" alt="${nm}" loading="lazy" onerror="this.parentNode.style.background='#eee'">${badge}</div>
+      <div class="c-img"><img src="${p.i}" alt="Купить ${nm} в России" loading="lazy" onerror="this.parentNode.style.background='#eee'">${badge}</div>
       <div class="c-body">
         <div class="c-name">${nm}</div>
         <div class="c-price"><span class="p-now">${p.p.toLocaleString('ru')} ₽</span>${old}</div>
