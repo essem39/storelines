@@ -109,11 +109,24 @@ footer{background:var(--blk);padding:32px 20px;margin-top:0}
 .erid-in{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:12px;font-size:11px;color:#666;line-height:1.5}
 .erid-tag{background:var(--or);color:#fff;font-size:10px;font-weight:700;padding:3px 8px;border-radius:4px;white-space:nowrap;letter-spacing:.5px}
 .erid-in strong{color:#aaa}
-@media(max-width:640px){
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;margin-left:8px}
+.burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:all .3s}
+.burger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.mob-nav{display:none;position:fixed;top:54px;left:0;right:0;bottom:0;background:#111;z-index:150;overflow-y:auto;padding:8px 0}
+.mob-nav.open{display:block}
+.mob-nav .nav-btn{display:flex;width:100%;padding:16px 24px;font-size:15px;border-bottom:1px solid #222;color:#ccc}
+.mob-nav .nav-btn:hover,.mob-nav .nav-btn.active{color:var(--or);background:#1a1a1a}
+@media(max-width:640px){@media(max-width:640px){
   .grid{grid-template-columns:repeat(2,1fr);gap:10px}
   .hero{padding:24px 16px}
   .ft-in{grid-template-columns:repeat(2,1fr)}
   .ft-bottom{flex-direction:column;align-items:flex-start}
+  .burger{display:flex}
+  nav{display:none}
+  .h-count{display:none}
+  .search{max-width:180px}
 }
 @media(max-width:380px){
   .grid{grid-template-columns:repeat(2,1fr);gap:8px}
@@ -133,6 +146,9 @@ footer{background:var(--blk);padding:32px 20px;margin-top:0}
       <input type="text" id="srch" placeholder="Поиск в Xiaomi Store...">
     </div>
     <div class="h-count" id="hcount"></div>
+    <button class="burger" id="burger" aria-label="Меню">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 
@@ -341,6 +357,25 @@ document.querySelectorAll('.nav-btn').forEach(b=>{
 });
 
 load();
+</script>
+<div class="mob-nav" id="mobNav">
+  <button class="nav-btn active" data-grp="" onclick="setGrp('');closeMob()">🏠 Все товары</button>
+  <button class="nav-btn" data-grp="phones" onclick="setGrp('phones');closeMob()">📱 Смартфоны</button>
+  <button class="nav-btn" data-grp="tablets" onclick="setGrp('tablets');closeMob()">📟 Планшеты</button>
+  <button class="nav-btn" data-grp="audio" onclick="setGrp('audio');closeMob()">🎧 Наушники</button>
+  <button class="nav-btn" data-grp="watch" onclick="setGrp('watch');closeMob()">⌚ Часы и браслеты</button>
+  <button class="nav-btn" data-grp="tv" onclick="setGrp('tv');closeMob()">📺 Телевизоры</button>
+  <button class="nav-btn" data-grp="smarthome" onclick="setGrp('smarthome');closeMob()">🏡 Умный дом</button>
+  <button class="nav-btn" data-grp="vacuum" onclick="setGrp('vacuum');closeMob()">🤖 Пылесосы</button>
+  <button class="nav-btn" data-grp="power" onclick="setGrp('power');closeMob()">🔋 Зарядки</button>
+  <button class="nav-btn" data-grp="accessories" onclick="setGrp('accessories');closeMob()">🛡️ Аксессуары</button>
+  <button class="nav-btn" data-grp="other" onclick="setGrp('other');closeMob()">✨ Другое</button>
+</div>
+<script>
+const burger=document.getElementById('burger');
+const mobNav=document.getElementById('mobNav');
+burger.addEventListener('click',()=>{burger.classList.toggle('open');mobNav.classList.toggle('open');});
+function closeMob(){burger.classList.remove('open');mobNav.classList.remove('open');}
 </script>
 </body>
 </html>
