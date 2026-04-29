@@ -59,7 +59,7 @@ def parse(feed_id):
                                 if price < MIN_PRICE: elem.clear(); continue
                                 img = first_pic or ""
                                 if not img: elem.clear(); continue
-                                u = cur.get("url", "").replace("aliexpress.ru", "aliexpress.com")
+                                u = cur.get("url", "")
                                 if not u: elem.clear(); continue
                                 name = cur.get("name") or cur.get("model", "")
                                 cat = cats.get(cur.get("categoryId", ""), "")
