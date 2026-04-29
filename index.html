@@ -359,17 +359,16 @@ document.querySelectorAll('.nav-btn').forEach(b=>{
 load();
 </script>
 <div class="mob-nav" id="mobNav">
-  <button class="nav-btn active" data-grp="" onclick="setGrp('');closeMob()">🏠 Все товары</button>
-  <button class="nav-btn" data-grp="phones" onclick="setGrp('phones');closeMob()">📱 Смартфоны</button>
-  <button class="nav-btn" data-grp="tablets" onclick="setGrp('tablets');closeMob()">📟 Планшеты</button>
-  <button class="nav-btn" data-grp="audio" onclick="setGrp('audio');closeMob()">🎧 Наушники</button>
-  <button class="nav-btn" data-grp="watch" onclick="setGrp('watch');closeMob()">⌚ Часы и браслеты</button>
-  <button class="nav-btn" data-grp="tv" onclick="setGrp('tv');closeMob()">📺 Телевизоры</button>
-  <button class="nav-btn" data-grp="smarthome" onclick="setGrp('smarthome');closeMob()">🏡 Умный дом</button>
-  <button class="nav-btn" data-grp="vacuum" onclick="setGrp('vacuum');closeMob()">🤖 Пылесосы</button>
-  <button class="nav-btn" data-grp="power" onclick="setGrp('power');closeMob()">🔋 Зарядки</button>
-  <button class="nav-btn" data-grp="accessories" onclick="setGrp('accessories');closeMob()">🛡️ Аксессуары</button>
-  <button class="nav-btn" data-grp="other" onclick="setGrp('other');closeMob()">✨ Другое</button>
+  <a href="/" class="nav-btn">🏠 Все товары</a>
+  <a href="/smartfony/" class="nav-btn">📱 Смартфоны</a>
+  <a href="/planshety/" class="nav-btn">📟 Планшеты</a>
+  <a href="/naushniki/" class="nav-btn">🎧 Наушники</a>
+  <a href="/chasy/" class="nav-btn">⌚ Часы</a>
+  <a href="/televizory/" class="nav-btn">📺 Телевизоры</a>
+  <a href="/umny-dom/" class="nav-btn">🏡 Умный дом</a>
+  <a href="/pylesosy/" class="nav-btn">🤖 Пылесосы</a>
+  <a href="/zaryadki/" class="nav-btn">🔋 Зарядки</a>
+  <a href="/aksessuary/" class="nav-btn">🛡️ Аксессуары</a>
 </div>
 <script>
 const burger=document.getElementById('burger');
