@@ -60,6 +60,9 @@ def parse(feed_id):
                                 img = first_pic or ""
                                 if not img: elem.clear(); continue
                                 u = cur.get("url", "")
+                                # Fix erid for correct Admitad redirect
+                                if "dhwnh.com" in u and "erid=" not in u:
+                                    u = u.split("?")[0] + "?erid=2bL9aMPo2e49hMef4pdzo6JkYp&" + u.split("?")[1] if "?" in u else u
                                 if not u: elem.clear(); continue
                                 name = cur.get("name") or cur.get("model", "")
                                 cat = cats.get(cur.get("categoryId", ""), "")
