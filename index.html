@@ -4,129 +4,148 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Xiaomi Store — официальные товары</title>
-<meta name="description" content="Официальные товары Xiaomi, Redmi и POCO. Смартфоны, умный дом, аксессуары с доставкой по России.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<meta name="description" content="Официальные товары Xiaomi, Redmi и POCO с доставкой по России.">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --mi-orange:#ff6900;
-  --mi-orange-dark:#e55e00;
-  --mi-black:#1a1a1a;
-  --mi-gray:#f5f5f5;
-  --mi-gray2:#e8e8e8;
-  --mi-text:#333;
-  --mi-muted:#888;
-  --radius:8px;
+  --or:#ff6900;--or2:#e55e00;--blk:#1a1a1a;--bg:#f5f5f5;
+  --bd:#e0e0e0;--tx:#222;--mu:#888;--rd:8px;
 }
-body{font-family:'Roboto',sans-serif;background:#fff;color:var(--mi-text);min-height:100vh}
+body{font-family:'Roboto',sans-serif;background:#fff;color:var(--tx)}
 
 /* HEADER */
-header{background:var(--mi-black);position:sticky;top:0;z-index:100}
-.header-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;height:56px;gap:24px}
-.logo{display:flex;align-items:center;gap:8px;text-decoration:none}
-.logo-mi{background:var(--mi-orange);color:#fff;font-weight:700;font-size:20px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:4px;letter-spacing:-1px}
-.logo-text{color:#fff;font-size:15px;font-weight:300;letter-spacing:1px}
-.search-wrap{flex:1;max-width:480px;position:relative}
-.search-wrap input{width:100%;padding:9px 16px 9px 40px;border:none;border-radius:20px;background:#2d2d2d;color:#fff;font-size:14px;outline:none}
-.search-wrap input::placeholder{color:#666}
-.search-wrap svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:#666}
-.header-right{margin-left:auto;color:#ccc;font-size:13px}
+header{background:var(--blk);position:sticky;top:0;z-index:200;box-shadow:0 2px 8px rgba(0,0,0,.4)}
+.h1{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;height:54px;gap:20px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.logo-box{background:var(--or);color:#fff;font-weight:700;font-size:18px;width:34px;height:34px;display:flex;align-items:center;justify-content:center;border-radius:4px}
+.logo-txt{color:#fff;font-size:14px;font-weight:300;letter-spacing:2px;text-transform:uppercase}
+.search{flex:1;max-width:440px;position:relative}
+.search input{width:100%;padding:8px 14px 8px 38px;border:none;border-radius:20px;background:#2d2d2d;color:#fff;font-size:13px;outline:none;font-family:'Roboto',sans-serif}
+.search input::placeholder{color:#666}
+.search svg{position:absolute;left:11px;top:50%;transform:translateY(-50%);opacity:.5}
+.h-count{margin-left:auto;color:#666;font-size:12px;flex-shrink:0}
 
-/* HERO BANNER */
-.hero{background:linear-gradient(135deg,#1a1a1a 0%,#2a2a2a 50%,#1a1a1a 100%);padding:48px 20px;text-align:center;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(ellipse at 70% 50%,rgba(255,105,0,0.15) 0%,transparent 60%)}
-.hero-inner{max-width:1200px;margin:0 auto;position:relative}
-.hero h1{color:#fff;font-size:clamp(28px,4vw,52px);font-weight:300;letter-spacing:-0.5px;margin-bottom:8px}
-.hero h1 span{color:var(--mi-orange);font-weight:700}
-.hero p{color:#aaa;font-size:16px;font-weight:300}
+/* NAV MENU */
+nav{background:#111;border-bottom:1px solid #2a2a2a}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;gap:0;overflow-x:auto;scrollbar-width:none}
+.nav-inner::-webkit-scrollbar{display:none}
+.nav-btn{padding:13px 18px;border:none;background:none;color:#aaa;font-size:13px;font-family:'Roboto',sans-serif;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;transition:all .2s;display:flex;align-items:center;gap:6px}
+.nav-btn:hover{color:#fff}
+.nav-btn.active{color:var(--or);border-bottom-color:var(--or);font-weight:500}
+.nav-btn .ico{font-size:15px}
 
-/* CATEGORIES */
-.cats-bar{background:var(--mi-gray);border-bottom:1px solid var(--mi-gray2)}
-.cats-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
-.cats-inner::-webkit-scrollbar{display:none}
-.cat-btn{padding:14px 18px;border:none;background:none;font-size:13px;font-family:'Roboto',sans-serif;color:var(--mi-muted);cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;transition:all .2s}
-.cat-btn:hover{color:var(--mi-orange)}
-.cat-btn.active{color:var(--mi-orange);border-bottom-color:var(--mi-orange);font-weight:500}
+/* HERO */
+.hero{background:linear-gradient(135deg,#111 0%,#1e1e1e 100%);padding:40px 20px;overflow:hidden;position:relative}
+.hero::after{content:'';position:absolute;right:-100px;top:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(255,105,0,.2) 0%,transparent 70%);pointer-events:none}
+.hero-in{max-width:1200px;margin:0 auto;position:relative}
+.hero h1{color:#fff;font-size:clamp(24px,3.5vw,44px);font-weight:300;margin-bottom:6px}
+.hero h1 b{color:var(--or);font-weight:700}
+.hero p{color:#777;font-size:14px}
 
 /* TOOLBAR */
-.toolbar{max-width:1200px;margin:0 auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between}
-.count{font-size:13px;color:var(--mi-muted)}
-.sort-wrap select{padding:7px 12px;border:1px solid var(--mi-gray2);border-radius:var(--radius);font-size:13px;font-family:'Roboto',sans-serif;color:var(--mi-text);background:#fff;cursor:pointer;outline:none}
+.toolbar{max-width:1200px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.t-left{font-size:13px;color:var(--mu)}
+.t-right{display:flex;align-items:center;gap:8px}
+.t-right label{font-size:13px;color:var(--mu)}
+.t-right select{padding:6px 10px;border:1px solid var(--bd);border-radius:var(--rd);font-size:13px;font-family:'Roboto',sans-serif;outline:none;background:#fff}
 
 /* GRID */
-.grid-wrap{max-width:1200px;margin:0 auto;padding:0 20px 48px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px 60px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
 
 /* CARD */
-.card{background:#fff;border:1px solid var(--mi-gray2);border-radius:var(--radius);overflow:hidden;text-decoration:none;color:inherit;display:flex;flex-direction:column;transition:box-shadow .2s,transform .2s}
-.card:hover{box-shadow:0 8px 32px rgba(0,0,0,0.12);transform:translateY(-2px)}
-.card-img{aspect-ratio:1;background:var(--mi-gray);overflow:hidden;position:relative}
-.card-img img{width:100%;height:100%;object-fit:contain;padding:12px;transition:transform .3s}
-.card:hover .card-img img{transform:scale(1.05)}
-.badge{position:absolute;top:10px;left:10px;background:var(--mi-orange);color:#fff;font-size:11px;font-weight:700;padding:3px 7px;border-radius:4px}
-.card-body{padding:14px;flex:1;display:flex;flex-direction:column;gap:6px}
-.card-name{font-size:13px;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;color:var(--mi-text)}
-.card-price{margin-top:auto;padding-top:8px}
-.price-now{font-size:18px;font-weight:700;color:var(--mi-black)}
-.price-old{font-size:12px;color:var(--mi-muted);text-decoration:line-through;margin-left:6px}
-.card-buy{display:block;margin-top:10px;padding:9px;background:var(--mi-orange);color:#fff;font-size:13px;font-weight:500;text-align:center;border-radius:var(--radius);transition:background .2s}
-.card:hover .card-buy{background:var(--mi-orange-dark)}
+.card{border:1px solid var(--bd);border-radius:var(--rd);overflow:hidden;text-decoration:none;color:inherit;display:flex;flex-direction:column;background:#fff;transition:box-shadow .2s,transform .18s}
+.card:hover{box-shadow:0 6px 24px rgba(0,0,0,.11);transform:translateY(-2px)}
+.c-img{aspect-ratio:1;background:var(--bg);overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center}
+.c-img img{width:90%;height:90%;object-fit:contain;transition:transform .3s}
+.card:hover .c-img img{transform:scale(1.06)}
+.badge{position:absolute;top:8px;left:8px;background:var(--or);color:#fff;font-size:10px;font-weight:700;padding:2px 6px;border-radius:3px;letter-spacing:.5px}
+.c-body{padding:12px;flex:1;display:flex;flex-direction:column}
+.c-name{font-size:12.5px;line-height:1.45;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;color:var(--tx);flex:1}
+.c-price{margin-top:10px;display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}
+.p-now{font-size:17px;font-weight:700;color:var(--blk)}
+.p-old{font-size:12px;color:var(--mu);text-decoration:line-through}
+.c-btn{display:block;margin-top:10px;padding:8px;background:var(--or);color:#fff;font-size:12px;font-weight:500;text-align:center;border-radius:var(--rd);transition:background .2s;letter-spacing:.3px}
+.card:hover .c-btn{background:var(--or2)}
 
-/* PAGINATION */
-.pagination{max-width:1200px;margin:0 auto;padding:0 20px 48px;display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
-.page-btn{width:36px;height:36px;display:flex;align-items:center;justify-content:center;border:1px solid var(--mi-gray2);border-radius:var(--radius);cursor:pointer;font-size:14px;background:#fff;transition:all .2s}
-.page-btn:hover,.page-btn.active{background:var(--mi-orange);color:#fff;border-color:var(--mi-orange)}
+/* PAGER */
+.pager{max-width:1200px;margin:0 auto;padding:0 20px 48px;display:flex;justify-content:center;gap:6px;flex-wrap:wrap}
+.pg{width:34px;height:34px;display:flex;align-items:center;justify-content:center;border:1px solid var(--bd);border-radius:var(--rd);cursor:pointer;font-size:13px;background:#fff;transition:all .15s;user-select:none}
+.pg:hover,.pg.on{background:var(--or);color:#fff;border-color:var(--or)}
 
-/* LOADING / EMPTY */
-.loading{text-align:center;padding:80px 20px;color:var(--mi-muted)}
-.spinner{width:36px;height:36px;border:3px solid var(--mi-gray2);border-top-color:var(--mi-orange);border-radius:50%;animation:spin .7s linear infinite;margin:0 auto 16px}
-@keyframes spin{to{transform:rotate(360deg)}}
+/* LOADING */
+.loading{text-align:center;padding:80px 20px;color:var(--mu)}
+.spin{width:34px;height:34px;border:3px solid var(--bd);border-top-color:var(--or);border-radius:50%;animation:sp .7s linear infinite;margin:0 auto 14px}
+@keyframes sp{to{transform:rotate(360deg)}}
 
 /* FOOTER */
-footer{background:var(--mi-black);color:#777;text-align:center;padding:24px 20px;font-size:13px;margin-top:32px}
-footer a{color:#aaa;text-decoration:none}
-footer span{color:var(--mi-orange)}
+footer{background:var(--blk);padding:32px 20px;margin-top:20px}
+.ft-in{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:24px}
+.ft-col h4{color:#fff;font-size:13px;font-weight:500;margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid #333}
+.ft-col a,.ft-col span{display:block;color:#666;font-size:12px;margin-bottom:6px;text-decoration:none;cursor:pointer;transition:color .15s}
+.ft-col a:hover,.ft-col span:hover{color:var(--or)}
+.ft-bottom{max-width:1200px;margin:24px auto 0;padding-top:16px;border-top:1px solid #2a2a2a;display:flex;justify-content:space-between;align-items:center;flex-wrap:gap;gap:8px}
+.ft-bottom p{color:#444;font-size:11px}
+.ft-logo{display:flex;align-items:center;gap:8px}
+.ft-logo .logo-box{width:26px;height:26px;font-size:14px}
+.ft-logo span{color:#444;font-size:12px;letter-spacing:1px}
 
-@media(max-width:600px){
+@media(max-width:640px){
   .grid{grid-template-columns:repeat(2,1fr);gap:10px}
-  .hero{padding:32px 16px}
+  .hero{padding:24px 16px}
+  .ft-in{grid-template-columns:repeat(2,1fr)}
+  .ft-bottom{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:380px){
+  .grid{grid-template-columns:repeat(2,1fr);gap:8px}
 }
 </style>
 </head>
 <body>
 
 <header>
-  <div class="header-inner">
+  <div class="h1">
     <a href="/" class="logo">
-      <div class="logo-mi">mi</div>
-      <span class="logo-text">Store</span>
+      <div class="logo-box">mi</div>
+      <span class="logo-txt">Store</span>
     </a>
-    <div class="search-wrap">
-      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-      <input type="text" id="searchInput" placeholder="Поиск товаров Xiaomi...">
+    <div class="search">
+      <svg width="15" height="15" fill="none" stroke="#fff" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" id="srch" placeholder="Поиск в Xiaomi Store...">
     </div>
-    <div class="header-right" id="totalCount"></div>
+    <div class="h-count" id="hcount"></div>
   </div>
 </header>
 
-<div class="hero">
-  <div class="hero-inner">
-    <h1>Официальные товары <span>Xiaomi</span></h1>
-    <p>Смартфоны, умный дом, аксессуары — лучшие цены с доставкой по России</p>
+<nav>
+  <div class="nav-inner" id="nav">
+    <button class="nav-btn active" data-grp=""><span class="ico">🏠</span> Все товары</button>
+    <button class="nav-btn" data-grp="phones"><span class="ico">📱</span> Смартфоны</button>
+    <button class="nav-btn" data-grp="tablets"><span class="ico">📟</span> Планшеты</button>
+    <button class="nav-btn" data-grp="audio"><span class="ico">🎧</span> Наушники</button>
+    <button class="nav-btn" data-grp="watch"><span class="ico">⌚</span> Часы и браслеты</button>
+    <button class="nav-btn" data-grp="tv"><span class="ico">📺</span> Телевизоры</button>
+    <button class="nav-btn" data-grp="smarthome"><span class="ico">🏡</span> Умный дом</button>
+    <button class="nav-btn" data-grp="vacuum"><span class="ico">🤖</span> Пылесосы</button>
+    <button class="nav-btn" data-grp="power"><span class="ico">🔋</span> Зарядки и Power Bank</button>
+    <button class="nav-btn" data-grp="accessories"><span class="ico">🛡️</span> Аксессуары</button>
+    <button class="nav-btn" data-grp="other"><span class="ico">✨</span> Другое</button>
   </div>
-</div>
+</nav>
 
-<div class="cats-bar">
-  <div class="cats-inner" id="catsBar">
-    <button class="cat-btn active" data-cat="">Все товары</button>
+<div class="hero">
+  <div class="hero-in">
+    <h1>Официальный магазин <b>Xiaomi</b></h1>
+    <p>Смартфоны, умный дом, аксессуары — лучшие цены, доставка по России</p>
   </div>
 </div>
 
 <div class="toolbar">
-  <div class="count" id="countLabel"></div>
-  <div class="sort-wrap">
-    <select id="sortSelect">
+  <div class="t-left" id="countlbl"></div>
+  <div class="t-right">
+    <label>Сортировка:</label>
+    <select id="srt">
       <option value="disc">По скидке</option>
       <option value="asc">Сначала дешевле</option>
       <option value="desc">Сначала дороже</option>
@@ -134,140 +153,164 @@ footer span{color:var(--mi-orange)}
   </div>
 </div>
 
-<div class="grid-wrap">
-  <div class="loading" id="loading">
-    <div class="spinner"></div>
-    Загружаем товары...
-  </div>
+<div class="wrap">
+  <div class="loading" id="loading"><div class="spin"></div>Загружаем товары...</div>
   <div class="grid" id="grid" style="display:none"></div>
 </div>
-<div class="pagination" id="pagination"></div>
+<div class="pager" id="pager"></div>
 
 <footer>
-  <p>© 2025 <span>Xiaomi Store</span> — партнёрский магазин. Все товары через официальных продавцов.<br>
-  <a href="https://mi-shop.com" target="_blank" rel="nofollow">mi-shop.com</a></p>
+  <div class="ft-in">
+    <div class="ft-col">
+      <h4>Категории</h4>
+      <span onclick="setGrp('phones')">Смартфоны</span>
+      <span onclick="setGrp('tablets')">Планшеты</span>
+      <span onclick="setGrp('audio')">Наушники и колонки</span>
+      <span onclick="setGrp('watch')">Часы и браслеты</span>
+      <span onclick="setGrp('tv')">Телевизоры</span>
+    </div>
+    <div class="ft-col">
+      <h4>Ещё</h4>
+      <span onclick="setGrp('smarthome')">Умный дом</span>
+      <span onclick="setGrp('vacuum')">Пылесосы</span>
+      <span onclick="setGrp('power')">Зарядки и Power Bank</span>
+      <span onclick="setGrp('accessories')">Аксессуары</span>
+      <span onclick="setGrp('other')">Другое</span>
+    </div>
+    <div class="ft-col">
+      <h4>Бренды</h4>
+      <a href="#" onclick="filterBrand('Xiaomi')">Xiaomi</a>
+      <a href="#" onclick="filterBrand('REDMI')">Redmi</a>
+      <a href="#" onclick="filterBrand('POCO')">POCO</a>
+    </div>
+    <div class="ft-col">
+      <h4>Информация</h4>
+      <a href="https://mi-shop.com" target="_blank" rel="nofollow">Официальный mi-shop.com</a>
+      <span style="color:#444;font-size:11px;margin-top:8px">Партнёрский магазин.<br>Все товары от официальных продавцов.</span>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <div class="ft-logo">
+      <div class="logo-box">mi</div>
+      <span>STORE</span>
+    </div>
+    <p>© 2025 Xiaomi Store — партнёрский агрегатор цен</p>
+  </div>
 </footer>
 
 <script>
-const PAGE_SIZE = 40;
-let allProducts = [];
-let filtered = [];
-let currentPage = 1;
-let activeCat = '';
-let searchQ = '';
-let sortMode = 'disc';
+const PG = 40;
+let all=[], filtered=[], page=1, grp='', q='', srt='disc';
 
-async function loadProducts() {
+// Группы по ключевым словам в названии/категории
+const GROUPS = {
+  phones: ['смартфон','телефон','redmi \d','xiaomi \d','poco [cfmx]','iphone','android phone','redmi a','redmi c','poco c','a3x','a3','a5','14c','15c','redmi 1','redmi 8','redmi 9','note \d'],
+  tablets: ['планшет','pad','tablet'],
+  audio: ['наушник','buds','гарнитур','колонк','soundbar','аудио','earphone','headphone'],
+  watch: ['часы','watch','band','браслет','smart band'],
+  tv: ['телевизор','tv ','qled','mini led','андроид тв'],
+  smarthome: ['умный дом','умн','датчик','розетк','лампоч','камер','звонок','замок','робот','очиститель воздух','увлажнитель','роутер','wifi','wi-fi','aqara'],
+  vacuum: ['пылесос','vacuum','робот-пылесос','roborock','roidmi','deerma','viomi'],
+  power: ['зарядк','power bank','аккумулятор','зарядное','powerbank','мач','быстрая зарядка','беспроводная зарядка','кабел'],
+  accessories: ['чехол','стекло','пленк','ремешок','держател','карт памяти','селфи','аксессуар','накладк','защит'],
+};
+
+function matchGroup(p, g) {
+  if (!g) return true;
+  const hay = (p.n + ' ' + (p.c||'')).toLowerCase();
+  return GROUPS[g].some(kw => new RegExp(kw,'i').test(hay));
+}
+
+async function load() {
   try {
-    const r = await fetch('data/products.json?v=' + Date.now());
+    const r = await fetch('data/products.json?v='+Date.now());
     const d = await r.json();
-    allProducts = d.products || [];
-    document.getElementById('totalCount').textContent = allProducts.length + ' товаров';
-    buildCats();
-    applyFilters();
+    all = d.products || [];
+    document.getElementById('hcount').textContent = all.length + ' товаров';
+    apply();
   } catch(e) {
-    document.getElementById('loading').innerHTML = '<p>Ошибка загрузки. Попробуйте обновить страницу.</p>';
+    document.getElementById('loading').innerHTML = '<p>Ошибка загрузки. Обновите страницу.</p>';
   }
 }
 
-function buildCats() {
-  const bar = document.getElementById('catsBar');
-  const cats = [...new Set(allProducts.map(p => p.c).filter(Boolean))].sort();
-  cats.forEach(c => {
-    const btn = document.createElement('button');
-    btn.className = 'cat-btn';
-    btn.dataset.cat = c;
-    btn.textContent = c;
-    btn.onclick = () => selectCat(c);
-    bar.appendChild(btn);
-  });
+function apply() {
+  let res = all;
+  if (grp) res = res.filter(p => matchGroup(p, grp));
+  if (q) res = res.filter(p => p.n.toLowerCase().includes(q));
+  if (srt==='asc') res=[...res].sort((a,b)=>a.p-b.p);
+  else if (srt==='desc') res=[...res].sort((a,b)=>b.p-a.p);
+  else res=[...res].sort((a,b)=>(b.d||0)-(a.d||0));
+  filtered=res; page=1;
+  document.getElementById('countlbl').textContent = res.length + ' товаров';
+  render();
 }
 
-function selectCat(cat) {
-  activeCat = cat;
-  document.querySelectorAll('.cat-btn').forEach(b => b.classList.toggle('active', b.dataset.cat === cat));
-  currentPage = 1;
-  applyFilters();
-}
-
-function applyFilters() {
-  let res = allProducts;
-  if (activeCat) res = res.filter(p => p.c === activeCat);
-  if (searchQ) res = res.filter(p => p.n.toLowerCase().includes(searchQ));
-  if (sortMode === 'asc') res = [...res].sort((a,b) => a.p - b.p);
-  else if (sortMode === 'desc') res = [...res].sort((a,b) => b.p - a.p);
-  else res = [...res].sort((a,b) => (b.d||0) - (a.d||0));
-  filtered = res;
-  document.getElementById('countLabel').textContent = res.length + ' товаров';
-  renderPage();
-}
-
-function renderPage() {
-  const grid = document.getElementById('grid');
-  const loading = document.getElementById('loading');
-  loading.style.display = 'none';
-  grid.style.display = '';
-
-  const start = (currentPage-1)*PAGE_SIZE;
-  const items = filtered.slice(start, start+PAGE_SIZE);
-
-  grid.innerHTML = items.map(p => {
-    const name = p.n.length > 60 ? p.n.slice(0,60)+'…' : p.n;
-    const badge = p.d > 0 ? `<div class="badge">-${p.d}%</div>` : '';
-    const oldp = p.op > p.p ? `<span class="price-old">${p.op.toLocaleString('ru')} ₽</span>` : '';
+function render() {
+  const grid=document.getElementById('grid'),lo=document.getElementById('loading');
+  lo.style.display='none'; grid.style.display='';
+  const items=filtered.slice((page-1)*PG, page*PG);
+  if(!items.length){grid.innerHTML='<p style="color:#888;grid-column:1/-1;padding:40px 0;text-align:center">Товары не найдены</p>';renderPager();return;}
+  grid.innerHTML=items.map(p=>{
+    const nm=p.n.length>62?p.n.slice(0,62)+'…':p.n;
+    const badge=p.d>0?`<div class="badge">−${p.d}%</div>`:'';
+    const old=p.op>p.p?`<span class="p-old">${p.op.toLocaleString('ru')} ₽</span>`:'';
     return `<a class="card" href="${p.u}" target="_blank" rel="nofollow noopener">
-      <div class="card-img">
-        <img src="${p.i}" alt="${name}" loading="lazy" onerror="this.style.display='none'">
-        ${badge}
-      </div>
-      <div class="card-body">
-        <div class="card-name">${name}</div>
-        <div class="card-price">
-          <span class="price-now">${p.p.toLocaleString('ru')} ₽</span>${oldp}
-        </div>
-        <div class="card-buy">Купить на mi-shop.com</div>
+      <div class="c-img"><img src="${p.i}" alt="${nm}" loading="lazy" onerror="this.parentNode.style.background='#eee'">${badge}</div>
+      <div class="c-body">
+        <div class="c-name">${nm}</div>
+        <div class="c-price"><span class="p-now">${p.p.toLocaleString('ru')} ₽</span>${old}</div>
+        <div class="c-btn">Купить →</div>
       </div>
     </a>`;
   }).join('');
-
-  renderPagination();
+  renderPager();
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
-function renderPagination() {
-  const total = Math.ceil(filtered.length / PAGE_SIZE);
-  const pag = document.getElementById('pagination');
-  if (total <= 1) { pag.innerHTML = ''; return; }
-  let html = '';
-  const prev = currentPage > 1 ? `<div class="page-btn" onclick="goPage(${currentPage-1})">‹</div>` : '';
-  const next = currentPage < total ? `<div class="page-btn" onclick="goPage(${currentPage+1})">›</div>` : '';
-  let pages = [];
-  for (let i=1; i<=total; i++) {
-    if (i===1 || i===total || Math.abs(i-currentPage)<=2) pages.push(i);
-    else if (pages[pages.length-1] !== '…') pages.push('…');
+function renderPager(){
+  const tot=Math.ceil(filtered.length/PG),pg=document.getElementById('pager');
+  if(tot<=1){pg.innerHTML='';return;}
+  let h='',ps=[];
+  for(let i=1;i<=tot;i++){
+    if(i===1||i===tot||Math.abs(i-page)<=2) ps.push(i);
+    else if(ps[ps.length-1]!=='…') ps.push('…');
   }
-  html = prev + pages.map(p => p==='…'
-    ? `<div class="page-btn" style="pointer-events:none">…</div>`
-    : `<div class="page-btn${p===currentPage?' active':''}" onclick="goPage(${p})">${p}</div>`
-  ).join('') + next;
-  pag.innerHTML = html;
+  if(page>1) h+=`<div class="pg" onclick="go(${page-1})">‹</div>`;
+  h+=ps.map(p=>p==='…'?`<div class="pg" style="pointer-events:none;color:#ccc">…</div>`
+    :`<div class="pg${p===page?' on':''}" onclick="go(${p})">${p}</div>`).join('');
+  if(page<tot) h+=`<div class="pg" onclick="go(${page+1})">›</div>`;
+  pg.innerHTML=h;
 }
 
-function goPage(n) { currentPage = n; renderPage(); }
+function go(n){page=n;render();}
 
-document.getElementById('searchInput').addEventListener('input', e => {
-  searchQ = e.target.value.toLowerCase().trim();
-  currentPage = 1;
-  applyFilters();
+function setGrp(g){
+  grp=g; q=''; page=1;
+  document.getElementById('srch').value='';
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.toggle('active',b.dataset.grp===g));
+  apply();
+}
+
+function filterBrand(b){
+  grp=''; q=b.toLowerCase(); page=1;
+  document.getElementById('srch').value=b;
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelector('.nav-btn[data-grp=""]').classList.add('active');
+  apply();
+  return false;
+}
+
+document.getElementById('srch').addEventListener('input',e=>{
+  q=e.target.value.toLowerCase().trim(); page=1; apply();
+});
+document.getElementById('srt').addEventListener('change',e=>{
+  srt=e.target.value; page=1; apply();
+});
+document.querySelectorAll('.nav-btn').forEach(b=>{
+  b.addEventListener('click',()=>setGrp(b.dataset.grp));
 });
 
-document.getElementById('sortSelect').addEventListener('change', e => {
-  sortMode = e.target.value;
-  currentPage = 1;
-  applyFilters();
-});
-
-loadProducts();
+load();
 </script>
 </body>
 </html>
