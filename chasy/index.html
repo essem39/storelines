@@ -68,6 +68,7 @@ nav{background:#111;border-bottom:1px solid #2a2a2a}
 .p-now{font-size:17px;font-weight:700;color:var(--blk)}
 .p-old{font-size:12px;color:var(--mu);text-decoration:line-through}
 .c-btn{display:block;margin-top:10px;padding:8px;background:var(--or);color:#fff;font-size:12px;font-weight:500;text-align:center;border-radius:var(--rd);transition:background .2s}
+.c-bonus{font-size:10.5px;color:#e55e00;text-align:center;margin-top:5px;font-weight:500;letter-spacing:.2px}
 .card:hover .c-btn{background:var(--or2)}
 .pager{max-width:1200px;margin:0 auto;padding:0 20px 48px;display:flex;justify-content:center;gap:6px;flex-wrap:wrap}
 .pg{width:34px;height:34px;display:flex;align-items:center;justify-content:center;border:1px solid var(--bd);border-radius:var(--rd);cursor:pointer;font-size:13px;background:#fff;transition:all .15s;user-select:none}
@@ -221,7 +222,7 @@ function render(){
     const nm=p.n.length>62?p.n.slice(0,62)+'…':p.n;
     const badge=p.d>0?`<div class="badge">−${p.d}%</div>`:'';
     const old=p.op>p.p?`<span class="p-old">${p.op.toLocaleString('ru')} ₽</span>`:'';
-    return `<a class="card" href="${p.u}" target="_blank" rel="nofollow noopener"><div class="c-img"><img src="${p.i}" alt="Купить ${nm} в России" loading="lazy" onerror="this.parentNode.style.background='#eee'">${badge}</div><div class="c-body"><div class="c-name">${nm}</div><div class="c-price"><span class="p-now">${p.p.toLocaleString('ru')} ₽</span>${old}</div><div class="c-btn">Купить →</div></div></a>`;
+    return `<a class="card" href="${p.u}" target="_blank" rel="nofollow noopener"><div class="c-img"><img src="${p.i}" alt="Купить ${nm} в России" loading="lazy" onerror="this.parentNode.style.background='#eee'">${badge}</div><div class="c-body"><div class="c-name">${nm}</div><div class="c-price"><span class="p-now">${p.p.toLocaleString('ru')} ₽</span>${old}</div><div class="c-btn">Купить →</div><div class="c-bonus">🎁 Получи скидку при покупке</div></div></a>`;
   }).join('');
   renderPager();
   window.scrollTo({top:0,behavior:'smooth'});
