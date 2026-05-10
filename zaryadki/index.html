@@ -34,8 +34,8 @@ header{background:var(--blk);position:sticky;top:0;z-index:200;box-shadow:0 2px 
 .burger.open span:nth-child(2){opacity:0}
 .burger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
 nav{background:#111;border-bottom:1px solid #2a2a2a}
-.nav-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;overflow-x:auto;scrollbar-width:none}
-.nav-inner::-webkit-scrollbar{display:none}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;overflow:visible}
+
 .nav-btn{padding:13px 18px;border:none;background:none;color:#aaa;font-size:13px;font-family:'Roboto',sans-serif;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;transition:all .2s;display:flex;align-items:center;gap:6px;text-decoration:none}
 .nav-btn:hover{color:#fff}
 .nav-btn.active{color:var(--or);border-bottom-color:var(--or);font-weight:500}
@@ -134,25 +134,24 @@ footer{background:var(--blk);padding:32px 20px}
     <a href="/umny-dom/" class="nav-btn">🏡 Умный дом</a>
     <a href="/pylesosy/" class="nav-btn">🤖 Пылесосы</a>
     <a href="/zaryadki/" class="nav-btn active">🔋 Зарядки</a>
-  </div>
-  <div class="nav-dropdown">
-    <button class="nav-btn" id="moreBtn" style="background:none;border:none;cursor:pointer">Ещё ▾</button>
-    <div class="nav-dropdown-menu" id="moreMenu" style="right:0;left:auto">
-      <a href="/aksessuary/">🛡️ Аксессуары</a>
-      <div class="dd-div"></div>
-      <div class="dd-label">Блог</div>
-      <a href="/blog/top10-smartfonov.html">📱 Топ-10 смартфонов 2026</a>
-      <a href="/blog/top10-televizory.html">📺 Топ-10 телевизоров</a>
-      <a href="/blog/top10-naushniki.html">🎧 Топ-10 наушников</a>
-      <a href="/blog/top10-pylesosy.html">🤖 Топ-10 пылесосов</a>
-      <a href="/blog/top10-planshety.html">📟 Топ-10 планшетов</a>
-      <a href="/blog/top10-chasy.html">⌚ Топ-10 часов</a>
-      <a href="/blog/top10-umny-dom.html">🏡 Топ-10 умный дом</a>
-      <a href="/blog/">📰 Все статьи →</a>
-      <div class="dd-div"></div>
-      <a href="/o-nas/">ℹ️ О нас</a>
+    <div class="nav-dropdown">
+      <button class="nav-btn" id="moreBtn" style="border:none;background:none;cursor:pointer">Ещё ▾</button>
+      <div class="nav-dropdown-menu" id="moreMenu">
+        <a href="/aksessuary/">🛡️ Аксессуары</a>
+        <div class="dd-div"></div>
+        <div class="dd-label">Блог</div>
+        <a href="/blog/top10-smartfonov.html">📱 Топ-10 смартфонов 2026</a>
+        <a href="/blog/top10-televizory.html">📺 Топ-10 телевизоров</a>
+        <a href="/blog/top10-naushniki.html">🎧 Топ-10 наушников</a>
+        <a href="/blog/top10-pylesosy.html">🤖 Топ-10 пылесосов</a>
+        <a href="/blog/top10-planshety.html">📟 Топ-10 планшетов</a>
+        <a href="/blog/top10-chasy.html">⌚ Топ-10 часов</a>
+        <a href="/blog/top10-umny-dom.html">🏡 Топ-10 умный дом</a>
+        <a href="/blog/">📰 Все статьи →</a>
+        <div class="dd-div"></div>
+        <a href="/o-nas/">ℹ️ О нас</a>
+      </div>
     </div>
-  </div>
   </div>
 </nav>
 <div class="hero">
