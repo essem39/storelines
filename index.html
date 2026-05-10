@@ -141,6 +141,18 @@ footer{background:var(--blk);padding:32px 20px;margin-top:0}
 @media(max-width:380px){
   .grid{grid-template-columns:repeat(2,1fr);gap:8px}
 }
+
+/* DROPDOWN */
+.nav-dropdown{position:relative}
+.nav-dropdown-btn{padding:13px 18px;border:none;background:none;color:#aaa;font-size:13px;font-family:'Roboto',sans-serif;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;transition:all .2s;display:flex;align-items:center;gap:6px}
+.nav-dropdown-btn:hover{color:#fff}
+.nav-dropdown-btn.open{color:#fff}
+.nav-dropdown-menu{display:none;position:absolute;top:calc(100% + 2px);left:0;background:#1a1a1a;border:1px solid #333;border-radius:10px;padding:6px 0;min-width:230px;z-index:999;box-shadow:0 8px 24px rgba(0,0,0,.6)}
+.nav-dropdown-menu.open{display:block}
+.nav-dropdown-menu a{display:flex;align-items:center;gap:8px;padding:9px 16px;color:#aaa;text-decoration:none;font-size:13px;white-space:nowrap;transition:all .2s}
+.nav-dropdown-menu a:hover{color:#fff;background:rgba(255,255,255,.08)}
+.nav-dropdown-menu .dd-div{height:1px;background:#333;margin:4px 0}
+.nav-dropdown-menu .dd-label{padding:8px 16px 4px;font-size:11px;color:#555;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
 </style>
 </head>
 <body>
@@ -163,8 +175,8 @@ footer{background:var(--blk);padding:32px 20px;margin-top:0}
 </header>
 
 <nav>
-  <div class="nav-inner" id="nav">
-    <a href="/" class="nav-btn active">Все товары</a>
+  <div class="nav-inner">
+    <a href="/" class="nav-btn active">🏠 Все товары</a>
     <a href="/smartfony/" class="nav-btn">📱 Смартфоны</a>
     <a href="/planshety/" class="nav-btn">📟 Планшеты</a>
     <a href="/naushniki/" class="nav-btn">🎧 Наушники</a>
@@ -174,11 +186,11 @@ footer{background:var(--blk);padding:32px 20px;margin-top:0}
     <a href="/pylesosy/" class="nav-btn">🤖 Пылесосы</a>
     <a href="/zaryadki/" class="nav-btn">🔋 Зарядки</a>
     <div class="nav-dropdown">
-      <button class="nav-btn" id="nav-more-btn">Ещё ▾</button>
-      <div class="nav-dropdown-menu">
+      <button class="nav-dropdown-btn" id="moreBtn">Ещё ▾</button>
+      <div class="nav-dropdown-menu" id="moreMenu">
         <a href="/aksessuary/">🛡️ Аксессуары</a>
-        <div class="divider"></div>
-        <span class="menu-label">Блог</span>
+        <div class="dd-div"></div>
+        <div class="dd-label">Блог</div>
         <a href="/blog/top10-smartfonov.html">📱 Топ-10 смартфонов 2026</a>
         <a href="/blog/top10-televizory.html">📺 Топ-10 телевизоров</a>
         <a href="/blog/top10-naushniki.html">🎧 Топ-10 наушников</a>
@@ -187,7 +199,7 @@ footer{background:var(--blk);padding:32px 20px;margin-top:0}
         <a href="/blog/top10-chasy.html">⌚ Топ-10 часов</a>
         <a href="/blog/top10-umny-dom.html">🏡 Топ-10 умный дом</a>
         <a href="/blog/">📰 Все статьи →</a>
-        <div class="divider"></div>
+        <div class="dd-div"></div>
         <a href="/o-nas/">ℹ️ О нас</a>
       </div>
     </div>
@@ -402,21 +414,16 @@ load();
   <a href="/pylesosy/" class="nav-btn">🤖 Пылесосы</a>
   <a href="/zaryadki/" class="nav-btn">🔋 Зарядки</a>
   <a href="/aksessuary/" class="nav-btn">🛡️ Аксессуары</a>
-  <a href="/o-nas/" class="nav-btn">ℹ️ О нас</a>
   <div style="height:1px;background:#333;margin:6px 0"></div>
-  <button id="mob-blog-btn" onclick="var m=document.getElementById('mob-blog-menu');var a=document.getElementById('mob-blog-arrow');m.style.display=m.style.display==='none'?'block':'none';a.textContent=m.style.display==='none'?'▶':'▼';" style="width:100%;background:rgba(255,255,255,.06);border:none;color:#fff;font-size:13px;padding:10px 14px;text-align:left;cursor:pointer;border-radius:8px;display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
-    <span>📝 Блог</span><span id="mob-blog-arrow">▶</span>
-  </button>
-  <div id="mob-blog-menu" style="display:none;padding-left:10px">
-    <a href="/blog/top10-smartfonov.html" class="nav-btn">📱 Топ-10 смартфонов</a>
-    <a href="/blog/top10-televizory.html" class="nav-btn">📺 Топ-10 телевизоров</a>
-    <a href="/blog/top10-naushniki.html" class="nav-btn">🎧 Топ-10 наушников</a>
-    <a href="/blog/top10-pylesosy.html" class="nav-btn">🤖 Топ-10 пылесосов</a>
-    <a href="/blog/top10-planshety.html" class="nav-btn">📟 Топ-10 планшетов</a>
-    <a href="/blog/top10-chasy.html" class="nav-btn">⌚ Топ-10 часов</a>
-    <a href="/blog/top10-umny-dom.html" class="nav-btn">🏡 Топ-10 умный дом</a>
-    <a href="/blog/" class="nav-btn">📰 Все статьи</a>
-  </div>
+  <div style="padding:10px 24px;color:#555;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.5px">Блог</div>
+  <a href="/blog/top10-smartfonov.html" class="nav-btn">📱 Топ-10 смартфонов</a>
+  <a href="/blog/top10-televizory.html" class="nav-btn">📺 Топ-10 телевизоров</a>
+  <a href="/blog/top10-naushniki.html" class="nav-btn">🎧 Топ-10 наушников</a>
+  <a href="/blog/top10-pylesosy.html" class="nav-btn">🤖 Топ-10 пылесосов</a>
+  <a href="/blog/top10-planshety.html" class="nav-btn">📟 Топ-10 планшетов</a>
+  <a href="/blog/top10-chasy.html" class="nav-btn">⌚ Топ-10 часов</a>
+  <a href="/blog/top10-umny-dom.html" class="nav-btn">🏡 Топ-10 умный дом</a>
+  <a href="/blog/" class="nav-btn">📰 Все статьи</a>
 </div>
 <script>
 const burger=document.getElementById('burger');
