@@ -97,7 +97,7 @@ footer{background:var(--blk);padding:40px 20px;margin-top:60px}
 <header><div class="h1"><a href="/" class="logo"><div class="logo-box">mi</div></a><div class="search"><input type="text" placeholder="Поиск..."></div></div>    <button class="burger" id="burger"><span></span><span></span><span></span></button>
 </header>
 
-<nav style="position:relative">
+<nav>
   <div class="nav-inner">
     <a href="/" class="nav-btn">🏠 Все товары</a>
     <a href="/smartfony/" class="nav-btn">📱 Смартфоны</a>
@@ -109,9 +109,9 @@ footer{background:var(--blk);padding:40px 20px;margin-top:60px}
     <a href="/pylesosy/" class="nav-btn">🤖 Пылесосы</a>
     <a href="/zaryadki/" class="nav-btn">🔋 Зарядки</a>
   </div>
-  <div class="nav-dropdown" style="position:absolute;right:20px;top:0;height:100%;display:flex;align-items:center">
+  <div class="nav-dropdown">
     <button class="nav-btn" id="moreBtn" style="background:none;border:none;cursor:pointer">Ещё ▾</button>
-    <div class="nav-dropdown-menu" id="moreMenu">
+    <div class="nav-dropdown-menu" id="moreMenu" style="right:0;left:auto">
       <a href="/aksessuary/">🛡️ Аксессуары</a>
       <div class="dd-div"></div>
       <div class="dd-label">Блог</div>
@@ -126,6 +126,7 @@ footer{background:var(--blk);padding:40px 20px;margin-top:60px}
       <div class="dd-div"></div>
       <a href="/o-nas/">ℹ️ О нас</a>
     </div>
+  </div>
   </div>
 </nav>
 
