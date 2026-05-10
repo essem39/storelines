@@ -45,12 +45,12 @@ nav{background:#111;border-bottom:1px solid #2a2a2a}
 .nav-btn.active{color:#fff;background:var(--or);font-weight:500}
 .nav-btn .ico{font-size:15px}
 .nav-dropdown{position:relative}
-.nav-dropdown-menu{display:none;position:absolute;top:calc(100% + 4px);left:0;background:#1a1a1a;border:1px solid #333;border-radius:10px;padding:6px 0;min-width:220px;z-index:999;box-shadow:0 8px 24px rgba(0,0,0,.5)}
-.nav-dropdown-menu.open{display:block}
+.nav-dropdown-menu{display:none;position:absolute;top:100%;left:0;background:#1a1a1a;border:1px solid #333;border-radius:10px;padding:6px 0;min-width:230px;z-index:9999;box-shadow:0 8px 24px rgba(0,0,0,.6)}
+.nav-dropdown-menu.open{display:block !important}
 .nav-dropdown-menu a{display:flex;align-items:center;gap:8px;padding:9px 16px;color:#aaa;text-decoration:none;font-size:13px;white-space:nowrap;transition:all .2s}
 .nav-dropdown-menu a:hover{color:#fff;background:rgba(255,255,255,.08)}
-.nav-dropdown-menu .divider{height:1px;background:#333;margin:4px 0}
-.nav-dropdown-menu .menu-label{padding:8px 16px 4px;font-size:11px;color:#555;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+.nav-dropdown-menu .dd-div{height:1px;background:#333;margin:4px 0}
+.nav-dropdown-menu .dd-label{padding:8px 16px 4px;font-size:11px;color:#555;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
 
 /* HERO */
 .hero{position:relative;overflow:hidden}
@@ -142,17 +142,6 @@ footer{background:var(--blk);padding:32px 20px;margin-top:0}
   .grid{grid-template-columns:repeat(2,1fr);gap:8px}
 }
 
-/* DROPDOWN */
-.nav-dropdown{position:relative}
-.nav-dropdown-btn{padding:13px 18px;border:none;background:none;color:#aaa;font-size:13px;font-family:'Roboto',sans-serif;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;transition:all .2s;display:flex;align-items:center;gap:6px}
-.nav-dropdown-btn:hover{color:#fff}
-.nav-dropdown-btn.open{color:#fff}
-.nav-dropdown-menu{display:none;position:absolute;top:calc(100% + 2px);left:0;background:#1a1a1a;border:1px solid #333;border-radius:10px;padding:6px 0;min-width:230px;z-index:999;box-shadow:0 8px 24px rgba(0,0,0,.6)}
-.nav-dropdown-menu.open{display:block}
-.nav-dropdown-menu a{display:flex;align-items:center;gap:8px;padding:9px 16px;color:#aaa;text-decoration:none;font-size:13px;white-space:nowrap;transition:all .2s}
-.nav-dropdown-menu a:hover{color:#fff;background:rgba(255,255,255,.08)}
-.nav-dropdown-menu .dd-div{height:1px;background:#333;margin:4px 0}
-.nav-dropdown-menu .dd-label{padding:8px 16px 4px;font-size:11px;color:#555;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
 </style>
 </head>
 <body>
@@ -186,7 +175,7 @@ footer{background:var(--blk);padding:32px 20px;margin-top:0}
     <a href="/pylesosy/" class="nav-btn">🤖 Пылесосы</a>
     <a href="/zaryadki/" class="nav-btn">🔋 Зарядки</a>
     <div class="nav-dropdown">
-      <button class="nav-dropdown-btn" id="moreBtn">Ещё ▾</button>
+      <button class="nav-btn" id="moreBtn" style="background:none;border:none;cursor:pointer;">Ещё ▾</button>
       <div class="nav-dropdown-menu" id="moreMenu">
         <a href="/aksessuary/">🛡️ Аксессуары</a>
         <div class="dd-div"></div>
