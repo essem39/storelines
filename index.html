@@ -183,6 +183,7 @@ footer{background:var(--blk);padding:32px 20px;margin-top:0}
         <a href="/blog/top10-televizory.html">📺 Топ-10 телевизоров</a>
         <a href="/blog/top10-naushniki.html">🎧 Топ-10 наушников</a>
         <a href="/blog/top10-pylesosy.html">🤖 Топ-10 пылесосов</a>
+        <a href="/blog/top10-planshety.html">📟 Топ-10 планшетов</a>
         <a href="/blog/">📰 Все статьи →</a>
         <div class="divider"></div>
         <a href="/o-nas/">ℹ️ О нас</a>
@@ -409,14 +410,18 @@ function closeMob(){burger.classList.remove('open');mobNav.classList.remove('ope
 <script>
 (function(){
   var btn = document.getElementById('nav-more-btn');
-  var menu = btn && btn.nextElementSibling;
-  if(!btn || !menu) return;
+  if(!btn) return;
+  var menu = btn.parentElement.querySelector('.nav-dropdown-menu');
+  if(!menu) return;
   btn.addEventListener('click', function(e){
+    e.preventDefault();
     e.stopPropagation();
     menu.classList.toggle('open');
   });
-  document.addEventListener('click', function(){
-    menu.classList.remove('open');
+  document.addEventListener('click', function(e){
+    if(!e.target.closest('.nav-dropdown')){
+      menu.classList.remove('open');
+    }
   });
 })();
 </script>
