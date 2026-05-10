@@ -284,5 +284,23 @@ const mobNav=document.getElementById('mobNav');
 burger.addEventListener('click',()=>{burger.classList.toggle('open');mobNav.classList.toggle('open');});
 load();
 </script>
+<script>
+(function(){
+  var btn=document.getElementById('moreBtn');
+  var menu=document.getElementById('moreMenu');
+  if(btn&&menu){
+    btn.addEventListener('click',function(e){
+      e.stopPropagation();
+      var isOpen=menu.classList.contains('open');
+      menu.classList.toggle('open',!isOpen);
+      btn.classList.toggle('open',!isOpen);
+    });
+    document.addEventListener('click',function(){
+      menu.classList.remove('open');
+      btn.classList.remove('open');
+    });
+  }
+})();
+</script>
 </body>
 </html>
