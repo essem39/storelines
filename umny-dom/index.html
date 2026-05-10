@@ -123,7 +123,7 @@ footer{background:var(--blk);padding:32px 20px}
     <button class="burger" id="burger"><span></span><span></span><span></span></button>
   </div>
 </header>
-<nav>
+<nav style="position:relative">
   <div class="nav-inner">
     <a href="/" class="nav-btn">🏠 Все товары</a>
     <a href="/smartfony/" class="nav-btn">📱 Смартфоны</a>
@@ -134,23 +134,23 @@ footer{background:var(--blk);padding:32px 20px}
     <a href="/umny-dom/" class="nav-btn active">🏡 Умный дом</a>
     <a href="/pylesosy/" class="nav-btn">🤖 Пылесосы</a>
     <a href="/zaryadki/" class="nav-btn">🔋 Зарядки</a>
-    <div class="nav-dropdown">
-      <button class="nav-dropdown-btn" id="moreBtn">Ещё ▾</button>
-      <div class="nav-dropdown-menu" id="moreMenu">
-        <a href="/aksessuary/">🛡️ Аксессуары</a>
-        <div class="dd-div"></div>
-        <div class="dd-label">Блог</div>
-        <a href="/blog/top10-smartfonov.html">📱 Топ-10 смартфонов 2026</a>
-        <a href="/blog/top10-televizory.html">📺 Топ-10 телевизоров</a>
-        <a href="/blog/top10-naushniki.html">🎧 Топ-10 наушников</a>
-        <a href="/blog/top10-pylesosy.html">🤖 Топ-10 пылесосов</a>
-        <a href="/blog/top10-planshety.html">📟 Топ-10 планшетов</a>
-        <a href="/blog/top10-chasy.html">⌚ Топ-10 часов</a>
-        <a href="/blog/top10-umny-dom.html">🏡 Топ-10 умный дом</a>
-        <a href="/blog/">📰 Все статьи →</a>
-        <div class="dd-div"></div>
-        <a href="/o-nas/">ℹ️ О нас</a>
-      </div>
+  </div>
+  <div class="nav-dropdown" style="position:absolute;right:20px;top:0;height:100%;display:flex;align-items:center">
+    <button class="nav-btn" id="moreBtn" style="background:none;border:none;cursor:pointer">Ещё ▾</button>
+    <div class="nav-dropdown-menu" id="moreMenu">
+      <a href="/aksessuary/">🛡️ Аксессуары</a>
+      <div class="dd-div"></div>
+      <div class="dd-label">Блог</div>
+      <a href="/blog/top10-smartfonov.html">📱 Топ-10 смартфонов 2026</a>
+      <a href="/blog/top10-televizory.html">📺 Топ-10 телевизоров</a>
+      <a href="/blog/top10-naushniki.html">🎧 Топ-10 наушников</a>
+      <a href="/blog/top10-pylesosy.html">🤖 Топ-10 пылесосов</a>
+      <a href="/blog/top10-planshety.html">📟 Топ-10 планшетов</a>
+      <a href="/blog/top10-chasy.html">⌚ Топ-10 часов</a>
+      <a href="/blog/top10-umny-dom.html">🏡 Топ-10 умный дом</a>
+      <a href="/blog/">📰 Все статьи →</a>
+      <div class="dd-div"></div>
+      <a href="/o-nas/">ℹ️ О нас</a>
     </div>
   </div>
 </nav>
