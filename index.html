@@ -174,7 +174,7 @@ footer{background:var(--blk);padding:32px 20px;margin-top:0}
     <a href="/pylesosy/" class="nav-btn">🤖 Пылесосы</a>
     <a href="/zaryadki/" class="nav-btn">🔋 Зарядки</a>
     <div class="nav-dropdown">
-      <a class="nav-btn" id="nav-more-btn" href="#" style="cursor:pointer" onclick="return false;">Ещё ▾</a>
+      <a class="nav-btn" id="nav-more-btn" href="#" onclick="var m=this.nextElementSibling;m.classList.toggle('open');event.preventDefault();event.stopPropagation();">Ещё ▾</a>
       <div class="nav-dropdown-menu">
         <a href="/aksessuary/">🛡️ Аксессуары</a>
         <div class="divider"></div>
@@ -425,23 +425,12 @@ burger.addEventListener('click',()=>{burger.classList.toggle('open');mobNav.clas
 function closeMob(){burger.classList.remove('open');mobNav.classList.remove('open');}
 </script>
 
+
 <script>
-(function(){
-  var btn = document.getElementById('nav-more-btn');
-  if(!btn) return;
-  var menu = btn.parentElement.querySelector('.nav-dropdown-menu');
-  if(!menu) return;
-  btn.addEventListener('click', function(e){
-    e.preventDefault();
-    e.stopPropagation();
-    menu.classList.toggle('open');
-  });
-  document.addEventListener('click', function(e){
-    if(!e.target.closest('.nav-dropdown')){
-      menu.classList.remove('open');
-    }
-  });
-})();
+document.addEventListener('click', function(e){
+  var menu = document.querySelector('.nav-dropdown-menu.open');
+  if(menu && !e.target.closest('.nav-dropdown')) menu.classList.remove('open');
+});
 </script>
 </body>
 </html>
