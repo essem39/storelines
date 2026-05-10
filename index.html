@@ -404,15 +404,19 @@ load();
   <a href="/aksessuary/" class="nav-btn">🛡️ Аксессуары</a>
   <a href="/o-nas/" class="nav-btn">ℹ️ О нас</a>
   <div style="height:1px;background:#333;margin:6px 0"></div>
-  <span style="color:#555;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;padding:8px 14px;display:block">Блог</span>
-  <a href="/blog/top10-smartfonov.html" class="nav-btn">📱 Топ-10 смартфонов</a>
-  <a href="/blog/top10-televizory.html" class="nav-btn">📺 Топ-10 телевизоров</a>
-  <a href="/blog/top10-naushniki.html" class="nav-btn">🎧 Топ-10 наушников</a>
-  <a href="/blog/top10-pylesosy.html" class="nav-btn">🤖 Топ-10 пылесосов</a>
-  <a href="/blog/top10-planshety.html" class="nav-btn">📟 Топ-10 планшетов</a>
-  <a href="/blog/top10-chasy.html" class="nav-btn">⌚ Топ-10 часов</a>
-  <a href="/blog/top10-umny-dom.html" class="nav-btn">🏡 Топ-10 умный дом</a>
-  <a href="/blog/" class="nav-btn">📰 Все статьи</a>
+  <button id="mob-blog-btn" onclick="var m=document.getElementById('mob-blog-menu');var a=document.getElementById('mob-blog-arrow');m.style.display=m.style.display==='none'?'block':'none';a.textContent=m.style.display==='none'?'▶':'▼';" style="width:100%;background:rgba(255,255,255,.06);border:none;color:#fff;font-size:13px;padding:10px 14px;text-align:left;cursor:pointer;border-radius:8px;display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+    <span>📝 Блог</span><span id="mob-blog-arrow">▶</span>
+  </button>
+  <div id="mob-blog-menu" style="display:none;padding-left:10px">
+    <a href="/blog/top10-smartfonov.html" class="nav-btn">📱 Топ-10 смартфонов</a>
+    <a href="/blog/top10-televizory.html" class="nav-btn">📺 Топ-10 телевизоров</a>
+    <a href="/blog/top10-naushniki.html" class="nav-btn">🎧 Топ-10 наушников</a>
+    <a href="/blog/top10-pylesosy.html" class="nav-btn">🤖 Топ-10 пылесосов</a>
+    <a href="/blog/top10-planshety.html" class="nav-btn">📟 Топ-10 планшетов</a>
+    <a href="/blog/top10-chasy.html" class="nav-btn">⌚ Топ-10 часов</a>
+    <a href="/blog/top10-umny-dom.html" class="nav-btn">🏡 Топ-10 умный дом</a>
+    <a href="/blog/" class="nav-btn">📰 Все статьи</a>
+  </div>
 </div>
 <script>
 const burger=document.getElementById('burger');
