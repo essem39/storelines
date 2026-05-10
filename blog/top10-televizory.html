@@ -466,5 +466,23 @@ footer{background:var(--blk);padding:40px 20px;margin-top:60px}
   <a href="/blog/top10-umny-dom.html" class="nav-btn">🏡 Топ-10 умный дом</a>
   <a href="/blog/" class="nav-btn">📰 Все статьи</a>
 </div>
+<script>
+(function(){
+  var btn=document.getElementById('moreBtn');
+  var menu=document.getElementById('moreMenu');
+  if(btn&&menu){
+    btn.addEventListener('click',function(e){
+      e.stopPropagation();
+      var isOpen=menu.classList.contains('open');
+      menu.classList.toggle('open',!isOpen);
+      btn.classList.toggle('open',!isOpen);
+    });
+    document.addEventListener('click',function(){
+      menu.classList.remove('open');
+      btn.classList.remove('open');
+    });
+  }
+})();
+</script>
 </body>
 </html>
