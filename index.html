@@ -386,7 +386,6 @@ function filterBrand(b){
   grp=''; q=b.toLowerCase(); page=1;
   document.getElementById('srch').value=b;
   document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
-  document.querySelector('.nav-btn[data-grp=""]').classList.add('active');
   apply();
   return false;
 }
@@ -426,27 +425,35 @@ load();
   <a href="/blog/" class="nav-btn">📰 Все статьи</a>
 </div>
 <script>
-const burger=document.getElementById('burger');
-const mobNav=document.getElementById('mobNav');
-burger.addEventListener('click',()=>{burger.classList.toggle('open');mobNav.classList.toggle('open');});
-function closeMob(){burger.classList.remove('open');mobNav.classList.remove('open');}
-</script>
-
-
-<script>
 (function(){
-  var btn = document.getElementById('nav-more-btn');
-  var menu = btn.nextElementSibling;
-  btn.addEventListener('click', function(e){
-    e.stopPropagation();
-    menu.classList.toggle('open');
-  });
-  document.addEventListener('click', function(e){
-    if(menu.classList.contains('open') && !e.target.closest('.nav-dropdown')){
+  // Burger
+  var burger=document.getElementById('burger');
+  var mobNav=document.getElementById('mobNav');
+  if(burger&&mobNav){
+    burger.addEventListener('click',function(){
+      burger.classList.toggle('open');
+      mobNav.classList.toggle('open');
+    });
+  }
+  // Dropdown "Ещё"
+  var btn=document.getElementById('moreBtn');
+  var menu=document.getElementById('moreMenu');
+  if(btn&&menu){
+    btn.addEventListener('click',function(e){
+      e.stopPropagation();
+      var isOpen=menu.classList.contains('open');
+      menu.classList.toggle('open',!isOpen);
+      btn.classList.toggle('open',!isOpen);
+    });
+    document.addEventListener('click',function(){
       menu.classList.remove('open');
-    }
-  });
+      btn.classList.remove('open');
+    });
+  }
 })();
 </script>
+
+
+
 </body>
 </html>
