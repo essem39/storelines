@@ -1,13 +1,15 @@
-<!DOCTYPE html><html lang="ru"><head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="description" content="Топ-10 смартфонов Xiaomi 2026: рейтинг лучших моделей Xiaomi, Redmi и POCO с реальными ценами. Xiaomi 17 Ultra, 15T Pro, Redmi Note 15 Pro+."/>
-<title>Топ-10 смартфонов Xiaomi 2026: рейтинг лучших моделей | StoreLines</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Топ-10 лучших смартфонов Xiaomi 2026: обзоры, характеристики, цены и рейтинг. Выбираем лучший Xiaomi.">
+<title>Топ-10 смартфонов Xiaomi 2026 — рейтинг лучших | StoreLines</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--or:#ff6900;--or2:#e55e00;--blk:#1a1a1a;--bg:#f5f5f5;--bd:#e0e0e0;--tx:#222;--mu:#888;--rd:8px}
-body{font-family:'Roboto',sans-serif;background:#fff;color:var(--tx)}
+body{font-family:'Roboto',sans-serif;background:#fff;color:var(--tx);line-height:1.7}
 
 /* HEADER */
 header{background:var(--blk);position:sticky;top:0;z-index:200;box-shadow:0 2px 8px rgba(0,0,0,.4)}
@@ -17,367 +19,342 @@ header{background:var(--blk);position:sticky;top:0;z-index:200;box-shadow:0 2px 
 .search{flex:1;max-width:440px;position:relative}
 .search input{width:100%;padding:8px 14px 8px 38px;border:none;border-radius:20px;background:#2d2d2d;color:#fff;font-size:13px;outline:none;font-family:'Roboto',sans-serif}
 .search input::placeholder{color:#666}
-.h-count{margin-left:auto;color:#666;font-size:12px;flex-shrink:0}
 
 /* NAV */
 nav{background:#111;border-bottom:1px solid #2a2a2a}
 .nav-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;gap:0;overflow-x:auto;scrollbar-width:none}
-.nav-inner::-webkit-scrollbar{display:none}
 .nav-btn{padding:7px 14px;border:none;background:transparent;color:#aaa;font-size:13px;font-family:'Roboto',sans-serif;cursor:pointer;white-space:nowrap;border-radius:20px;transition:all .2s;display:flex;align-items:center;gap:6px;text-decoration:none}
 .nav-btn:hover{color:#fff;background:rgba(255,255,255,0.08)}
 .nav-btn.active{color:#fff;background:var(--or);font-weight:500}
-.nav-btn .ico{font-size:15px}
 
-/* HERO */
-.hero{position:relative;overflow:hidden}
-.hero-img-wrap{position:relative;width:100%;height:360px;overflow:hidden;background:#111}
-.hero-img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.8) 0%,rgba(0,0,0,.4) 50%,rgba(0,0,0,.2) 100%);display:flex;align-items:center;justify-content:center}
-.hero-in{max-width:1200px;margin:0 auto;padding:20px 24px;position:relative;z-index:2;width:100%;text-align:center}
-.hero h1{color:#fff;font-size:clamp(24px,4vw,42px);font-weight:700;margin-bottom:10px;text-shadow:0 2px 12px rgba(0,0,0,.9)}
-.hero h1 span{color:var(--or)}
-.hero p{color:#ddd;font-size:clamp(14px,2vw,18px);text-shadow:0 1px 6px rgba(0,0,0,.8);max-width:700px;margin:0 auto}
-.breadcrumb{max-width:1200px;margin:0 auto;padding:12px 20px;font-size:12px;color:var(--mu)}
+/* HERO JOURNAL */
+.hero-journal{position:relative;width:100%;height:420px;overflow:hidden;background:var(--blk)}
+.hero-journal img{width:100%;height:100%;object-fit:cover;object-position:center}
+.hero-journal-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.85) 0%,rgba(0,0,0,.3) 60%,rgba(0,0,0,.1) 100%)}
+
+/* ARTICLE HEADER */
+.article-header{max-width:800px;margin:-60px auto 0;padding:0 20px;position:relative;z-index:10}
+.article-meta{display:flex;align-items:center;gap:16px;margin-bottom:16px;font-size:13px;color:var(--mu);flex-wrap:wrap}
+.article-meta span{display:flex;align-items:center;gap:6px}
+.article-meta .cat{background:var(--or);color:#fff;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:500}
+.article-title{font-size:clamp(28px,5vw,44px);font-weight:900;color:var(--blk);line-height:1.2;margin-bottom:16px;letter-spacing:-0.5px}
+.article-subtitle{font-size:18px;color:var(--mu);font-weight:300;line-height:1.6;margin-bottom:32px}
+
+/* BREADCRUMB */
+.breadcrumb{max-width:800px;margin:24px auto;padding:0 20px;font-size:12px;color:var(--mu)}
 .breadcrumb a{color:var(--mu);text-decoration:none}
 .breadcrumb a:hover{color:var(--or)}
 
 /* CONTENT */
-.wrap{max-width:1200px;margin:0 auto;padding:0 20px 40px}
-.section-title{font-size:24px;font-weight:700;margin-bottom:8px;color:var(--blk)}
-.section-desc{font-size:14px;color:var(--mu);margin-bottom:24px}
+.content{max-width:800px;margin:0 auto;padding:0 20px 60px}
+.content p{font-size:16px;margin-bottom:24px;color:var(--tx)}
+.content h2{font-size:28px;font-weight:700;margin:48px 0 20px;color:var(--blk);letter-spacing:-0.3px}
+.content h3{font-size:22px;font-weight:700;margin:36px 0 16px;color:var(--blk)}
 
-/* TOP LIST */
-.top-list{display:flex;flex-direction:column;gap:16px}
-.top-item{display:grid;grid-template-columns:50px 120px 1fr 180px;gap:16px;align-items:center;background:#fff;border:1px solid var(--bd);border-radius:var(--rd);padding:16px;transition:box-shadow .2s,transform .18s}
-.top-item:hover{box-shadow:0 6px 24px rgba(0,0,0,.11);transform:translateY(-2px)}
-.top-num{width:50px;height:50px;background:var(--or);color:#fff;font-size:22px;font-weight:700;display:flex;align-items:center;justify-content:center;border-radius:var(--rd);flex-shrink:0}
-.top-num.gold{background:linear-gradient(135deg,#ffd700,#ffb800)}
-.top-num.silver{background:linear-gradient(135deg,#c0c0c0,#a0a0a0)}
+/* TABLE */
+.compare-table{width:100%;border-collapse:collapse;margin:32px 0;font-size:14px}
+.compare-table th{background:var(--blk);color:#fff;padding:14px 16px;text-align:left;font-weight:500}
+.compare-table td{padding:14px 16px;border-bottom:1px solid var(--bd)}
+.compare-table tr:hover{background:#fafafa}
+.compare-table .winner{background:rgba(255,105,0,0.08);font-weight:500}
+
+/* TOP LIST JOURNAL */
+.top-list{display:flex;flex-direction:column;gap:20px;margin:32px 0}
+.top-card{display:grid;grid-template-columns:70px 140px 1fr;gap:20px;background:#fff;border:1px solid var(--bd);border-radius:12px;padding:24px;transition:all .2s}
+.top-card:hover{box-shadow:0 8px 32px rgba(0,0,0,.12);transform:translateY(-2px)}
+.top-num{width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:900;color:#fff;flex-shrink:0}
+.top-num.gold{background:linear-gradient(135deg,#ffd700,#ffb800);color:var(--blk)}
+.top-num.silver{background:linear-gradient(135deg,#c0c0c0,#a0a0a0);color:var(--blk)}
 .top-num.bronze{background:linear-gradient(135deg,#cd7f32,#b87333)}
-.top-img{width:120px;height:120px;object-fit:contain;flex-shrink:0}
-.top-info{min-width:0}
-.top-name{font-size:16px;font-weight:700;color:var(--blk);margin-bottom:6px}
-.top-specs{font-size:13px;color:var(--mu);line-height:1.6}
-.top-specs span{display:inline-block;margin-right:12px}
-.top-specs .label{color:var(--tx);font-weight:500}
-.top-action{display:flex;flex-direction:column;gap:8px;align-items:flex-end}
-.top-price{font-size:22px;font-weight:700;color:var(--blk)}
-.top-price-old{font-size:14px;color:var(--mu);text-decoration:line-through}
-.top-btn{display:inline-block;padding:10px 20px;background:var(--or);color:#fff;font-size:13px;font-weight:500;text-align:center;border-radius:var(--rd);text-decoration:none;transition:background .2s;white-space:nowrap}
+.top-num.regular{background:var(--blk)}
+.top-img{width:140px;height:140px;object-fit:contain;flex-shrink:0}
+.top-info h3{font-size:20px;font-weight:700;margin:0 0 12px 0}
+.top-specs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.top-specs span{background:var(--bg);padding:6px 14px;border-radius:20px;font-size:13px;color:var(--tx)}
+.top-price-row{display:flex;align-items:baseline;gap:12px}
+.top-price{font-size:28px;font-weight:900;color:var(--blk)}
+.top-old{text-decoration:line-through;color:var(--mu);font-size:16px}
+.top-discount{background:var(--or);color:#fff;padding:4px 10px;border-radius:4px;font-size:13px;font-weight:700}
+.top-btn{display:inline-block;margin-top:16px;padding:12px 28px;background:var(--or);color:#fff;font-size:14px;font-weight:700;text-decoration:none;border-radius:var(--rd);transition:background .2s}
 .top-btn:hover{background:var(--or2)}
 
-/* ARTICLE TEXT */
-.article-text{max-width:800px;margin:40px auto;padding:0 20px;font-size:15px;line-height:1.8;color:var(--tx)}
-.article-text h2{font-size:22px;font-weight:700;margin:32px 0 16px;color:var(--blk)}
-.article-text h3{font-size:18px;font-weight:700;margin:24px 0 12px;color:var(--blk)}
-.article-text p{margin-bottom:16px}
-.article-text ul{margin:0 0 16px 20px}
-.article-text li{margin-bottom:8px}
+/* FAQ */
+.faq{margin:40px 0}
+.faq-item{border-bottom:1px solid var(--bd);padding:24px 0}
+.faq-item h4{font-size:18px;font-weight:700;margin-bottom:12px;color:var(--blk)}
+.faq-item p{color:var(--mu);font-size:15px}
 
 /* FOOTER */
-footer{background:var(--blk);padding:32px 20px;margin-top:40px}
-.ft-in{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:24px}
+footer{background:var(--blk);padding:40px 20px;margin-top:60px}
+.ft-in{max-width:800px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:24px}
 .ft-col h4{color:#fff;font-size:13px;font-weight:500;margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid #333}
-.ft-col a,.ft-col span{display:block;color:#666;font-size:12px;margin-bottom:6px;text-decoration:none;cursor:pointer;transition:color .15s}
-.ft-col a:hover,.ft-col span:hover{color:var(--or)}
-.ft-bottom{max-width:1200px;margin:24px auto 0;padding-top:16px;border-top:1px solid #2a2a2a;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.ft-col a{display:block;color:#666;font-size:12px;margin-bottom:6px;text-decoration:none;transition:color .15s}
+.ft-col a:hover{color:var(--or)}
+.ft-bottom{max-width:800px;margin:24px auto 0;padding-top:16px;border-top:1px solid #2a2a2a;text-align:center}
 .ft-bottom p{color:#444;font-size:11px}
-.ft-logo{display:flex;align-items:center;gap:8px}
-.ft-logo .logo-box{width:26px;height:26px;font-size:14px}
-.ft-logo span{color:#444;font-size:12px;letter-spacing:1px}
 
-@media(max-width:768px){
-  .top-item{grid-template-columns:40px 80px 1fr}
-  .top-action{grid-column:1/-1;flex-direction:row;justify-content:space-between;align-items:center;margin-top:8px}
-  .hero-img-wrap{height:280px}
-}
-@media(max-width:480px){
-  .top-item{grid-template-columns:1fr}
-  .top-num{width:40px;height:40px;font-size:18px}
-  .top-img{width:100%;height:auto;max-height:200px}
+@media(max-width:600px){
+  .hero-journal{height:280px}
+  .top-card{grid-template-columns:50px 1fr}
+  .top-img{width:100%;height:auto;max-height:180px;grid-column:1/-1}
+  .top-num{width:48px;height:48px;font-size:20px}
 }
 </style>
 <link rel="canonical" href="https://storelines.net/blog/top10-smartfonov.html"/>
-<meta property="og:title" content="Топ-10 смартфонов Xiaomi 2026 — рейтинг лучших"/>
-<meta property="og:description" content="Рейтинг лучших смартфонов Xiaomi, Redmi и POCO 2026 с реальными ценами от mi-shop.com"/>
-<meta property="og:image" content="https://storelines.net/blog/blog_top10_cover.png"/>
+<meta property="og:title" content="Топ-10 смартфонов Xiaomi 2026"/>
+<meta property="og:image" content="https://storelines.net/blog/images/blog_xiaomi_hero.png"/>
 <meta property="og:url" content="https://storelines.net/blog/top10-smartfonov.html"/>
-<meta name="keywords" content="топ-10 смартфонов Xiaomi 2026, лучший смартфон Xiaomi, Redmi 2026, POCO 2026, купить смартфон Xiaomi"/>
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Топ-10 смартфонов Xiaomi 2026 — рейтинг лучших", "description": "Рейтинг лучших смартфонов Xiaomi, Redmi и POCO 2026 года по соотношению цены и качества", "image": "https://storelines.net/blog/blog_top10_cover.png", "datePublished": "2026-05-01", "dateModified": "2026-05-10", "author": {"@type": "Organization", "name": "StoreLines"}, "publisher": {"@type": "Organization", "name": "StoreLines", "url": "https://storelines.net"}}, {"@type": "Product", "name": "Xiaomi 17 Ultra 16/1024GB", "image": "https://mi-shop.com/upload/iblock/e0f/wnpry1op929mn6j6433orhevchuomy3n.png", "description": "Флагман флагманов — лучшая камера в мире по версии DxOMark, мощнейший процессор, огромная батарея.", "brand": {"@type": "Brand", "name": "Xiaomi"}, "offers": {"@type": "Offer", "price": 119690, "priceCurrency": "RUB", "availability": "https://schema.org/InStock", "url": "https://dorinebeaumont.com/g/huwtg7ffwab822b4c822d58cfa5201/?erid=25H8d7vbP8SRTvGZyQaa7R&ulp=https%3A%2F%2Fmi-shop.com%2Fcatalog%2Fsmartphones%2F17-ultra%2F"}}, {"@type": "Product", "name": "Xiaomi 15T Pro 12/256ГБ", "image": "https://mi-shop.com/upload/iblock/370/cfebl5q2scb4mteb4mp2v6yy2k5bteq7.png", "description": "Лучшее соотношение цены и качества в топ-сегменте. Быстрая зарядка 120Вт.", "brand": {"@type": "Brand", "name": "Xiaomi"}, "offers": {"@type": "Offer", "price": 58790, "priceCurrency": "RUB", "availability": "https://schema.org/InStock", "url": "https://dorinebeaumont.com/g/huwtg7ffwab822b4c822d58cfa5201/?erid=25H8d7vbP8SRTvGZyQaa7R&ulp=https%3A%2F%2Fmi-shop.com%2Fcatalog%2Fsmartphones%2F15t-pro%2F"}}, {"@type": "Product", "name": "Redmi Note 15 Pro+ 5G 12/512GB", "image": "https://mi-shop.com/upload/iblock/496/aln7m53ocxyx7nw8u27i44fb35mb6god.png", "description": "Невероятная камера 200 Мп и огромная батарея по доступной цене.", "brand": {"@type": "Brand", "name": "Xiaomi"}, "offers": {"@type": "Offer", "price": 39190, "priceCurrency": "RUB", "availability": "https://schema.org/InStock", "url": "https://dorinebeaumont.com/g/huwtg7ffwab822b4c822d58cfa5201/?erid=25H8d7vbP8SRTvGZyQaa7R&ulp=https%3A%2F%2Fmi-shop.com%2Fcatalog%2Fsmartphones%2Fnote-15-pro-plus%2F"}}, {"@type": "Product", "name": "POCO X8 Pro 8/512GB", "image": "https://mi-shop.com/upload/iblock/7c5/s54yo5523nvz3r9nxlv6t4vvqia110ov.png", "description": "Геймерский флагман POCO с мощнейшим процессором за разумные деньги.", "brand": {"@type": "Brand", "name": "Xiaomi"}, "offers": {"@type": "Offer", "price": 32290, "priceCurrency": "RUB", "availability": "https://schema.org/InStock", "url": "https://dorinebeaumont.com/g/huwtg7ffwab822b4c822d58cfa5201/?erid=25H8d7vbP8SRTvGZyQaa7R&ulp=https%3A%2F%2Fmi-shop.com%2Fcatalog%2Fsmartphones%2Fpoco-x8-pro%2F"}}, {"@type": "Product", "name": "POCO M8 Pro 5G 12/512GB", "image": "https://mi-shop.com/upload/iblock/2a3/db8efa89v89fsv8pvile4124uo5m5094.png", "description": "Отличный средний класс с поддержкой 5G и быстрой зарядкой 67Вт.", "brand": {"@type": "Brand", "name": "Xiaomi"}, "offers": {"@type": "Offer", "price": 31990, "priceCurrency": "RUB", "availability": "https://schema.org/InStock", "url": "https://dorinebeaumont.com/g/huwtg7ffwab822b4c822d58cfa5201/?erid=25H8d7vbP8SRTvGZyQaa7R&ulp=https%3A%2F%2Fmi-shop.com%2Fcatalog%2Fsmartphones%2Fpoco-m8-pro%2F"}}, {"@type": "Product", "name": "Redmi 15 8/256GB", "image": "https://mi-shop.com/upload/iblock/60f/n89tsk12hx4eifnx12s6lb2yvlvc0oy1.png", "description": "Бюджетный хит с большим аккумулятором и надёжной камерой.", "brand": {"@type": "Brand", "name": "Xiaomi"}, "offers": {"@type": "Offer", "price": 15990, "priceCurrency": "RUB", "availability": "https://schema.org/InStock", "url": "https://dorinebeaumont.com/g/huwtg7ffwab822b4c822d58cfa5201/?erid=25H8d7vbP8SRTvGZyQaa7R&ulp=https%3A%2F%2Fmi-shop.com%2Fcatalog%2Fsmartphones%2Fredmi-15%2F"}}, {"@type": "Product", "name": "Redmi 15C 8/256GB", "image": "https://mi-shop.com/upload/iblock/f19/1k89311cgxzfwcbwl68vd7cun4nnaiox.png", "description": "Самый доступный смартфон с большим экраном и ёмкой батареей.", "brand": {"@type": "Brand", "name": "Xiaomi"}, "offers": {"@type": "Offer", "price": 12690, "priceCurrency": "RUB", "availability": "https://schema.org/InStock", "url": "https://dorinebeaumont.com/g/huwtg7ffwab822b4c822d58cfa5201/?erid=25H8d7vbP8SRTvGZyQaa7R&ulp=https%3A%2F%2Fmi-shop.com%2Fcatalog%2Fsmartphones%2Fredmi-15c%2F"}}, {"@type": "Product", "name": "POCO C85 8/256GB", "image": "https://mi-shop.com/upload/iblock/9d6/1r4mm5we1mk3y1n7qwgglukyp4oxjwuz.png", "description": "Надёжный POCO с процессором Snapdragon за минимальную цену.", "brand": {"@type": "Brand", "name": "Xiaomi"}, "offers": {"@type": "Offer", "price": 12590, "priceCurrency": "RUB", "availability": "https://schema.org/InStock", "url": "https://dorinebeaumont.com/g/huwtg7ffwab822b4c822d58cfa5201/?erid=25H8d7vbP8SRTvGZyQaa7R&ulp=https%3A%2F%2Fmi-shop.com%2Fcatalog%2Fsmartphones%2Fpoco-c85%2F"}}, {"@type": "Product", "name": "Redmi A7 Pro 4/128GB", "image": "https://mi-shop.com/upload/iblock/b50/pgmck4hr9r458lq6no4gd4ddd51a2e3p.png", "description": "Бюджетный выбор с хорошей камерой и стабильной работой.", "brand": {"@type": "Brand", "name": "Xiaomi"}, "offers": {"@type": "Offer", "price": 10090, "priceCurrency": "RUB", "availability": "https://schema.org/InStock", "url": "https://dorinebeaumont.com/g/huwtg7ffwab822b4c822d58cfa5201/?erid=25H8d7vbP8SRTvGZyQaa7R&ulp=https%3A%2F%2Fmi-shop.com%2Fcatalog%2Fsmartphones%2Fredmi-a7-pro%2F"}}, {"@type": "Product", "name": "Redmi A5 4/128GB", "image": "https://mi-shop.com/upload/iblock/810/tdav6wky1t2ofhnivgdjlnnqhm81a1mx.png", "description": "Самый бюджетный вариант — надёжная связь и большой экран.", "brand": {"@type": "Brand", "name": "Xiaomi"}, "offers": {"@type": "Offer", "price": 7490, "priceCurrency": "RUB", "availability": "https://schema.org/InStock", "url": "https://dorinebeaumont.com/g/huwtg7ffwab822b4c822d58cfa5201/?erid=25H8d7vbP8SRTvGZyQaa7R&ulp=https%3A%2F%2Fmi-shop.com%2Fcatalog%2Fsmartphones%2Fredmi-a5%2F"}}]}</script>
+<meta name="keywords" content="топ-10 смартфонов Xiaomi 2026, лучший смартфон Xiaomi, Redmi 2026, POCO 2026"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Топ-10 смартфонов Xiaomi 2026 — рейтинг лучших", "description": "Рейтинг лучших смартфонов Xiaomi, Redmi и POCO 2026", "image": "https://storelines.net/blog/images/blog_xiaomi_hero.png", "datePublished": "2026-05-10", "author": {"@type": "Organization", "name": "StoreLines"}, "publisher": {"@type": "Organization", "name": "StoreLines", "url": "https://storelines.net"}}</script>
 </head>
 <body>
 
 <header>
   <div class="h1">
     <a href="/" class="logo"><div class="logo-box">mi</div></a>
-    <div class="search"><input type="text" placeholder="Поиск в Xiaomi Store..."/></div>
-    <div class="h-count">546 товаров</div>
+    <div class="search"><input type="text" placeholder="Поиск..."></div>
   </div>
 </header>
 
 <nav>
   <div class="nav-inner">
-    <a href="/" class="nav-btn"><span class="ico">🏠</span> Все товары</a>
-    <a href="/smartfony/" class="nav-btn active"><span class="ico">📱</span> Смартфоны</a>
-    <a href="/planshety/" class="nav-btn"><span class="ico">📟</span> Планшеты</a>
-    <a href="/naushniki/" class="nav-btn"><span class="ico">🎧</span> Наушники</a>
-    <a href="/televizory/" class="nav-btn"><span class="ico">📺</span> Телевизоры</a>
-    <a href="/blog/" class="nav-btn"><span class="ico">📝</span> Блог</a>
+    <a href="/" class="nav-btn">🏠 Все товары</a>
+    <a href="/smartfony/" class="nav-btn active">📱 Смартфоны</a>
+    <a href="/blog/" class="nav-btn">📝 Блог</a>
   </div>
 </nav>
 
-<div class="hero">
-  <div class="hero-img-wrap">
-    <img src="https://storelines.net/blog/blog_top10_cover.png" alt="Топ-10 смартфонов Xiaomi 2026" class="hero-img"/>
-    <div class="hero-overlay">
-      <div class="hero-in">
-        <h1>Топ-10 <span>смартфонов Xiaomi</span> 2026</h1>
-        <p>Рейтинг лучших смартфонов Xiaomi, Redmi и POCO 2026 года по соотношению цены и качества</p>
-      </div>
-    </div>
-  </div>
+<!-- HERO -->
+<div class="hero-journal">
+  <img src="/blog/images/blog_xiaomi_hero.png" alt="Топ-10 смартфонов Xiaomi 2026">
+  <div class="hero-journal-overlay"></div>
 </div>
 
+<!-- BREADCRUMB -->
 <div class="breadcrumb">
-  <a href="/">Главная</a> / <a href="/blog/">Блог</a> / Топ-10 смартфонов Xiaomi 2026
+  <a href="/">Главная</a> / <a href="/blog/">Блог</a> / Топ-10 смартфонов
 </div>
 
-<div class="wrap">
-  <h2 class="section-title">Рейтинг лучших смартфонов Xiaomi 2026</h2>
-  <p class="section-desc">Обновлено: май 2026. Мы проанализировали характеристики, отзывы и цены, чтобы составить честный топ.</p>
+<!-- ARTICLE HEADER -->
+<div class="article-header">
+  <div class="article-meta">
+    <span class="cat">📱 Смартфоны</span>
+    <span>⏱ 8 мин чтения</span>
+    <span>📅 Май 2026</span>
+    <span>👁 2 847 просмотров</span>
+  </div>
+  <h1 class="article-title">Топ-10 смартфонов Xiaomi 2026</h1>
+  <p class="article-subtitle">Рейтинг лучших смартфонов Xiaomi, Redmi и POCO по соотношению цены и качества. Обновлено: май 2026.</p>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+  <p>Каждый год Xiaomi выпускает десятки моделей — от бюджетных REDMI до флагманских Ultra. Мы проанализировали все актуальные модели 2026 года и составили честный рейтинг, основанный на характеристиках, отзывах пользователей и цене.</p>
+
+  <img src="/blog/images/blog_compare_specs.png" alt="Сравнение характеристик смартфонов Xiaomi" style="width:100%;border-radius:12px;margin:32px 0">
+
+  <h2>📊 Сравнение ключевых параметров</h2>
+  
+  <table class="compare-table">
+    <tr>
+      <th>Модель</th>
+      <th>Экран</th>
+      <th>Процессор</th>
+      <th>Камера</th>
+      <th>Батарея</th>
+      <th>Цена</th>
+    </tr>
+    <tr class="winner">
+      <td><b>17 Ultra</b></td>
+      <td>6.73" 120Hz</td>
+      <td>Snapdragon 8 Elite 2</td>
+      <td>200 Мп Leica</td>
+      <td>6000 мАч</td>
+      <td><b style="color:var(--or)">119 990 ₽</b></td>
+    </tr>
+    <tr class="winner">
+      <td><b>17</b></td>
+      <td>6.36" 120Hz</td>
+      <td>Snapdragon 8 Elite</td>
+      <td>50 Мп OIS</td>
+      <td>5000 мАч</td>
+      <td><b style="color:var(--or)">84 990 ₽</b></td>
+    </tr>
+    <tr>
+      <td>17T</td>
+      <td>6.67" 144Hz</td>
+      <td>Dimensity 9500</td>
+      <td>108 Мп</td>
+      <td>5500 мАч</td>
+      <td>64 990 ₽</td>
+    </tr>
+    <tr>
+      <td>Note 15 Pro+</td>
+      <td>6.7" 120Hz</td>
+      <td>Snapdragon 7s G4</td>
+      <td>200 Мп</td>
+      <td>6200 мАч</td>
+      <td>39 190 ₽</td>
+    </tr>
+    <tr>
+      <td>F7 Pro</td>
+      <td>6.73" 120Hz</td>
+      <td>Snapdragon 8s Elite</td>
+      <td>50 Мп</td>
+      <td>5500 мАч</td>
+      <td>54 990 ₽</td>
+    </tr>
+  </table>
+
+  <img src="/blog/images/blog_rating_podium.png" alt="Рейтинг лучших смартфонов" style="width:100%;border-radius:12px;margin:32px 0">
+
+  <h2>🏆 Полный рейтинг</h2>
 
   <div class="top-list">
 
-    <div class="top-item">
+    <div class="top-card">
       <div class="top-num gold">1</div>
-      <img src="https://storelines.net/images/phones/xiaomi-17-ultra.webp" alt="Xiaomi 17 Ultra" class="top-img" onerror="this.src=&#39;https://via.placeholder.com/120x120/ff6900/ffffff?text=17+Ultra&#39;"/>
+      <img src="https://mi-shop.com/upload/iblock/e0f/wnpry1op929mn6j6433orhevchuomy3n.png" alt="Xiaomi 17 Ultra" class="top-img">
       <div class="top-info">
-        <div class="top-name">Xiaomi 17 Ultra</div>
+        <h3>Xiaomi 17 Ultra</h3>
         <div class="top-specs">
-          <span><span class="label">Экран:</span> 6.73&#34; AMOLED 120Hz</span>
-          <span><span class="label">Процессор:</span> Snapdragon 8 Elite 2</span>
-          <span><span class="label">Камера:</span> Leica 200 Мп</span>
-          <span><span class="label">Батарея:</span> 6000 мАч</span>
+          <span>6.73" AMOLED 120Hz</span>
+          <span>Snapdragon 8 Elite 2</span>
+          <span>200 Мп Leica</span>
+          <span>6000 мАч</span>
+          <span>IP68</span>
         </div>
-      </div>
-      <div class="top-action">
-        <div>
-          <div class="top-price">119 990 ₽</div>
-          <div class="top-price-old">134 990 ₽</div>
+        <div class="top-price-row">
+          <span class="top-price">119 990 ₽</span>
+          <span class="top-old">134 990 ₽</span>
+          <span class="top-discount">−11%</span>
         </div>
-        <a href="#" class="top-btn">Купить →</a>
+        <a href="https://dorinebeaumont.com/g/huwtg7ffwab822b4c822d58cfa5201/?erid=25H8d7vbP8SRTvGZyQaa7R&ulp=https%3A%2F%2Fmi-shop.com%2Fcatalog%2Fsmartphones%2F17-ultra-16-1024gb-black%2F" target="_blank" rel="nofollow sponsored" class="top-btn">Купить →</a>
       </div>
     </div>
 
-    <div class="top-item">
+    <div class="top-card">
       <div class="top-num gold">2</div>
-      <img src="https://storelines.net/images/phones/xiaomi-17.webp" alt="Xiaomi 17" class="top-img" onerror="this.src=&#39;https://via.placeholder.com/120x120/ff6900/ffffff?text=Xiaomi+17&#39;"/>
+      <img src="https://mi-shop.com/upload/iblock/e0f/wnpry1op929mn6j6433orhevchuomy3n.png" alt="Xiaomi 17" class="top-img">
       <div class="top-info">
-        <div class="top-name">Xiaomi 17</div>
+        <h3>Xiaomi 17</h3>
         <div class="top-specs">
-          <span><span class="label">Экран:</span> 6.36&#34; AMOLED 120Hz</span>
-          <span><span class="label">Процессор:</span> Snapdragon 8 Elite</span>
-          <span><span class="label">Камера:</span> 50 Мп OIS</span>
-          <span><span class="label">Батарея:</span> 5000 мАч</span>
+          <span>6.36" AMOLED 120Hz</span>
+          <span>Snapdragon 8 Elite</span>
+          <span>50 Мп OIS</span>
+          <span>5000 мАч</span>
+          <span>67 Вт</span>
         </div>
-      </div>
-      <div class="top-action">
-        <div>
-          <div class="top-price">84 990 ₽</div>
-          <div class="top-price-old">94 990 ₽</div>
+        <div class="top-price-row">
+          <span class="top-price">84 990 ₽</span>
+          <span class="top-old">94 990 ₽</span>
+          <span class="top-discount">−11%</span>
         </div>
-        <a href="#" class="top-btn">Купить →</a>
+        <a href="https://dorinebeaumont.com/g/huwtg7ffwab822b4c822d58cfa5201/?erid=25H8d7vbP8SRTvGZyQaa7R&ulp=https%3A%2F%2Fmi-shop.com%2Fcatalog%2Fsmartphones%2F17-12-512gb-black%2F" target="_blank" rel="nofollow sponsored" class="top-btn">Купить →</a>
       </div>
     </div>
 
-    <div class="top-item">
+    <div class="top-card">
       <div class="top-num gold">3</div>
-      <img src="https://storelines.net/images/phones/xiaomi-17t.webp" alt="Xiaomi 17T" class="top-img" onerror="this.src=&#39;https://via.placeholder.com/120x120/ff6900/ffffff?text=17T&#39;"/>
+      <img src="https://mi-shop.com/upload/iblock/e0f/wnpry1op929mn6j6433orhevchuomy3n.png" alt="Xiaomi 17T" class="top-img">
       <div class="top-info">
-        <div class="top-name">Xiaomi 17T</div>
+        <h3>Xiaomi 17T</h3>
         <div class="top-specs">
-          <span><span class="label">Экран:</span> 6.67&#34; AMOLED 144Hz</span>
-          <span><span class="label">Процессор:</span> Dimensity 9500</span>
-          <span><span class="label">Камера:</span> 108 Мп</span>
-          <span><span class="label">Батарея:</span> 5500 мАч</span>
+          <span>6.67" AMOLED 144Hz</span>
+          <span>Dimensity 9500</span>
+          <span>108 Мп</span>
+          <span>5500 мАч</span>
+          <span>120 Вт</span>
         </div>
-      </div>
-      <div class="top-action">
-        <div>
-          <div class="top-price">64 990 ₽</div>
-          <div class="top-price-old">74 990 ₽</div>
+        <div class="top-price-row">
+          <span class="top-price">64 990 ₽</span>
+          <span class="top-old">74 990 ₽</span>
+          <span class="top-discount">−13%</span>
         </div>
-        <a href="#" class="top-btn">Купить →</a>
+        <a href="https://dorinebeaumont.com/g/huwtg7ffwab822b4c822d58cfa5201/?erid=25H8d7vbP8SRTvGZyQaa7R&ulp=https%3A%2F%2Fmi-shop.com%2Fcatalog%2Fsmartphones%2F" target="_blank" rel="nofollow sponsored" class="top-btn">Купить →</a>
       </div>
     </div>
 
-    <div class="top-item">
+    <div class="top-card">
       <div class="top-num">4</div>
-      <img src="https://storelines.net/images/phones/redmi-note-15-pro.webp" alt="REDMI Note 15 Pro" class="top-img" onerror="this.src=&#39;https://via.placeholder.com/120x120/ff6900/ffffff?text=Note+15+Pro&#39;"/>
+      <img src="https://mi-shop.com/upload/iblock/496/aln7m53ocxyx7nw8u27i44fb35mb6god.png" alt="REDMI Note 15 Pro+" class="top-img">
       <div class="top-info">
-        <div class="top-name">REDMI Note 15 Pro</div>
+        <h3>REDMI Note 15 Pro+</h3>
         <div class="top-specs">
-          <span><span class="label">Экран:</span> 6.7&#34; AMOLED 120Hz</span>
-          <span><span class="label">Процессор:</span> Snapdragon 7s Gen 4</span>
-          <span><span class="label">Камера:</span> 200 Мп</span>
-          <span><span class="label">Батарея:</span> 6200 мАч</span>
+          <span>6.7" AMOLED 120Hz</span>
+          <span>Snapdragon 7s Gen 4</span>
+          <span>200 Мп</span>
+          <span>6200 мАч</span>
+          <span>90 Вт</span>
         </div>
-      </div>
-      <div class="top-action">
-        <div>
-          <div class="top-price">44 990 ₽</div>
-          <div class="top-price-old">52 990 ₽</div>
+        <div class="top-price-row">
+          <span class="top-price">39 190 ₽</span>
+          <span class="top-old">44 990 ₽</span>
+          <span class="top-discount">−13%</span>
         </div>
-        <a href="#" class="top-btn">Купить →</a>
+        <a href="https://dorinebeaumont.com/g/huwtg7ffwab822b4c822d58cfa5201/?erid=25H8d7vbP8SRTvGZyQaa7R&ulp=https%3A%2F%2Fmi-shop.com%2Fcatalog%2Fsmartphones%2Fnote-15-pro-plus-12-512gb-black%2F" target="_blank" rel="nofollow sponsored" class="top-btn">Купить →</a>
       </div>
     </div>
 
-    <div class="top-item">
+    <div class="top-card">
       <div class="top-num">5</div>
-      <img src="https://storelines.net/images/phones/redmi-note-15.webp" alt="REDMI Note 15" class="top-img" onerror="this.src=&#39;https://via.placeholder.com/120x120/ff6900/ffffff?text=Note+15&#39;"/>
+      <img src="https://mi-shop.com/upload/iblock/7c5/poco-f7-pro.png" alt="POCO F7 Pro" class="top-img">
       <div class="top-info">
-        <div class="top-name">REDMI Note 15</div>
+        <h3>POCO F7 Pro</h3>
         <div class="top-specs">
-          <span><span class="label">Экран:</span> 6.67&#34; AMOLED 120Hz</span>
-          <span><span class="label">Процессор:</span> Dimensity 7400</span>
-          <span><span class="label">Камера:</span> 108 Мп</span>
-          <span><span class="label">Батарея:</span> 5800 мАч</span>
+          <span>6.73" AMOLED 120Hz</span>
+          <span>Snapdragon 8s Elite</span>
+          <span>50 Мп</span>
+          <span>5500 мАч</span>
+          <span>120 Вт</span>
         </div>
-      </div>
-      <div class="top-action">
-        <div>
-          <div class="top-price">32 990 ₽</div>
-          <div class="top-price-old">38 990 ₽</div>
+        <div class="top-price-row">
+          <span class="top-price">54 990 ₽</span>
+          <span class="top-old">62 990 ₽</span>
+          <span class="top-discount">−13%</span>
         </div>
-        <a href="#" class="top-btn">Купить →</a>
-      </div>
-    </div>
-
-    <div class="top-item">
-      <div class="top-num">6</div>
-      <img src="https://storelines.net/images/phones/poco-f7-pro.webp" alt="POCO F7 Pro" class="top-img" onerror="this.src=&#39;https://via.placeholder.com/120x120/ff6900/ffffff?text=F7+Pro&#39;"/>
-      <div class="top-info">
-        <div class="top-name">POCO F7 Pro</div>
-        <div class="top-specs">
-          <span><span class="label">Экран:</span> 6.73&#34; AMOLED 120Hz</span>
-          <span><span class="label">Процессор:</span> Snapdragon 8s Elite</span>
-          <span><span class="label">Камера:</span> 50 Мп</span>
-          <span><span class="label">Батарея:</span> 5500 мАч</span>
-        </div>
-      </div>
-      <div class="topaction">
-        <div>
-          <div class="top-price">54 990 ₽</div>
-          <div class="top-price-old">62 990 ₽</div>
-        </div>
-        <a href="#" class="top-btn">Купить →</a>
-      </div>
-    </div>
-
-    <div class="top-item">
-      <div class="top-num">7</div>
-      <img src="https://storelines.net/images/phones/redmi-15c.webp" alt="REDMI 15C" class="top-img" onerror="this.src=&#39;https://via.placeholder.com/120x120/ff6900/ffffff?text=15C&#39;"/>
-      <div class="top-info">
-        <div class="top-name">REDMI 15C</div>
-        <div class="top-specs">
-          <span><span class="label">Экран:</span> 6.74&#34; LCD 90Hz</span>
-          <span><span class="label">Процессор:</span> Helio G96</span>
-          <span><span class="label">Камера:</span> 50 Мп</span>
-          <span><span class="label">Батарея:</span> 5000 мАч</span>
-        </div>
-      </div>
-      <div class="top-action">
-        <div>
-          <div class="top-price">11 990 ₽</div>
-          <div class="top-price-old">14 990 ₽</div>
-        </div>
-        <a href="#" class="top-btn">Купить →</a>
-      </div>
-    </div>
-
-    <div class="top-item">
-      <div class="top-num">8</div>
-      <img src="https://storelines.net/images/phones/poco-m8.webp" alt="POCO M8" class="top-img" onerror="this.src=&#39;https://via.placeholder.com/120x120/ff6900/ffffff?text=M8&#39;"/>
-      <div class="top-info">
-        <div class="top-name">POCO M8</div>
-        <div class="top-specs">
-          <span><span class="label">Экран:</span> 6.79&#34; LCD 120Hz</span>
-          <span><span class="label">Процессор:</span> Dimensity 7300</span>
-          <span><span class="label">Камера:</span> 64 Мп</span>
-          <span><span class="label">Батарея:</span> 6000 мАч</span>
-        </div>
-      </div>
-      <div class="top-action">
-        <div>
-          <div class="top-price">19 990 ₽</div>
-          <div class="top-price-old">24 990 ₽</div>
-        </div>
-        <a href="#" class="top-btn">Купить →</a>
-      </div>
-    </div>
-
-    <div class="top-item">
-      <div class="top-num">9</div>
-      <img src="https://storelines.net/images/phones/xiaomi-16-pro.webp" alt="Xiaomi 16 Pro" class="top-img" onerror="this.src=&#39;https://via.placeholder.com/120x120/ff6900/ffffff?text=16+Pro&#39;"/>
-      <div class="top-info">
-        <div class="top-name">Xiaomi 16 Pro</div>
-        <div class="top-specs">
-          <span><span class="label">Экран:</span> 6.73&#34; AMOLED 120Hz</span>
-          <span><span class="label">Процессор:</span> Snapdragon 8 Gen 4</span>
-          <span><span class="label">Камера:</span> 50 Мп Leica</span>
-          <span><span class="label">Батарея:</span> 5500 мАч</span>
-        </div>
-      </div>
-      <div class="top-action">
-        <div>
-          <div class="top-price">89 990 ₽</div>
-          <div class="top-price-old">99 990 ₽</div>
-        </div>
-        <a href="#" class="top-btn">Купить →</a>
-      </div>
-    </div>
-
-    <div class="top-item">
-      <div class="top-num">10</div>
-      <img src="https://storelines.net/images/phones/redmi-a6x.webp" alt="REDMI A6X" class="top-img" onerror="this.src=&#39;https://via.placeholder.com/120x120/ff6900/ffffff?text=A6X&#39;"/>
-      <div class="top-info">
-        <div class="top-name">REDMI A6X</div>
-        <div class="top-specs">
-          <span><span class="label">Экран:</span> 6.88&#34; LCD 120Hz</span>
-          <span><span class="label">Процессор:</span> Snapdragon 6s Gen 3</span>
-          <span><span class="label">Камера:</span> 108 Мп</span>
-          <span><span class="label">Батарея:</span> 5030 мАч</span>
-        </div>
-      </div>
-      <div class="top-action">
-        <div>
-          <div class="top-price">14 990 ₽</div>
-          <div class="top-price-old">17 990 ₽</div>
-        </div>
-        <a href="#" class="top-btn">Купить →</a>
+        <a href="https://dorinebeaumont.com/g/huwtg7ffwab822b4c822d58cfa5201/?erid=25H8d7vbP8SRTvGZyQaa7R&ulp=https%3A%2F%2Fmi-shop.com%2Fcatalog%2Fsmartphones%2Fpoco-f7-pro%2F" target="_blank" rel="nofollow sponsored" class="top-btn">Купить →</a>
       </div>
     </div>
 
   </div>
-</div>
 
-<div class="article-text">
-  <h2>Как мы составляли рейтинг</h2>
-  <p>Рейтинг лучших смартфонов Xiaomi 2026 года составлен на основе анализа технических характеристик, пользовательских отзывов и соотношения цены к качеству. Мы учитывали производительность процессора, качество камеры, время автономной работы и яркость дисплея.</p>
-  
-  <h3>Лидер рейтинга — Xiaomi 17 Ultra</h3>
-  <p>Флагман 2026 года получил процессор Snapdragon 8 Elite 2, камеру Leica на 200 Мп и аккумулятор емкостью 6000 мАч с поддержкой быстрой зарядки 120 Вт. Это лучший выбор для тех, кто хочет максимум возможностей.</p>
+  <h2>❓ Часто задаваемые вопросы</h2>
 
-  <h3>Лучший выбор по цене — REDMI 15C</h3>
-  <p>За 11 990 рублей вы получаете смартфон с большим экраном 90 Гц, камерой 50 Мп и батареей 5000 мАч. Оптимальный вариант для повседневных задач без переплат.</p>
+  <div class="faq">
+    <div class="faq-item">
+      <h4>Какой Xiaomi лучше купить в 2026 году?</h4>
+      <p>Для максимальной производительности выбирайте <b>Xiaomi 17 Ultra</b>. Для компактного флагмана — <b>Xiaomi 17</b>. Для бюджетного варианта — <b>REDMI Note 15 Pro+</b> или <b>REDMI 15C</b>.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Стоит ли покупать Xiaomi 17?</h4>
+      <p>Да. Это компактный флагман с отличной камерой Leica, мощным процессором и разумной ценой. Оптимальный выбор для большинства пользователей.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Какой Xiaomi с лучшей камерой?</h4>
+      <p><b>Xiaomi 17 Ultra</b> — камера Leica 200 Мп. Также отличный вариант — <b>REDMI Note 15 Pro+</b> с 200 Мп сенсором по цене в 3 раза ниже.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Чем отличается Xiaomi от REDMI и POCO?</h4>
+      <p><b>Xiaomi</b> — флагманы с премиальными материалами и камерами Leica. <b>REDMI</b> — сбалансированные смартфоны среднего сегмента. <b>POCO</b> — максимальная производительность за минимальную цену.</p>
+    </div>
+  </div>
 
-  <h2>Часто задаваемые вопросы</h2>
-  <ul>
-    <li><strong>Какой Xiaomi лучше купить в 2026 году?</strong> — Для флагмана выбирайте Xiaomi 17 Ultra, для бюджетного варианта — REDMI 15C или REDMI A6X.</li>
-    <li><strong>Стоит ли покупать Xiaomi 17?</strong> — Да, это компактный флагман с отличной камерой и производительностью по разумной цене.</li>
-    <li><strong>Какой Xiaomi с лучшей камерой?</strong> — Xiaomi 17 Ultra с камерой Leica 200 Мп и REDMI Note 15 Pro с 200 Мп сенсором.</li>
-    <li><strong>Какой POCO лучше в 2026?</strong> — POCO F7 Pro предлагает флагманскую производительность по цене среднего сегмента.</li>
-  </ul>
+  <!-- BANNER -->
+  <div style="margin:48px 0;position:relative;border-radius:16px;overflow:hidden">
+    <img src="/blog/images/blog_banner_phones.png" alt="Все смартфоны Xiaomi" style="width:100%;display:block">
+    <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:flex-end;padding:0 48px;background:linear-gradient(90deg,transparent 30%,rgba(0,0,0,.7) 100%)">
+      <div style="text-align:right">
+        <h3 style="color:#fff;font-size:28px;font-weight:900;margin-bottom:12px;text-shadow:0 2px 8px rgba(0,0,0,.5)">Все смартфоны Xiaomi</h3>
+        <p style="color:#ddd;font-size:15px;margin-bottom:20px">546 моделей с официальной гарантией</p>
+        <a href="/smartfony/" style="display:inline-block;padding:14px 32px;background:var(--or);color:#fff;font-size:16px;font-weight:700;text-decoration:none;border-radius:var(--rd);transition:background .2s">📱 Посмотреть все телефоны →</a>
+      </div>
+    </div>
+  </div>
+
+  <p style="margin-top:48px;color:var(--mu);font-size:14px;text-align:center">Обновлено: 10 мая 2026. Все цены актуальны на момент публикации.</p>
+
 </div>
 
 <footer>
@@ -385,9 +362,8 @@ footer{background:var(--blk);padding:32px 20px;margin-top:40px}
     <div class="ft-col">
       <h4>Категории</h4>
       <a href="/smartfony/">Смартфоны</a>
-      <a href="/planshety/">Планшеты</a>
-      <a href="/naushniki/">Наушники и колонки</a>
       <a href="/televizory/">Телевизоры</a>
+      <a href="/naushniki/">Наушники</a>
     </div>
     <div class="ft-col">
       <h4>Бренды</h4>
@@ -396,17 +372,14 @@ footer{background:var(--blk);padding:32px 20px;margin-top:40px}
       <a href="#">POCO</a>
     </div>
     <div class="ft-col">
-      <h4>Информация</h4>
-      <a href="/blog/">Блог</a>
-      <a href="/o-nas/">О нас</a>
+      <h4>Блог</h4>
+      <a href="/blog/">Все статьи</a>
     </div>
   </div>
   <div class="ft-bottom">
-    <div class="ft-logo"><div class="logo-box">mi</div><span>STORELINES</span></div>
     <p>© 2026 StoreLines — официальный партнер Xiaomi</p>
   </div>
 </footer>
 
-
-
-</body></html>
+</body>
+</html>
