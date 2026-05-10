@@ -65,6 +65,28 @@ footer{background:var(--blk);padding:40px 20px;margin-top:60px}
 @media(max-width:600px){
 .hero-journal{height:280px}.top-card{grid-template-columns:50px 1fr}.top-img{width:100%;height:auto;max-height:180px;grid-column:1/-1}
 .top-num{width:48px;height:48px;font-size:20px}}
+
+/* DROPDOWN */
+.nav-dropdown{position:relative}
+.nav-dropdown-btn{padding:13px 18px;border:none;background:none;color:#aaa;font-size:13px;font-family:'Roboto',sans-serif;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;transition:all .2s;display:flex;align-items:center;gap:6px}
+.nav-dropdown-btn:hover{color:#fff}
+.nav-dropdown-btn.open{color:#fff}
+.nav-dropdown-menu{display:none;position:absolute;top:calc(100% + 2px);left:0;background:#1a1a1a;border:1px solid #333;border-radius:10px;padding:6px 0;min-width:230px;z-index:999;box-shadow:0 8px 24px rgba(0,0,0,.6)}
+.nav-dropdown-menu.open{display:block}
+.nav-dropdown-menu a{display:flex;align-items:center;gap:8px;padding:9px 16px;color:#aaa;text-decoration:none;font-size:13px;white-space:nowrap;transition:all .2s}
+.nav-dropdown-menu a:hover{color:#fff;background:rgba(255,255,255,.08)}
+.nav-dropdown-menu .dd-div{height:1px;background:#333;margin:4px 0}
+.nav-dropdown-menu .dd-label{padding:8px 16px 4px;font-size:11px;color:#555;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;margin-left:auto}
+.burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:all .3s}
+.burger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.mob-nav{display:none;position:fixed;top:54px;left:0;right:0;bottom:0;background:#111;z-index:150;overflow-y:auto;padding:8px 0}
+.mob-nav.open{display:block}
+.mob-nav .nav-btn{display:flex;width:100%;padding:16px 24px;font-size:15px;border-bottom:1px solid #222;color:#ccc;text-decoration:none;white-space:nowrap}
+.mob-nav .nav-btn:hover,.mob-nav .nav-btn.active{color:var(--or);background:#1a1a1a}
+@media(max-width:640px){.burger{display:flex}nav{display:none}}
 </style>
 <link rel="canonical" href="https://storelines.net/blog/top10-planshety.html"/>
 <meta name="keywords" content="топ-10 планшетов Xiaomi 2026, Xiaomi Pad 8, Xiaomi Pad 7 Pro"/>
@@ -74,11 +96,37 @@ footer{background:var(--blk);padding:40px 20px;margin-top:60px}
 
 <header><div class="h1"><a href="/" class="logo"><div class="logo-box">mi</div></a><div class="search"><input type="text" placeholder="Поиск..."></div></div></header>
 
-<nav><div class="nav-inner">
-<a href="/" class="nav-btn">🏠 Все товары</a>
-<a href="/planshety/" class="nav-btn active">📟 Планшеты</a>
-<a href="/blog/" class="nav-btn">📝 Блог</a>
-</div></nav>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-btn">🏠 Все товары</a>
+    <a href="/smartfony/" class="nav-btn">📱 Смартфоны</a>
+    <a href="/planshety/" class="nav-btn active">📟 Планшеты</a>
+    <a href="/naushniki/" class="nav-btn">🎧 Наушники</a>
+    <a href="/chasy/" class="nav-btn">⌚ Часы</a>
+    <a href="/televizory/" class="nav-btn">📺 Телевизоры</a>
+    <a href="/umny-dom/" class="nav-btn">🏡 Умный дом</a>
+    <a href="/pylesosy/" class="nav-btn">🤖 Пылесосы</a>
+    <a href="/zaryadki/" class="nav-btn">🔋 Зарядки</a>
+    <div class="nav-dropdown">
+      <button class="nav-dropdown-btn" id="moreBtn">Ещё ▾</button>
+      <div class="nav-dropdown-menu" id="moreMenu">
+        <a href="/aksessuary/">🛡️ Аксессуары</a>
+        <div class="dd-div"></div>
+        <div class="dd-label">Блог</div>
+        <a href="/blog/top10-smartfonov.html">📱 Топ-10 смартфонов 2026</a>
+        <a href="/blog/top10-televizory.html">📺 Топ-10 телевизоров</a>
+        <a href="/blog/top10-naushniki.html">🎧 Топ-10 наушников</a>
+        <a href="/blog/top10-pylesosy.html">🤖 Топ-10 пылесосов</a>
+        <a href="/blog/top10-planshety.html">📟 Топ-10 планшетов</a>
+        <a href="/blog/top10-chasy.html">⌚ Топ-10 часов</a>
+        <a href="/blog/top10-umny-dom.html">🏡 Топ-10 умный дом</a>
+        <a href="/blog/">📰 Все статьи →</a>
+        <div class="dd-div"></div>
+        <a href="/o-nas/">ℹ️ О нас</a>
+      </div>
+    </div>
+  </div>
+</nav>
 
 <div class="hero-journal"><img src="/blog/images/blog_planshety_hero.png" alt="Топ-10 планшетов Xiaomi 2026"><div class="hero-journal-overlay"></div></div>
 
@@ -244,5 +292,27 @@ footer{background:var(--blk);padding:40px 20px;margin-top:60px}
 <div class="ft-bottom"><p>© 2026 StoreLines — официальный партнер Xiaomi</p></div>
 </footer>
 
+<div class="mob-nav" id="mobNav">
+  <a href="/" class="nav-btn">🏠 Все товары</a>
+  <a href="/smartfony/" class="nav-btn">📱 Смартфоны</a>
+  <a href="/planshety/" class="nav-btn">📟 Планшеты</a>
+  <a href="/naushniki/" class="nav-btn">🎧 Наушники</a>
+  <a href="/chasy/" class="nav-btn">⌚ Часы</a>
+  <a href="/televizory/" class="nav-btn">📺 Телевизоры</a>
+  <a href="/umny-dom/" class="nav-btn">🏡 Умный дом</a>
+  <a href="/pylesosy/" class="nav-btn">🤖 Пылесосы</a>
+  <a href="/zaryadki/" class="nav-btn">🔋 Зарядки</a>
+  <a href="/aksessuary/" class="nav-btn">🛡️ Аксессуары</a>
+  <div style="height:1px;background:#333;margin:6px 0"></div>
+  <div style="padding:10px 24px;color:#555;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.5px">Блог</div>
+  <a href="/blog/top10-smartfonov.html" class="nav-btn">📱 Топ-10 смартфонов</a>
+  <a href="/blog/top10-televizory.html" class="nav-btn">📺 Топ-10 телевизоров</a>
+  <a href="/blog/top10-naushniki.html" class="nav-btn">🎧 Топ-10 наушников</a>
+  <a href="/blog/top10-pylesosy.html" class="nav-btn">🤖 Топ-10 пылесосов</a>
+  <a href="/blog/top10-planshety.html" class="nav-btn">📟 Топ-10 планшетов</a>
+  <a href="/blog/top10-chasy.html" class="nav-btn">⌚ Топ-10 часов</a>
+  <a href="/blog/top10-umny-dom.html" class="nav-btn">🏡 Топ-10 умный дом</a>
+  <a href="/blog/" class="nav-btn">📰 Все статьи</a>
+</div>
 </body>
 </html>
