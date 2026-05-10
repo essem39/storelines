@@ -40,7 +40,7 @@ header{background:var(--blk);position:sticky;top:0;z-index:200;box-shadow:0 2px 
 nav{background:#111;border-bottom:1px solid #2a2a2a}
 .nav-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;gap:0;overflow-x:auto;scrollbar-width:none}
 .nav-inner::-webkit-scrollbar{display:none}
-.nav-btn{padding:7px 14px;border:none;background:transparent;color:#aaa;font-size:13px;font-family:'Roboto',sans-serif;cursor:pointer;white-space:nowrap;border-radius:20px;transition:all .2s;display:flex;align-items:center;gap:6px;text-decoration:none}
+.nav-btn{padding:5px 10px;border:none;background:transparent;color:#aaa;font-size:12px;font-family:'Roboto',sans-serif;cursor:pointer;white-space:nowrap;border-radius:20px;transition:all .2s;display:flex;align-items:center;gap:4px;text-decoration:none}
 .nav-btn:hover{color:#fff;background:rgba(255,255,255,0.08)}
 .nav-btn.active{color:#fff;background:var(--or);font-weight:500}
 .nav-btn .ico{font-size:15px}
@@ -164,31 +164,30 @@ footer{background:var(--blk);padding:32px 20px;margin-top:0}
 
 <nav>
   <div class="nav-inner" id="nav">
-    <a href="/" class="nav-btn active"><span class="ico">🏠</span> Все товары</a>
-    <a href="/smartfony/" class="nav-btn"><span class="ico">📱</span> Смартфоны</a>
-    <a href="/planshety/" class="nav-btn"><span class="ico">📟</span> Планшеты</a>
-    <a href="/naushniki/" class="nav-btn"><span class="ico">🎧</span> Наушники</a>
-    <a href="/chasy/" class="nav-btn"><span class="ico">⌚</span> Часы и браслеты</a>
-    <a href="/televizory/" class="nav-btn"><span class="ico">📺</span> Телевизоры</a>
-    <a href="/umny-dom/" class="nav-btn"><span class="ico">🏡</span> Умный дом</a>
-    <a href="/pylesosy/" class="nav-btn"><span class="ico">🤖</span> Пылесосы</a>
-    <a href="/zaryadki/" class="nav-btn"><span class="ico">🔋</span> Зарядки</a>
-    <a href="/aksessuary/" class="nav-btn"><span class="ico">🛡️</span> Аксессуары</a>
+    <a href="/" class="nav-btn active">Все товары</a>
+    <a href="/smartfony/" class="nav-btn">📱 Смартфоны</a>
+    <a href="/planshety/" class="nav-btn">📟 Планшеты</a>
+    <a href="/naushniki/" class="nav-btn">🎧 Наушники</a>
+    <a href="/chasy/" class="nav-btn">⌚ Часы</a>
+    <a href="/televizory/" class="nav-btn">📺 Телевизоры</a>
+    <a href="/umny-dom/" class="nav-btn">🏡 Умный дом</a>
+    <a href="/pylesosy/" class="nav-btn">🤖 Пылесосы</a>
+    <a href="/zaryadki/" class="nav-btn">🔋 Зарядки</a>
     <div class="nav-dropdown">
-      <a href="/blog/" class="nav-btn"><span class="ico">📝</span> Блог ▾</a>
+      <a class="nav-btn" style="cursor:pointer">Ещё ▾</a>
       <div class="nav-dropdown-menu">
-        <span class="menu-label">Смартфоны</span>
-        <a href="/blog/top10-smartfonov.html">📱 Топ-10 смартфонов Xiaomi 2026</a>
+        <a href="/aksessuary/">🛡️ Аксессуары</a>
         <div class="divider"></div>
-        <span class="menu-label">Скоро</span>
+        <span class="menu-label">Блог</span>
+        <a href="/blog/top10-smartfonov.html">📱 Топ-10 смартфонов 2026</a>
         <a href="/blog/" style="opacity:.5">📺 Топ-10 телевизоров</a>
         <a href="/blog/" style="opacity:.5">🎧 Топ-10 наушников</a>
         <a href="/blog/" style="opacity:.5">🤖 Топ-10 пылесосов</a>
-        <div class="divider"></div>
         <a href="/blog/">📰 Все статьи →</a>
+        <div class="divider"></div>
+        <a href="/o-nas/">ℹ️ О нас</a>
       </div>
     </div>
-    <a href="/o-nas/" class="nav-btn"><span class="ico">ℹ️</span> О нас</a>
   </div>
 </nav>
 
