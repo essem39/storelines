@@ -458,6 +458,14 @@ footer{background:var(--blk);padding:40px 20px;margin-top:60px}
 </div>
 <script>
 (function(){
+  var burger=document.getElementById('burger');
+  var mobNav=document.getElementById('mobNav');
+  if(burger&&mobNav){
+    burger.addEventListener('click',function(){
+      burger.classList.toggle('open');
+      mobNav.classList.toggle('open');
+    });
+  }
   var btn=document.getElementById('moreBtn');
   var menu=document.getElementById('moreMenu');
   if(!btn||!menu) return;
