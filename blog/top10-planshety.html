@@ -86,7 +86,7 @@ footer{background:var(--blk);padding:40px 20px;margin-top:60px}
 .mob-nav.open{display:block}
 .mob-nav .nav-btn{display:flex;width:100%;padding:16px 24px;font-size:15px;border-bottom:1px solid #222;color:#ccc;text-decoration:none;white-space:nowrap}
 .mob-nav .nav-btn:hover,.mob-nav .nav-btn.active{color:var(--or);background:#1a1a1a}
-@media(max-width:640px){.burger{display:flex}nav{display:none}}
+@media(max-width:640px){.burger{display:flex}nav{display:none}.search{max-width:none;flex:1}}
 </style>
 <link rel="canonical" href="https://storelines.net/blog/top10-planshety.html"/>
 <meta name="keywords" content="топ-10 планшетов Xiaomi 2026, Xiaomi Pad 8, Xiaomi Pad 7 Pro"/>
@@ -94,7 +94,7 @@ footer{background:var(--blk);padding:40px 20px;margin-top:60px}
 </head>
 <body>
 
-<header><div class="h1"><a href="/" class="logo"><div class="logo-box">mi</div></a><div class="search"><input type="text" placeholder="Поиск..."></div></div>    <button class="burger" id="burger"><span></span><span></span><span></span></button>
+<header><div class="h1"><a href="/" class="logo"><div class="logo-box">mi</div></a><div class="search"><input type="text" placeholder="Поиск..."></div><button class="burger" id="burger"><span></span><span></span><span></span></button></div>
 </header>
 
 <nav>
@@ -321,6 +321,15 @@ footer{background:var(--blk);padding:40px 20px;margin-top:60px}
 </div>
 <script>
 (function(){
+  var burger=document.getElementById('burger');
+  var mobNav=document.getElementById('mobNav');
+  if(burger&&mobNav){
+    burger.addEventListener('click',function(e){
+      e.stopPropagation();
+      burger.classList.toggle('open');
+      mobNav.classList.toggle('open');
+    });
+  }
   var btn=document.getElementById('moreBtn');
   var menu=document.getElementById('moreMenu');
   if(!btn||!menu) return;
