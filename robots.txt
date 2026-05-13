@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://storelines.net/sitemap.xml
