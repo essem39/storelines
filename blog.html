@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Блог о технике Xiaomi — обзоры, рейтинги, советы | Storelines</title>
+<meta name="description" content="Топ-10 смартфонов, часов, наушников и планшетов Xiaomi. Честные рейтинги и советы по выбору техники в 2026 году.">
+<link rel="canonical" href="https://storelines.net/blog.html">
+<meta property="og:title" content="Блог о технике Xiaomi — обзоры и рейтинги | Storelines">
+<meta property="og:description" content="Топ-10 смартфонов, часов, наушников и планшетов Xiaomi. Честные рейтинги и советы.">
+<meta property="og:url" content="https://storelines.net/blog.html">
+<meta property="og:type" content="website">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="/favicon.png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--or:#ff6900;--or2:#e55e00;--blk:#1a1a1a;--bg:#f5f5f5;--bd:#e0e0e0;--tx:#222;--mu:#888;--rd:8px}
+body{font-family:'Roboto',sans-serif;background:#fff;color:var(--tx)}
+header{background:var(--blk);position:sticky;top:0;z-index:200;box-shadow:0 2px 8px rgba(0,0,0,.4)}
+.h1{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;height:54px;gap:20px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.logo-box{background:var(--or);color:#fff;font-weight:700;font-size:18px;width:34px;height:34px;display:flex;align-items:center;justify-content:center;border-radius:4px}
+.search{flex:1;max-width:440px;position:relative}
+.search input{width:100%;padding:8px 14px 8px 38px;border:none;border-radius:20px;background:#2d2d2d;color:#fff;font-size:13px;outline:none}
+.search input::placeholder{color:#666}
+.search svg{position:absolute;left:11px;top:50%;transform:translateY(-50%);opacity:.5}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;margin-left:auto}
+.burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px}
+nav{background:#111;border-bottom:1px solid #2a2a2a}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;overflow:visible}
+.nav-btn{padding:13px 18px;border:none;background:none;color:#aaa;font-size:13px;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;transition:all .2s;display:flex;align-items:center;gap:6px;text-decoration:none}
+.nav-btn:hover,.nav-btn.active{color:#fff}
+.nav-btn.active{color:var(--or);border-bottom-color:var(--or)}
+.nav-dropdown{position:relative}
+.nav-dropdown-menu{display:none;position:absolute;top:calc(100% + 2px);left:0;background:#1a1a1a;border:1px solid #333;border-radius:10px;padding:6px 0;min-width:230px;z-index:999;box-shadow:0 8px 24px rgba(0,0,0,.6)}
+.nav-dropdown-menu.open{display:block}
+.nav-dropdown-menu a{display:flex;align-items:center;gap:8px;padding:9px 16px;color:#aaa;text-decoration:none;font-size:13px;white-space:nowrap;transition:all .2s}
+.nav-dropdown-menu a:hover{color:#fff;background:rgba(255,255,255,.08)}
+.nav-dropdown-menu .dd-div{height:1px;background:#333;margin:4px 0}
+.nav-dropdown-menu .dd-label{padding:8px 16px 4px;font-size:11px;color:#555;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+.hero-blog{background:linear-gradient(135deg,#1a1a1a 0%,#2d2d2d 100%);padding:48px 20px;text-align:center}
+.hero-blog h1{color:#fff;font-size:2rem;font-weight:700;margin-bottom:12px}
+.hero-blog h1 span{color:var(--or)}
+.hero-blog p{color:#aaa;font-size:1rem}
+.breadcrumb{max-width:1200px;margin:16px auto;padding:0 20px;font-size:12px;color:var(--mu)}
+.breadcrumb a{color:var(--or);text-decoration:none}
+.blog-grid{max-width:1200px;margin:24px auto 48px;padding:0 20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px}
+.blog-card{border:1px solid var(--bd);border-radius:12px;overflow:hidden;text-decoration:none;color:var(--tx);transition:box-shadow .2s;display:flex;flex-direction:column}
+.blog-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.1)}
+.blog-card-img{background:linear-gradient(135deg,#ff6900,#e55e00);height:160px;display:flex;align-items:center;justify-content:center;font-size:4rem}
+.blog-card-body{padding:20px;flex:1;display:flex;flex-direction:column;gap:8px}
+.blog-card-body h2{font-size:1rem;font-weight:600;line-height:1.4}
+.blog-card-body p{font-size:13px;color:var(--mu);flex:1}
+.blog-card-footer{padding:12px 20px;border-top:1px solid var(--bd);font-size:12px;color:var(--or);font-weight:500}
+footer{background:var(--blk);padding:32px 20px}
+.ft-in{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:24px}
+.ft-col h4{color:#fff;font-size:13px;font-weight:500;margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid #333}
+.ft-col a{display:block;color:#666;font-size:12px;margin-bottom:6px;text-decoration:none;transition:color .15s}
+.ft-col a:hover{color:var(--or)}
+.ft-bottom{max-width:1200px;margin:24px auto 0;padding-top:16px;border-top:1px solid #2a2a2a;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.ft-bottom p{color:#444;font-size:11px}
+.mob-nav{display:none;position:fixed;top:54px;left:0;right:0;bottom:0;background:#111;z-index:150;overflow-y:auto;padding:8px 0}
+.mob-nav.open{display:block}
+.mob-nav .nav-btn{display:flex;width:100%;padding:16px 24px;font-size:15px;border-bottom:1px solid #222;color:#ccc;text-decoration:none}
+@media(max-width:640px){
+  .burger{display:flex}
+  nav{display:none}
+  .blog-grid{grid-template-columns:1fr;gap:16px}
+  .hero-blog h1{font-size:1.5rem}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="h1">
+    <a href="/" class="logo"><div class="logo-box">mi</div></a>
+    <div class="search"><svg width="16" height="16" fill="none" stroke="#fff" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><input type="text" placeholder="Поиск товаров Xiaomi..."></div>
+    <button class="burger" id="burger"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-btn">🏠 Все товары</a>
+    <a href="/smartfony/" class="nav-btn">📱 Смартфоны</a>
+    <a href="/planshety/" class="nav-btn">📟 Планшеты</a>
+    <a href="/naushniki/" class="nav-btn">🎧 Наушники</a>
+    <a href="/chasy/" class="nav-btn">⌚ Часы</a>
+    <a href="/televizory/" class="nav-btn">📺 Телевизоры</a>
+    <div class="nav-dropdown">
+      <button class="nav-btn" id="moreBtn" style="border:none;background:none;cursor:pointer">Ещё ▾</button>
+      <div class="nav-dropdown-menu" id="moreMenu">
+        <a href="/aksessuary/">🛡️ Аксессуары</a>
+        <a href="/umny-dom/">🏡 Умный дом</a>
+        <a href="/pylesosy/">🤖 Пылесосы</a>
+        <a href="/zaryadki/">🔋 Зарядки</a>
+        <div class="dd-div"></div>
+        <div class="dd-label">Блог</div>
+        <a href="/blog/top10-smartfonov.html">📱 Топ-10 смартфонов</a>
+        <a href="/blog/top10-chasy.html">⌚ Топ-10 часов</a>
+        <a href="/blog/top10-naushniki.html">🎧 Топ-10 наушников</a>
+        <a href="/blog/top10-planshety.html">📟 Топ-10 планшетов</a>
+        <a href="/blog/top10-televizory.html">📺 Топ-10 телевизоров</a>
+        <a href="/blog/top10-pylesosy.html">🤖 Топ-10 пылесосов</a>
+        <a href="/blog/top10-umny-dom.html">🏡 Топ-10 умный дом</a>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="hero-blog">
+  <h1>Блог <span>Storelines</span></h1>
+  <p>Топ-10 рейтинги, обзоры и советы по технике Xiaomi</p>
+</div>
+<div class="breadcrumb"><a href="/">Главная</a> › Блог</div>
+<div class="blog-grid">
+  <a href="/blog/top10-smartfonov.html" class="blog-card">
+    <div class="blog-card-img">📱</div>
+    <div class="blog-card-body">
+      <h2>Топ-10 смартфонов Xiaomi 2026</h2>
+      <p>Лучшие смартфоны Xiaomi, Redmi и POCO по соотношению цены и качества</p>
+    </div>
+    <div class="blog-card-footer">Читать →</div>
+  </a>
+  <a href="/blog/top10-chasy.html" class="blog-card">
+    <div class="blog-card-img">⌚</div>
+    <div class="blog-card-body">
+      <h2>Топ-10 умных часов Xiaomi 2026</h2>
+      <p>Лучшие смарт-часы и фитнес-браслеты Xiaomi Watch и Redmi Watch</p>
+    </div>
+    <div class="blog-card-footer">Читать →</div>
+  </a>
+  <a href="/blog/top10-naushniki.html" class="blog-card">
+    <div class="blog-card-img">🎧</div>
+    <div class="blog-card-body">
+      <h2>Топ-10 наушников Xiaomi 2026</h2>
+      <p>Лучшие TWS наушники и гарнитуры Xiaomi Buds и Redmi Buds</p>
+    </div>
+    <div class="blog-card-footer">Читать →</div>
+  </a>
+  <a href="/blog/top10-planshety.html" class="blog-card">
+    <div class="blog-card-img">📟</div>
+    <div class="blog-card-body">
+      <h2>Топ-10 планшетов Xiaomi 2026</h2>
+      <p>Лучшие планшеты Xiaomi Pad для работы, учёбы и развлечений</p>
+    </div>
+    <div class="blog-card-footer">Читать →</div>
+  </a>
+  <a href="/blog/top10-televizory.html" class="blog-card">
+    <div class="blog-card-img">📺</div>
+    <div class="blog-card-body">
+      <h2>Топ-10 телевизоров Xiaomi 2026</h2>
+      <p>Лучшие телевизоры Xiaomi TV с QLED и 4K для дома</p>
+    </div>
+    <div class="blog-card-footer">Читать →</div>
+  </a>
+  <a href="/blog/top10-pylesosy.html" class="blog-card">
+    <div class="blog-card-img">🤖</div>
+    <div class="blog-card-body">
+      <h2>Топ-10 пылесосов Xiaomi 2026</h2>
+      <p>Лучшие роботы-пылесосы и вертикальные пылесосы Xiaomi</p>
+    </div>
+    <div class="blog-card-footer">Читать →</div>
+  </a>
+  <a href="/blog/top10-umny-dom.html" class="blog-card">
+    <div class="blog-card-img">🏡</div>
+    <div class="blog-card-body">
+      <h2>Топ-10 умный дом Xiaomi 2026</h2>
+      <p>Лучшие устройства умного дома Xiaomi Mi Home и Mijia</p>
+    </div>
+    <div class="blog-card-footer">Читать →</div>
+  </a>
+</div>
+<footer>
+  <div class="ft-in">
+    <div class="ft-col"><h4>Категории</h4><a href="/smartfony/">Смартфоны</a><a href="/planshety/">Планшеты</a><a href="/naushniki/">Наушники</a><a href="/chasy/">Часы</a><a href="/televizory/">Телевизоры</a></div>
+    <div class="ft-col"><h4>Ещё</h4><a href="/umny-dom/">Умный дом</a><a href="/pylesosy/">Пылесосы</a><a href="/zaryadki/">Зарядки</a><a href="/aksessuary/">Аксессуары</a></div>
+    <div class="ft-col"><h4>Блог</h4><a href="/blog/top10-smartfonov.html">📱 Топ смартфонов</a><a href="/blog/top10-chasy.html">⌚ Топ часов</a><a href="/blog/top10-naushniki.html">🎧 Топ наушников</a><a href="/blog/top10-televizory.html">📺 Топ телевизоров</a></div>
+    <div class="ft-col"><h4>Информация</h4><a href="https://mi-shop.com" target="_blank" rel="nofollow">mi-shop.com</a></div>
+  </div>
+  <div class="ft-bottom"><p>© 2026 Storelines — партнёрский агрегатор mi-shop.com</p></div>
+</footer>
+<div class="mob-nav" id="mobNav">
+  <a href="/" class="nav-btn">🏠 Все товары</a>
+  <a href="/smartfony/" class="nav-btn">📱 Смартфоны</a>
+  <a href="/planshety/" class="nav-btn">📟 Планшеты</a>
+  <a href="/naushniki/" class="nav-btn">🎧 Наушники</a>
+  <a href="/chasy/" class="nav-btn">⌚ Часы</a>
+  <a href="/televizory/" class="nav-btn">📺 Телевизоры</a>
+  <a href="/umny-dom/" class="nav-btn">🏡 Умный дом</a>
+  <a href="/pylesosy/" class="nav-btn">🤖 Пылесосы</a>
+  <a href="/zaryadki/" class="nav-btn">🔋 Зарядки</a>
+  <a href="/aksessuary/" class="nav-btn">🛡️ Аксессуары</a>
+  <a href="/blog.html" class="nav-btn active">📰 Блог</a>
+</div>
+<script src="/storepilot-widget.js"></script>
+<script>
+(function(){
+  var burger=document.getElementById('burger');
+  var mobNav=document.getElementById('mobNav');
+  if(burger&&mobNav){
+    burger.addEventListener('click',function(){
+      burger.classList.toggle('open');
+      mobNav.classList.toggle('open');
+    });
+  }
+  var btn=document.getElementById('moreBtn');
+  var menu=document.getElementById('moreMenu');
+  if(btn&&menu){
+    btn.addEventListener('click',function(e){
+      e.stopPropagation();
+      menu.classList.toggle('open');
+    });
+    document.addEventListener('click',function(){
+      menu.classList.remove('open');
+    });
+  }
+})();
+</script>
+</body>
+</html>
