@@ -1,16 +1,26 @@
 (function() {
 
   function parseMarkdown(text) {
-    let html = text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-    html = html.replace(/\*\*(.+?)\*\*/g, '$1');
-    html = html.replace(/\*(.+?)\*/g, '$1');
-    html = html.replace(/(?:^|\n)(\d+)\.\s+(.+)/g, '\n<li style="margin:4px 0;">$2</li>');
-    html = html.replace(/(?:^|\n)[-•]\s+(.+)/g, '\n<li style="margin:4px 0;">$1</li>');
-    html = html.replace(/(<li[^>]*>.*?<\/li>\n?)+/gs, '<ul style="margin:8px 0;padding-left:18px;list-style:disc;">$&</ul>');
-    html = html.replace(/\n/g, '<br>');
-    html = html.replace(/<br>(<ul)/g, '$1');
-    html = html.replace(/(<\/ul>)<br>/g, '$1');
-    return html;
+    if (!text) return '';
+    let t = text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    t = t.replace(/\*\*([^*]+):\*\*/g, (m,h) => {
+      const colors = ['#ff6900','#2563eb','#059669','#7c3aed','#dc2626','#0891b2'];
+      const c = colors[Math.abs(h.charCodeAt(0)) % colors.length];
+      return '<div style="margin:10px 0 4px;padding:6px 12px;background:'+c+'15;border-left:3px solid '+c+';border-radius:0 8px 8px 0;font-weight:700;font-size:12px;color:'+c+'">'+h+'</div>';
+    });
+    t = t.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+    t = t.replace(/\*(.+?)\*/g, '<em style="color:#6b7280">$1</em>');
+    let num = 0;
+    t = t.replace(/(?:^|\n)(\d+)\.\s+(.+)/g, (m,n,item) => {
+      num++;
+      const colors = ['#ff6900','#2563eb','#059669','#7c3aed','#dc2626','#0891b2'];
+      const c = colors[(num-1) % colors.length];
+      return '<div style="display:flex;gap:10px;align-items:baseline;margin:4px 0;padding:6px 10px;background:'+c+'08;border-radius:8px;border:1px solid '+c+'20"><span style="background:'+c+';color:#fff;border-radius:50%;width:20px;height:20px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0">'+num+'</span><span>'+item+'</span></div>';
+    });
+    t = t.replace(/(?:^|\n)[-•]\s+(.+)/g, (m,item) => '<div style="display:flex;gap:8px;align-items:baseline;margin:3px 0;padding:4px 8px;background:#fff7ed;border-radius:6px"><span style="color:#ff6900;font-weight:700;flex-shrink:0">›</span><span>'+item+'</span></div>');
+    t = t.replace(/`(.+?)`/g, '<code style="background:#f1f5f9;padding:1px 6px;border-radius:4px;font-size:11px;font-family:monospace">$1</code>');
+    t = t.replace(/\n/g, '<br>');
+    return t;
   }
 
   const WORKER_URL = 'https://storepilot.esem39.workers.dev';
@@ -94,6 +104,15 @@
     }
     .sp-send:hover { transform: scale(1.1); }
     .sp-send:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+    .sp-mic {
+      width: 36px; height: 36px; border-radius: 50%; border: 2px solid #ff6900;
+      background: white; color: #ff6900; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; flex-shrink: 0; transition: all 0.2s;
+    }
+    .sp-mic:hover { background: #ff6900; color: white; }
+    .sp-mic.listening { background: #ff6900; color: white; animation: sp-pulse 1s infinite; }
+    @keyframes sp-pulse { 0%,100%{box-shadow:0 0 0 0 rgba(255,105,0,0.4)} 50%{box-shadow:0 0 0 8px rgba(255,105,0,0)} }
     .sp-quick { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 16px 10px; }
     .sp-quick-btn {
       font-size: 11px; padding: 5px 10px; border-radius: 20px; border: 1px solid #ff6900;
@@ -126,14 +145,9 @@
       <button class="sp-close">✕</button>
     </div>
     <div class="sp-messages"></div>
-    <div class="sp-quick">
-      <button class="sp-quick-btn">📱 Смартфоны</button>
-      <button class="sp-quick-btn">📟 Планшеты</button>
-      <button class="sp-quick-btn">🎧 Наушники</button>
-      <button class="sp-quick-btn">⌚ Часы</button>
-      <button class="sp-quick-btn">🏠 Умный дом</button>
-    </div>
+
     <div class="sp-input-area">
+      <button class="sp-mic" title="Голосовой ввод">🎤</button>
       <textarea class="sp-input" placeholder="Напишите вопрос..." rows="1"></textarea>
       <button class="sp-send">➤</button>
     </div>
@@ -223,9 +237,26 @@
     input.style.height = Math.min(input.scrollHeight, 80) + 'px';
   });
 
-  // Быстрые кнопки
-  chat.querySelectorAll('.sp-quick-btn').forEach(b => {
-    b.addEventListener('click', () => send(b.textContent.trim()));
-  });
+  // Микрофон
+  const micBtn = chat.querySelector('.sp-mic');
+  if (micBtn && ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window)) {
+    const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const recognition = new SR();
+    recognition.lang = 'ru-RU';
+    recognition.interimResults = false;
+    recognition.onresult = (e) => {
+      input.value = e.results[0][0].transcript;
+      micBtn.classList.remove('listening');
+      send(input.value);
+    };
+    recognition.onend = () => micBtn.classList.remove('listening');
+    recognition.onerror = () => micBtn.classList.remove('listening');
+    micBtn.addEventListener('click', () => {
+      micBtn.classList.add('listening');
+      recognition.start();
+    });
+  } else if (micBtn) {
+    micBtn.style.display = 'none';
+  }
 
 })();
